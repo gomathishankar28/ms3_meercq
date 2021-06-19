@@ -33,7 +33,7 @@ def register():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash("Username already exists. Please Login if you are an existing user")
+            flash("Username already exists. Please Login if you are an existing User")
             return redirect(url_for("register"))
 
         register = {
@@ -45,7 +45,7 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
+        flash("your Registration is Successful!")
     return render_template("register.html")
 
 

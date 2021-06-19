@@ -45,9 +45,24 @@
 					<li><a href="#">Log In</a></li>
 					<li><a href="{{ url_for('register') }}">Register</a></li>
 		</ul>
-	</header>
+    </header>
+        <section id ="flash-msg">
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <h5 class="brown lighten-1 center-align brown-text text-lighten-5">{{ message }}</h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        </section>
+
+        <main class="container">
             {% block content %}
             {% endblock %}
+        </main>
     <!-- script for jQuery -->
     <script
         src="https://code.jquery.com/jquery-3.6.0.min.js"
