@@ -1,9 +1,7 @@
   
 {% extends "base.html" %}
 {% block content %}
-
-    <h2>I'm extending the base template!</h2>
-
+    <h2>services</h2>
     {% for service in services %}
         {{ service.service_type }}<br>
     {% endfor %}

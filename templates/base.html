@@ -18,10 +18,36 @@
 </head>
 <body>
 
-    <h1>I'm part of the base template!</h1>
-    {% block content %}
-    {% endblock %}
+    <header>
+        <!-- top navbar -->
+		<nav class="nav-extended text-shadow brown darken-4 brown lighten-5-text">
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo">MeerCQ</a>
+				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="{{ url_for('services') }}">Services</a></li>
+					<li><a href="#">Log Out</a></li>
+					<li><a href="#">Log In</a></li>
+					<li><a href="#">Register</a></li>
+				</ul>
+			</div>
+		</nav>
 
+        <!-- mobile sidenav -->
+		<ul class="sidenav" id="mobile-demo">
+            <li><h4 class="center-align">MeerCQ</h4></li>
+                    <li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="{{ url_for('services') }}">Services</a></li>
+					<li><a href="#">Log Out</a></li>
+					<li><a href="#">Log In</a></li>
+					<li><a href="#">Register</a></li>
+		</ul>
+	</header>
+            {% block content %}
+            {% endblock %}
     <!-- script for jQuery -->
     <script
         src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -36,6 +62,6 @@
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% block scripts %}
     {% endblock %}
-    
+
 </body>
 </html>
