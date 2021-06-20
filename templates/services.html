@@ -2,6 +2,38 @@
 {% extends "base.html" %}
 {% block content %}
     <h2>services</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l4">
+                <h3>Electricians</h3>
+                <a href="{{ url_for('services') }}"><img src="../static/images/electrician.jpg"></a>
+            </div>
+            <div class="col s12 m12 l4">
+                <h3>Electricians</h3>
+                <a href="{{ url_for('services') }}"><img src="../static/images/electrician.jpg"></a>
+            </div>
+            <div class="col s12 m12 l4">
+                <h3>Electricians</h3>
+                <a href="{{ url_for('services') }}"><img src="../static/images/electrician.jpg"></a>
+            </div>
+            <div class="col s12 m12 l4">
+                <h3>Electricians</h3>
+                <a href="{{ url_for('services') }}"><img src="../static/images/electrician.jpg"></a>
+            </div>
+            <div class="col s12 m12 l4">
+                <h3>Electricians</h3>
+                <a href="{{ url_for('services') }}"><img src="../static/images/electrician.jpg"></a>
+            </div>
+            <div class="col s12 m12 l4">
+                <h3>Electricians</h3>
+                <a href="{{ url_for('services') }}"><img src="../static/images/electrician.jpg"></a>
+            </div>
+            <div class="col s12 m12 l4">
+                <h3>Electricians</h3>
+                <a href="{{ url_for('services') }}"><img src="../static/images/electrician.jpg"></a>
+            </div>
+        </div>
+    </div>
     {% for service in services %}
         {{ service.service_type }}<br>
     {% endfor %}
