@@ -1,41 +1,85 @@
   
 {% extends "base.html" %}
 {% block content %}
-    <h2>services</h2>
+    
     <div class="container">
+        <h2 class="center-align">services</h2>
         <div class="row">
-            <div class="col s12 m12 l4">
-                <h3>Electricians</h3>
-                <a href="{{ url_for('services') }}"><img src="../static/images/electrician.jpg"></a>
+            <div class="col s12 m4 l3 services">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../static/images/electrician.jpg">
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Electricians</a>
+                    </div>
+                </div>
             </div>
-            <div class="col s12 m12 l4">
-                <h3>Electricians</h3>
-                <a href="{{ url_for('services') }}"><img src="../static/images/electrician.jpg"></a>
+            <div class="col s12 m4 l3 services">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../static/images/plumber.jpg">
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Plumbers</a>
+                    </div>
+                </div>
             </div>
-            <div class="col s12 m12 l4">
-                <h3>Electricians</h3>
-                <a href="{{ url_for('services') }}"><img src="../static/images/electrician.jpg"></a>
+            <div class="col s12 m4 l3 services">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../static/images/painter.jpg">
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Painters</a>
+                    </div>
+                </div>
             </div>
-            <div class="col s12 m12 l4">
-                <h3>Electricians</h3>
-                <a href="{{ url_for('services') }}"><img src="../static/images/electrician.jpg"></a>
+        </div>
+        <div class="row">
+             <div class="col s12 m4 l3 services">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../static/images/gardener.jpg">
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Gardeners</a>
+                    </div>
+                </div>
             </div>
-            <div class="col s12 m12 l4">
-                <h3>Electricians</h3>
-                <a href="{{ url_for('services') }}"><img src="../static/images/electrician.jpg"></a>
+            <div class="col s12 m4 l3 services">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../static/images/whitegoods.jpg">
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Whitegoods</a>
+                    </div>
+                </div>
             </div>
-            <div class="col s12 m12 l4">
-                <h3>Electricians</h3>
-                <a href="{{ url_for('services') }}"><img src="../static/images/electrician.jpg"></a>
+             <div class="col s12 m4 l3 services">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../static/images/carpenter.jpg">
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Carpenters</a>
+                    </div>
+                </div>
             </div>
-            <div class="col s12 m12 l4">
-                <h3>Electricians</h3>
-                <a href="{{ url_for('services') }}"><img src="../static/images/electrician.jpg"></a>
+        </div>
+        <div class="row">
+             <div class="col s12 m4 l3 services">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../static/images/cleaner.jpg">
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Cleaners</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    {% for service in services %}
-        {{ service.service_type }}<br>
-    {% endfor %}
 
 {% endblock %}

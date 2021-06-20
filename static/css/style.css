@@ -24,6 +24,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    
 }
 .hero-text {
     text-align: center;
@@ -36,6 +37,7 @@ body {
     
 }
 
+
 form-search {
     padding: 10rem;
 }
@@ -43,4 +45,12 @@ form-search {
     background-color: red;
     padding: 5px;
     color: black;
+}
+
+.services {
+    margin: 10px 30px;
+}
+
+.card-content i {
+    padding-left: 10px;
 }
