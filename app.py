@@ -19,6 +19,11 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+@app.route("/home")
+def home():
+    return render_template("index.html")
+
+
 @app.route("/services")
 def services():
     services = mongo.db.services.find()
@@ -46,6 +51,7 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Hi {} , your Registration is Successful!".format(request.form.get("username")))
+        return render_template("login.html")
     return render_template("register.html")
 
 
@@ -62,6 +68,7 @@ def login():
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(request.form.get("username")))
+                    return render_template("services.html")
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")

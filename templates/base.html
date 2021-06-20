@@ -20,12 +20,12 @@
 
     <header>
         <!-- top navbar -->
-		<nav class="nav-extended text-shadow brown lighten-1 brown-text text-lighten-5">
+		<nav class="nav-extended text-shadow grey lighten-1 grey-text text-darken-4">
 			<div class="nav-wrapper">
 				<a href="#" class="brand-logo">MeerCQ</a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
 				<ul class="right hide-on-med-and-down">
-					<li><a href="#">Home</a></li>
+					<li><a href="{{ url_for('home') }}">Home</a></li>
 					<li><a href="#">About</a></li>
 					<li><a href="{{ url_for('services') }}">Services</a></li>
 					<li><a href="#">Log Out</a></li>
@@ -38,7 +38,7 @@
         <!-- mobile sidenav -->
 		<ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align">MeerCQ</h4></li>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
 					<li><a href="#">About</a></li>
 					<li><a href="{{ url_for('services') }}">Services</a></li>
 					<li><a href="#">Log Out</a></li>
@@ -52,7 +52,7 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes">
-                        <h5 class="brown lighten-1 center-align brown-text text-lighten-5">{{ message }}</h5>
+                        <h5 class="grey lighten-1 center-align grey-text text-darken-4">{{ message }}</h5>
                     </div>
                 {% endfor %}
             {% endif %}
