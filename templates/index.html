@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-        
             <div class="hero-image">
                 <img src="../static/images/home.jpg" alt="women pic">
                 <div class="hero-text">
@@ -23,95 +22,64 @@
                 </div>
             </div>
 
-            <div class = "container about">
+        <section id = "about-section">
+            <div class="about"></div>
                 <h2 class="center-align">About us</h2>
                 <p> We gather recommendations shared in public conversations on social media and 
                     create business listings for recommended pros. We help you find
-                    easy referrals for various services in one handy location. Choose a contact 
+                     easy referrals for various services in one handy location. Choose a contact 
                     and call the pro that you need.
-                 </p>
-            </div>
-            <div class="container">
-        <h2 class="center-align">services</h2>
-        <div class="row">
-            <div class="col s12 m4 l3 services">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="../static/images/electrician.jpg">
-                    </div>
-                    <div class="card-action">
-                        <a href="#">Electricians</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m4 l3 services">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="../static/images/plumber.jpg">
-                    </div>
-                    <div class="card-action">
-                        <a href="#">Plumbers</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m4 l3 services">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="../static/images/painter.jpg">
-                    </div>
-                    <div class="card-action">
-                        <a href="#">Painters</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-             <div class="col s12 m4 l3 services">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="../static/images/gardener.jpg">
-                    </div>
-                    <div class="card-action">
-                        <a href="#">Gardeners</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m4 l3 services">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="../static/images/whitegoods.jpg">
-                    </div>
-                    <div class="card-action">
-                        <a href="#">Whitegoods</a>
-                    </div>
-                </div>
-            </div>
-             <div class="col s12 m4 l3 services">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="../static/images/carpenter.jpg">
-                    </div>
-                    <div class="card-action">
-                        <a href="#">Carpenters</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-             <div class="col s12 m4 l3 services">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="../static/images/cleaner.jpg">
-                    </div>
-                    <div class="card-action">
-                        <a href="#">Cleaners</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-       
-        
- 
+                </p>
+            <div></div>
+            </section>
 
+        <div class="services">
+        <h2 class="center-align">services</h2>
+        <p> We have contacts listed for variety of services such an electricians, plumbers, painters, Carpenters, Gardeners,
+            whitegoods and Cleaners.
+        </p>
+        <div class="row">
+            <div class="col s12 m4 l3 services">
+                <div class="service">
+                    <a href="#"><img src="../static/images/electrician.jpg" class="circle"></a>
+                </div>
+            </div>
+            <div class="col s12 m4 l3 services">
+                <div class="service">
+                    <a href="#"><img src="../static/images/plumber.jpg" class="circle"></a>
+                </div>
+            </div>
+            <div class="col s12 m4 l3 services">
+                <div class="service">
+                    <a href="#"><img src="../static/images/painter.jpg" class="circle"></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m4 l3 services">
+                <div class="service">
+                    <a href="#"><img src="../static/images/carpenter.jpg" class="circle"></a>
+                </div>
+            </div>
+            <div class="col s12 m4 l3 services">
+                <div class="service">
+                    <a href="#"><img src="../static/images/gardener.jpg" class="circle"></a>
+                </div>
+            </div>
+            <div class="col s12 m4 l3 services">
+                <div class="service">
+                    <a href="#"><img src="../static/images/whitegoods.jpg" class="circle"></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m4 l3 services"></div>
+            <div class="col s12 m4 l3 services">
+                <div class="service">
+                    <a href="#"><img src="../static/images/cleaner.jpg" class="circle"></a>
+                </div>
+            </div>
+            <div class="col s12 m4 l3 services"></div>
+        </div>   
+ 
 {% endblock %}

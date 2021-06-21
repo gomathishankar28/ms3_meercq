@@ -20,14 +20,30 @@
 
     <header>
         <!-- top navbar -->
+        <ul id="dropdown" class="dropdown-content">
+            <li><a href="#!">Electricians</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Plumbers</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Carpenters</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Painters</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Gardeners</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Whitegoods</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Cleaners</a></li>
+        </ul>
 		<nav class="nav-extended text-shadow grey lighten-1 grey-text text-darken-4">
 			<div class="nav-wrapper">
 				<a href="#" class="brand-logo">MeerCQ</a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
 				<ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('home') }}">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="{{ url_for('services') }}">Services</a></li>
+                        <li><a href="{{ url_for('home', _anchor='about-section') }}">About</a></li>
+                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown">Services
+                            <i class="fas fa-caret-down"></i></a></li>
 					{% if session.user %}
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
@@ -36,21 +52,25 @@
                     {% endif %}
 				</ul>
 			</div>
-		</nav>
+        </nav>
+        
+        
 
         <!-- mobile sidenav -->
 		<ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align">MeerCQ</h4></li>
                      <li><a href="{{ url_for('home') }}">Home</a></li>
                         <li><a href="#">About</a></li>
-                        <li><a href="{{ url_for('services') }}">Services</a></li>
+                         <li><a class="dropdown-trigger" href="#!" data-target="dropdown">Services
+                            <i class="fas fa-caret-down"></i></a></li>
 					{% if session.user %}
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
                         <li><a href="{{ url_for('login') }}">Log In</a></li>
                         <li><a href="{{ url_for('register') }}">Register</a></li>
                     {% endif %}
-		</ul>
+        </ul>
+        
     </header>
         <section id ="flash-msg">
         <!-- flash messages -->

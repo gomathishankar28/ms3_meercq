@@ -51,6 +51,8 @@ form-search {
     margin: 10px 30px;
 }
 
-.card-content i {
-    padding-left: 10px;
+.service img {
+    height: 200px;
+    width: 200px;
+    radius: 50;
 }
