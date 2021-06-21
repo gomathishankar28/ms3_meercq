@@ -88,7 +88,13 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-    
+
+@app.route("/electicians")
+def electricians():
+    electrician_contacts = mongo.db.contacts.find_one()
+    return render_template("electricians.html", contacts=electrician_contacts)   
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
