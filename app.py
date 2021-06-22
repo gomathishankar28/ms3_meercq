@@ -103,9 +103,24 @@ def carpenters():
         {"service_type": "carpenters"})
     return render_template("carpenters.html", contacts=carpenter_contacts, count=carpenter_contacts.count()) 
 
-@app.route("/add_contact")
+
+@app.route("/add_contact", methods=["GET", "POST"])
 def add_contact():
+    if request.method == "POST":
+        contact = {
+            "service_type": request.form.get("service_type"),
+            "company_name": request.form.get("company_name"),
+            "mobile": request.form.get("mobile"),
+            "email": request.form.get("email"),
+            "URL": request.form.get("url"),
+	        "address": request.form.get("address"),
+            "created_by": session["user"]
+        }
+        mongo.db.contacts.insert_one(contact)
+        flash("Your new Contact Successfully Added")
+        return render_template("index.html")
     return render_template("add_contact.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
