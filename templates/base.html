@@ -42,7 +42,7 @@
 				<ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('home') }}">Home</a></li>
                         <li><a href="{{ url_for('home', _anchor='about-section') }}">About</a></li>
-                        <li><a class="dropdown-trigger" data-target="dropdown">Services
+                        <li><a class="dropdown-trigger" href="#" data-target="dropdown">Services
                             <i class="fas fa-caret-down"></i></a></li>
 					{% if session.user %}
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
@@ -61,7 +61,7 @@
             <li><h4 class="center-align">MeerCQ</h4></li>
                      <li><a href="{{ url_for('home') }}">Home</a></li>
                         <li><a href="#">About</a></li>
-                         <li><a class="dropdown-trigger" href="#!" data-target="dropdown">Services
+                         <li><a class="dropdown-trigger" href="#" data-target="dropdown">Services
                             <i class="fas fa-caret-down"></i></a></li>
 					{% if session.user %}
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>

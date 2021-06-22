@@ -103,6 +103,9 @@ def carpenters():
         {"service_type": "carpenters"})
     return render_template("carpenters.html", contacts=carpenter_contacts, count=carpenter_contacts.count()) 
 
+@app.route("/add_contact")
+def add_contact():
+    return render_template("add_contact.html")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

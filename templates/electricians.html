@@ -1,21 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
-
-    <h2> Electricians</h2> <p>Available contacts: {{ count }}</p>
-        
-        <div class="row">
-            {% for contact in contacts %}
-                <div class="col s12 m4 l3 contact">
-                    <div class="card medium blue-grey darken-1">
-                        <div class="card-content white-text">
-                            <span class="card-title"><strong>{{ contact.company_name }}</strong></span>
-                            <p>Mobile: {{ contact.mobile }} </p>
-                            <p>Email: {{ contact.email }}</p>
-                            <p>URL: {{ contact.url }}</p>
+    
+    <div class="row">
+        <div class = "col s12">
+            <h2> Electricians</h2>
+            <h5> Available contacts: {{ count }} </h5>
+            <a class="waves-effect waves-light btn-small href="{{ url_for('add_contact') }}"><i class="fas fa-user-plus"></i> Add New Contact </a>
+        </div>
+    </div>
+    <div class="row">
+        {% for contact in contacts %}
+            <div class="col s12 m4 l3 contact">
+                <div class="card medium grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title"><strong>{{ contact.company_name }}</strong></span>
+                            <h6>Mobile: {{ contact.mobile }} </h6>
+                            <h6>Email: {{ contact.email }}</h6>
+                            <h6>URL: {{ contact.url }}</h6>
                             <p>Address: {{ contact.address }}</p>
-                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a href="#"><i class="fas fa-edit"></i></a>
+                        <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        <a href="#"><i class="fas fa-thumbs-up"></i></a>
+                        <a href="#"><i class="fas fa-thumbs-down"></i></a>
                     </div>
                 </div>
-            {% endfor %}
-        </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
