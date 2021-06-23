@@ -11,13 +11,9 @@
                     <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
                     <select id="service_type" name="service_type" class="validate" required>
                         <option value="" disabled selected>Choose a Service</option>
-                        <option value="electricians">Electricians</option>
-                        <option value="plumbers">Plumbers</option>
-                        <option value="carpenters">Carpenters</option>
-                        <option value="painters">Painters</option>
-                        <option value="gardeners">Gardeners</option>
-                        <option value="whitegoods">Whitegoods</option>
-                        <option value="cleaners">Cleaners</option>
+                        {% for service in services %}
+                            <option value="{{ service.service_type }}">{{ service.service_type }}</option>
+                        {% endfor %}
                     </select>
                     <label for="service_type">Service Type</label>
                 </div>
@@ -61,6 +57,18 @@
                     <input id="url" name="url" type="text" class="validate"
                         required>
                     <label for="url">Website</label>
+                </div>
+            </div>
+            <div class="row">
+                 <div class="input-field col s12">
+                    <i class="fas fa-star prefix light-blue-text text-darken-4"></i>
+                    <select id="rating" name="rating" class="validate" required>
+                        <option value="" disabled selected>give your rating</option>
+                        {% for rating in ratings %}
+                            <option value="{{ rating }}">{{ rating }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="rating">Rating</label>
                 </div>
             </div>
             <div class="row">

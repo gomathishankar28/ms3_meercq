@@ -113,12 +113,16 @@ def add_contact():
             "email": request.form.get("email"),
             "url": request.form.get("url"),
 	        "address": request.form.get("address"),
+            "rating": request.form.get("rating"),
             "created_by": session["user"]
         }
         mongo.db.contacts.insert_one(contact)
         flash("Your new Contact Successfully Added")
-        return render_template("index.html")
-    return render_template("add_contact.html")
+        redirect(url_for(request.form.get("service_type")))
+
+    services = mongo.db.services.find().sort("service-type", 1)
+    ratings = ["1", "2", "3", "4", "5"]
+    return render_template("add_contact.html", services=services, ratings=ratings)
 
 
 @app.route("/edit_contact/<contact_id>", methods=["GET", "POST"])
@@ -128,6 +132,7 @@ def edit_contact(contact_id):
             "service_type": request.form.get("service_type"),
             "company_name": request.form.get("company_name"),
             "mobile": request.form.get("mobile"),
+            "email": request.form.get("email"),
             "address": request.form.get("address"),
             "url": request.form.get("url"),
             "rating": request.form.get("rating"),
@@ -136,10 +141,19 @@ def edit_contact(contact_id):
         mongo.db.contacts.update({"_id": ObjectId(contact_id)}, edited_contact)
         flash("contact Successfully Updated")
 
-    contact = mongo.db.tasks.find_one({"_id": ObjectId(contact_id)})
-    return render_template("edit_contact.html", contact=contact)
+    contact = mongo.db.contacts.find_one({"_id": ObjectId(contact_id)})
+    services = mongo.db.services.find().sort("service-type", 1)
+    ratings = ["1", "2", "3", "4", "5"]
+    return render_template("edit_contact.html", contact=contact, services=services, ratings=ratings)
     
     
+@app.route("/delete_contact/<contact_id>")
+def delete_contact(contact_id):
+    mongo.db.contacts.remove({"_id": ObjectId(contact_id)})
+    flash("contact Successfully Deleted")
+    return redirect(url_for("electricians"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
