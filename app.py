@@ -96,7 +96,6 @@ def electricians():
     return render_template("electricians.html", contacts=electrician_contacts, count=electrician_contacts.count())   
 
 
-
 @app.route("/carpenters")
 def carpenters():
     carpenter_contacts = mongo.db.contacts.find(
@@ -112,7 +111,7 @@ def add_contact():
             "company_name": request.form.get("company_name"),
             "mobile": request.form.get("mobile"),
             "email": request.form.get("email"),
-            "URL": request.form.get("url"),
+            "url": request.form.get("url"),
 	        "address": request.form.get("address"),
             "created_by": session["user"]
         }
@@ -122,28 +121,25 @@ def add_contact():
     return render_template("add_contact.html")
 
 
-
-
 @app.route("/edit_contact/<contact_id>", methods=["GET", "POST"])
 def edit_contact(contact_id):
     if request.method == "POST":
-       edited_contact = {
+        edited_contact = {
             "service_type": request.form.get("service_type"),
             "company_name": request.form.get("company_name"),
             "mobile": request.form.get("mobile"),
-            "email": request.form.get("email"),
-            "URL": request.form.get("url"),
-	        "address": request.form.get("address"),
+            "address": request.form.get("address"),
+            "url": request.form.get("url"),
             "rating": request.form.get("rating"),
             "created_by": session["user"]
         }
         mongo.db.contacts.update({"_id": ObjectId(contact_id)}, edited_contact)
-        flash("Contact Successfully Updated")
-    
-    contact = mongo.db.contacts.find_one({"_id": ObjectId(contact_id)})
+        flash("contact Successfully Updated")
+
+    contact = mongo.db.tasks.find_one({"_id": ObjectId(contact_id)})
     return render_template("edit_contact.html", contact=contact)
-
-
+    
+    
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
