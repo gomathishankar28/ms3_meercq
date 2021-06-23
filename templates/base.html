@@ -20,7 +20,7 @@
 
     <header>
         <!-- top navbar -->
-        <ul id="dropdown" class="dropdown-content">
+        <ul id="dropdown1" class="dropdown-content">
             <li><a href="{{ url_for('electricians') }}">Electricians</a></li>
             <li class="divider"></li>
             <li><a href="#!">Plumbers</a></li>
@@ -35,15 +35,15 @@
             <li class="divider"></li>
             <li><a href="#!">Cleaners</a></li>
         </ul>
-		<nav class="nav-extended text-shadow grey lighten-1 grey-text text-darken-4">
+		<nav class="text-shadow grey lighten-1 grey-text text-darken-4">
 			<div class="nav-wrapper">
-				<a href="#" class="brand-logo">MeerCQ</a>
+				<a href="{{ url_for('home') }}" class="brand-logo">MeerCQ</a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
 				<ul class="right hide-on-med-and-down">
-                        <li><a href="{{ url_for('home') }}">Home</a></li>
-                        <li><a href="{{ url_for('home', _anchor='about-section') }}">About</a></li>
-                        <li><a class="dropdown-trigger" href="#" data-target="dropdown">Services
-                            <i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('home', _anchor='about-section') }}">About</a></li>
+                    <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Services
+                        <i class="fas fa-caret-down"></i></a></li>
 					{% if session.user %}
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
@@ -61,7 +61,7 @@
             <li><h4 class="center-align">MeerCQ</h4></li>
                      <li><a href="{{ url_for('home') }}">Home</a></li>
                         <li><a href="#">About</a></li>
-                         <li><a class="dropdown-trigger" href="#" data-target="dropdown">Services
+                         <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Services
                             <i class="fas fa-caret-down"></i></a></li>
 					{% if session.user %}
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
@@ -90,6 +90,7 @@
             {% endblock %}
         </main>
     <!-- script for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
         src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="

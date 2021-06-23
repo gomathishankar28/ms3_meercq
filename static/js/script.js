@@ -3,8 +3,9 @@
 */
 
 $(document).ready(function () {
+    $(".dropdown-trigger").dropdown({ hover: true });
     $(".sidenav").sidenav({edge: "right"});
-    $(".dropdown-trigger").dropdown();
+    
     $('.collapsible').collapsible();
     $('select').formSelect();
 });

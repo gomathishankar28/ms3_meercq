@@ -23,7 +23,7 @@
                     </div>
                     <div class="card-action">
                         {% if session["user"] %}
-                            <a class="waves-effect waves-light btn medium" href="{{ url_for('add_contact') }}"><i class="fas fa-edit"></i></a>
+                            <a class="waves-effect waves-light btn medium" href="{{ url_for('edit_contact') }}"><i class="fas fa-edit"></i></a>
                             {% if session["user"]=="admin" %}
                                 <a class="waves-effect waves-light btn medium" href="{{ url_for('add_contact') }}"><i class="fas fa-trash-alt"></i></a>
                             {% endif %}

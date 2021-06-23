@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}   
+   
+
+    <div class="row card-panel grey lighten-5">
+        <h4>Add New contact</h4>
+        <form class="col s12" method="POST" action="{{ url_for('edit_contact', contact_id=contact_id) }}">
+            <!-- service_type selection -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                    <select id="service_type" name="service_type" class="validate" required>
+                        <option value="" disabled selected>Choose a Service</option>
+                        <option value="electricians">Electricians</option>
+                        <option value="plumbers">Plumbers</option>
+                        <option value="carpenters">Carpenters</option>
+                        <option value="painters">Painters</option>
+                        <option value="gardeners">Gardeners</option>
+                        <option value="whitegoods">Whitegoods</option>
+                        <option value="cleaners">Cleaners</option>
+                    </select>
+                    <label for="service_type">Service Type</label>
+                </div>
+            </div>
+            <!-- task name -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-building prefix light-blue-text text-darken-4"></i>
+                    <input id="company_name" name="company_name" minlength="5" maxlength="50" type="text" class="validate"
+                        required>
+                    <label for="comapany_name">Company Name</label>
+                </div>
+            </div>
+             <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-phone-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="mobile" name="mobile" type="tel" class="validate"
+                        required>
+                    <label for="mobile">Contact Number</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-envelope-square prefix light-blue-text text-darken-4"></i>
+                    <input id="email" name="email" type="email" class="validate"
+                        required>
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                 <div class="input-field col s12">
+                    <i class="fas fa-map-marker-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="address" name="address" type="text" class="validate"
+                        required>
+                    <label for="address">Address</label>
+                </div>
+            </div>
+            <div class="row">
+                 <div class="input-field col s12">
+                    <i class="fas fa-map-marker-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="url" name="url" type="text" class="validate"
+                        required>
+                    <label for="url">Website</label>
+                </div>
+            </div>
+            <div class="row">
+                 <div class="input-field col s12">
+                    <i class="fas fa-star prefix light-blue-text text-darken-4"></i>
+                    <<select id="service_type" name="service_type" class="validate" required>
+                        <option value="" disabled selected>give your rating</option>
+                        <option value="1">1<i class="fas fa-star></i></option>
+                        <option value="2">2*<i class="fas fa-star></i></option>
+                        <option value="3">3*<i class="fas fa-star></i></option>
+                        <option value="4">4*<i class="fas fa-star></i></option>
+                        <option value="5">5*<i class="fas fa-star></i></option>
+                        
+                    </select>
+                    <label for="service_type">Service Type</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                        Edit Contact <i class="fas fa-edit right"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

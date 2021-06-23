@@ -68,7 +68,7 @@ def login():
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(request.form.get("username")))
-                    return render_template("services.html")
+                    return render_template("index.html")
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -122,7 +122,30 @@ def add_contact():
     return render_template("add_contact.html")
 
 
+
+
+@app.route("/edit_contact/<contact_id>", methods=["GET", "POST"])
+def edit_contact(contact_id):
+    if request.method == "POST":
+       edited_contact = {
+            "service_type": request.form.get("service_type"),
+            "company_name": request.form.get("company_name"),
+            "mobile": request.form.get("mobile"),
+            "email": request.form.get("email"),
+            "URL": request.form.get("url"),
+	        "address": request.form.get("address"),
+            "rating": request.form.get("rating"),
+            "created_by": session["user"]
+        }
+        mongo.db.contacts.update({"_id": ObjectId(contact_id)}, edited_contact)
+        flash("Contact Successfully Updated")
+    
+    contact = mongo.db.contacts.find_one({"_id": ObjectId(contact_id)})
+    return render_template("edit_contact.html", contact=contact)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
+        
