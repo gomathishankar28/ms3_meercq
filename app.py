@@ -193,7 +193,7 @@ def delete_contact(contact_id):
 def search():
     query = request.form.get("query")
     contacts = list(mongo.db.contacts.find({"$text": {"$search": query}}))
-    return render_template("electricians.html", contacts=contacts)
+    return render_template("services.html", contacts=contacts)
 
 
 if __name__ == "__main__":

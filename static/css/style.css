@@ -1,30 +1,31 @@
 body {
     margin: 0;
+    padding: 0
 }
 
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
-#flash-msg {
+.flash-msg {
     line-height: 3;
     padding: 3rem;
-    background-color: #d3d3d3;
+    
 }
 
 .hero-image {
     /* The image used */
     background-image: url("../images/home.jpg");
 
-    /* Set a specific height */
+    /*Set a specific height*/ 
     height: 50%;
-    width: 100vh;
+    
 
-    /* Position and center the image to scale nicely on all screens */
+    /*Position and center the image to scale nicely on all screens */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    position: relative;*/
     
 }
 .hero-text {
@@ -39,8 +40,8 @@ body {
 }
 
 
-form-search {
-    padding: 10rem;
+.search-form {
+    top: 50%;
 }
 .cta-btn, .search {
     background-color: red;

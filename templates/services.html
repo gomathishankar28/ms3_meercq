@@ -1,7 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
   
-
     
-    {% electricians.html %}
-    {% carpenters.html %}
+    <div class="row">
+        <div class = "col s12">
+            <h2> your search results </h2>
+            
+            {% if session["user"] %}
+                <a class="waves-effect waves-light btn medium" href="{{ url_for('add_contact') }}">Add Contact</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        {% for contact in contacts %}
+            <div class="col s12 m4 l3 contact">
+                <div class="card medium grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title"><strong>{{ contact.company_name }}</strong></span>
+                            <h6>Mobile: {{ contact.mobile }} </h6>
+                            <h6>Email: {{ contact.email }}</h6>
+                            <h6>URL: {{ contact.url }}</h6>
+                            <h6>Address: {{ contact.address }}</h6>
+                    </div>
+                    <div class="card-action">
+                        {% if session["user"] %}
+                            <a class="waves-effect waves-light btn medium" href="{{ url_for('edit_contact', contact_id=contact._id) }}"><i class="fas fa-edit"></i></a>
+                            {% if session["user"]=="admin" %}
+                                <a class="waves-effect waves-light btn medium" href="{{ url_for('delete_contact', contact_id=contact._id) }}"><i class="fas fa-trash-alt"></i></a>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+                    
+
+{% endblock %}
 
 

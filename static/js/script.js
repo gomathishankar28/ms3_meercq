@@ -3,7 +3,7 @@
 */
 
 $(document).ready(function () {
-    $(".dropdown-trigger").dropdown({ hover: true });
+    $(".dropdown-trigger").dropdown();
     $(".sidenav").sidenav({edge: "right"});
     
     $('.collapsible').collapsible();
