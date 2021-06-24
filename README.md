@@ -79,20 +79,22 @@ As a customer, I would like
 
 *   As a new customer to the website, I want to know the contact details based on the service type chosen.
 
+*   As a new customer to website, I want to know how many contacts are available under each service.
+
 *   As a customer to the website, I want to know the name of the person/company as part of the contact deatils
 
 *   As a customer, I would like to know the address of the company so that I have a place to reach incase of any issue..
 
-*   As a customer, I would like to know the mobile number in order to contact him and fix an appointment.
+*   As a customer, I would like to know the mobile number in order to contact and fix an appointment.
 
 *   As a customer, I would like to know the emailID of the contact for future communication and invoice sharing.
 
 *   As a customer, I would like to see a rating for each contact that would help me to choose a better contact profesional.
 
-*   As a Prospective customer I want to add a new contact to the service when I find a new reliable contact and wishes to suggest the contact to others.
+*   As a Prospective customer I want to add a new contact to the service when I find a new reliable contact and wishes to suggest the same to others.
 
 *   As a prospective customer to the website, I want to edit a contact when the address or mobile number changes.
 
-*   As a  prospective customer to the website, I want to edit a contact to add review comments wich helps other users to select a best contact from the service.
+*   As a  prospective customer to the website, I want to edit a contact to add review comments wich helps other users to choose the best contact from the available list.
 
 *   As a  admin to the website, I want to delete a contact which is fake, never exists or stopped providing any service.

@@ -103,6 +103,41 @@ def carpenters():
     return render_template("carpenters.html", contacts=carpenter_contacts, count=carpenter_contacts.count()) 
 
 
+@app.route("/plumbers")
+def plumbers():
+    plumber_contacts = mongo.db.contacts.find(
+        {"service_type": "plumbers"})
+    return render_template("plumbers.html", contacts=plumber_contacts, count=plumber_contacts.count()) 
+
+
+@app.route("/painters")
+def painters():
+    painter_contacts = mongo.db.contacts.find(
+        {"service_type": "painters"})
+    return render_template("painters.html", contacts=painter_contacts, count=painter_contacts.count()) 
+
+
+@app.route("/gardeners")
+def gardeners():
+    gardener_contacts = mongo.db.contacts.find(
+        {"service_type": "gardeners"})
+    return render_template("gardeners.html", contacts=gardener_contacts, count=gardener_contacts.count()) 
+
+
+@app.route("/whitegoods")
+def whitegoods():
+    whitegoods_contacts = mongo.db.contacts.find(
+        {"service_type": "whitegoods"})
+    return render_template("whitegoods.html", contacts=whitegoods_contacts, count=whitegoods_contacts.count()) 
+
+
+@app.route("/cleaners")
+def cleaners():
+    cleaner_contacts = mongo.db.contacts.find(
+        {"service_type": "cleaners"})
+    return render_template("cleaners.html", contacts=cleaner_contacts, count=cleaner_contacts.count()) 
+
+
 @app.route("/add_contact", methods=["GET", "POST"])
 def add_contact():
     if request.method == "POST":
@@ -152,6 +187,13 @@ def delete_contact(contact_id):
     mongo.db.contacts.remove({"_id": ObjectId(contact_id)})
     flash("contact Successfully Deleted")
     return redirect(url_for("electricians"))
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    contacts = list(mongo.db.contacts.find({"$text": {"$search": query}}))
+    return render_template("electricians.html", contacts=contacts)
 
 
 if __name__ == "__main__":

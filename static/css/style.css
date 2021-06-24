@@ -18,6 +18,7 @@ body {
 
     /* Set a specific height */
     height: 50%;
+    width: 100vh;
 
     /* Position and center the image to scale nicely on all screens */
     background-position: center;
@@ -60,7 +61,7 @@ form-search {
     margin: 30px;
 }
 .card {
-    height: 300px;
+    height: 100px;
     width: 250px;
     
 }

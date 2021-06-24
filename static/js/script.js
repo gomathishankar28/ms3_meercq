@@ -8,4 +8,5 @@ $(document).ready(function () {
     
     $('.collapsible').collapsible();
     $('select').formSelect();
+    $('.slider').slider('duration', 1000);
 });
