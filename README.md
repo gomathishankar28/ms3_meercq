@@ -1,59 +1,98 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# [MeerCQ](https://gomathishankar28.github.io/ms3_meercq/)
 
-Welcome gomathishankar28,
+This is a website that provides contact details of variety of services like electricians, plumbers,
+carpenters, painters, gardeners, whitegoods and cleaners in Meerhoven in one place. As the name suggests, MeerCQ( which means Meerhoven people seek you) 
+is a platform where people can find the contact of a professional for all the chores at home without any hassle.
+**MeerCQ** is an educational project that serves as the **Milestone Project 3** for the **Full-Stack Software Developer programme** powered by **Code Institute**.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+## **Table of Contents**
+  - [Demo](#demo)
+  - [Introduction](#introduction)
+  - [UX](#ux)
+    - [Business Goals](#business-goals)
+    - [User Goals](#user-goals)
+    - [User Stories](#user-stories)
+    - [Strategy](#strategy)
+    - [Scope](#scope)
+    - [Structure](#structure)
+    - [Skeleton](#skeleton)
+    - [Surface](#surface)
+  - [Features](#features)
+  - [Technologies Used](#technologies-used)
+  - [Testing](#testing)
+  - [Deployment](#deployment)
+  - [Credits](#credits)
+  - [Acknowledgements](#acknowledgements)
 
-## Gitpod Reminders
+## **Demo** 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+# **Introduction**
 
-Another blue button should appear to click: _Open Browser_.
+MeerCQ gathers recommendations shared in public conversations on social media. It aims to create contact listings for
+ recommended pros, so that the customers can easily see referrals from across social media, in one handy location.
+ Customers can find a professional to contact for small jobs in and around the house.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The reason to promote this business model is because when there is a problem with any of the service at home,
+it is very difficult to find an appropriate contact on time. Users refer to google and find some available contact which will not ensure 
+a reliable service. MeerCQ aims at collecting the details and contacts  for such services based on experience from other users which 
+ensures a reliable service.
 
-A blue button should appear to click: _Make Public_,
+The site enables the registered users to create, Read, Update and Delete (CRUD) contacts. The site also provides a platform to share
+the user reviews for each contact, based on which the customers can choose a best contact professional from the list of available contacts.
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## **Business Goals**
+*   To target the expat community who are looking for contact professionals for their home needs.
 
-To log into the Heroku toolbelt CLI:
+*   To evince interest in customers who wants to find contacts for all home services in one place.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+*   To bring this offering to all the expats who are new to this place and doesn't have any contacts to reach to in case of a problem at home.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
+*   Provide a single, standard way to find the contact of professionals for all the basic home services.
 
-## Updates Since The Instructional Video
+*   To comprehensively list the available contacts under each service type.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+*   Build a brand image for contact directory for all home services in Meerhoven
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+*   Clearly communicate the contact information for every company under each service type.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+## **user Goals**
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+As a customer, I would like 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+*   To know what kind of information, MeerCQ can Provide. 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+*   To know the list of services for which contacts is provided
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+*   To know the name, contact number, address,emailID of each contact for further communication
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+*   To see the user reviews for each company,so that i can pick the best choice up. 
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+##  **User stories**
+*   As a prospective customer to the website, I want to easily navigate the site, so that I can easily find the details about MeerCQ so that I am assured about their service. 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+*   As a prospective customer to the website, I want to precisely know what services are offered so that I have enough information to avail their service
 
----
+*   As a new customer to the website, I want to know for what kind of services, the contact deatils are provided.
 
-Happy coding!
+*   As a new customer to the website, I want to know the contact details based on the service type chosen.
+
+*   As a customer to the website, I want to know the name of the person/company as part of the contact deatils
+
+*   As a customer, I would like to know the address of the company so that I have a place to reach incase of any issue..
+
+*   As a customer, I would like to know the mobile number in order to contact him and fix an appointment.
+
+*   As a customer, I would like to know the emailID of the contact for future communication and invoice sharing.
+
+*   As a customer, I would like to see a rating for each contact that would help me to choose a better contact profesional.
+
+*   As a Prospective customer I want to add a new contact to the service when I find a new reliable contact and wishes to suggest the contact to others.
+
+*   As a prospective customer to the website, I want to edit a contact when the address or mobile number changes.
+
+*   As a  prospective customer to the website, I want to edit a contact to add review comments wich helps other users to select a best contact from the service.
+
+*   As a  admin to the website, I want to delete a contact which is fake, never exists or stopped providing any service.
