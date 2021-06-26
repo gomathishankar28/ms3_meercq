@@ -21,7 +21,7 @@
 
     <header>
         <!-- top navbar -->
-        <ul id="dropdown1" class="dropdown-content">
+        <ul id="dropdown1" class="dropdown-content black black-text">
             <li><a href="{{ url_for('electricians') }}">Electricians</a></li>
             <li class="divider"></li>
             <li><a href="{{ url_for('plumbers') }}">Plumbers</a></li>
@@ -36,11 +36,12 @@
             <li class="divider"></li>
             <li><a href="{{ url_for('cleaners') }}">Cleaners</a></li>
         </ul>
-		<nav class="text-shadow grey darken-3 grey-text text-darken-4">
-			<div class="nav-wrapper">
+        <div class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper grey darken-3 grey-text text-darken-4">
 				<a href="{{ url_for('home') }}" class="brand-logo">MeerCQ</a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-				<ul class="right hide-on-med-and-down">
+				<ul class="right hide-on-med-and-down" id="navbar-items">
                     <li class=active><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('home', _anchor='about-section') }}">About</a></li>
                     <li><a class="dropdown-trigger navdropdown" href="#!" data-target="dropdown1">Services
@@ -54,7 +55,7 @@
 				</ul>
 			</div>
         </nav>
-        
+        </div>
         
 
         <!-- mobile sidenav -->
@@ -62,8 +63,30 @@
             <li><h4 class="center-align">MeerCQ</h4></li>
                     <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('home', _anchor='about-section') }}">About</a></li>
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Services
-                        <i class="fas fa-caret-down"></i></a></li>
+                    <li>
+                        <ul class="collapsible collapsible-accordion">
+                            <li>
+                                <a class="collapsible-header">Services<i class="fas fa-caret-down right"></i></a>
+                                <div class="collapsible-body">
+                                    <ul id="" class="">
+                                        <li><a href="{{ url_for('electricians') }}">Electricians</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="{{ url_for('plumbers') }}">Plumbers</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="{{ url_for('carpenters') }}">Carpenters</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="{{ url_for('painters') }}">Painters</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="{{ url_for('gardeners') }}">Gardeners</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="{{ url_for('whitegoods') }}">Whitegoods</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="{{ url_for('cleaners') }}">Cleaners</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
 					{% if session.user %}
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
