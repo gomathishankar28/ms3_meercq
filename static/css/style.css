@@ -12,33 +12,28 @@ body {
     padding: 3rem;
     
 }
-
-.hero-image {
-    /* The image used */
+.callout {
+    margin-left: 0;
+}
+/*.hero-image {
     background-image: url("../images/home.jpg");
-
-    /*Set a specific height*/ 
-    height: 30%;
-    
-
-    /*Position and center the image to scale nicely on all screens */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;*/
-    overflow-x: hidden;
-    margin-left:-50%;
+    position: relative;
+    height: 1000px;
+    width: 100%
+    margin-left: -50%;
+    padding: 0;
 }
 .hero-text {
     text-align: center;
     position: absolute;
-    top: 15%;
+    top: 30%;
     left: 25%
     transform: translate(-50%, -50%);
-    color: black;
-    margin-left: 30%
-    
-}
+    color: black;  
+}*/
 .form-search {
     top: 30%;
 }
@@ -55,7 +50,7 @@ body {
 
 .service img {
     height: 200px;
-    width: 250px;
+    width: 200px;
     radius: 50;
 }
 .contact {

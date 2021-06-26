@@ -86,7 +86,7 @@ def logout():
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("login"))
+    return redirect(url_for("home"))
 
 
 @app.route("/electicians")
@@ -153,7 +153,7 @@ def add_contact():
         }
         mongo.db.contacts.insert_one(contact)
         flash("Your new Contact Successfully Added")
-        redirect(url_for(request.form.get("service_type")))
+        return redirect(url_for('home', _anchor='services-section'))
 
     services = mongo.db.services.find().sort("service-type", 1)
     ratings = ["1", "2", "3", "4", "5"]
@@ -175,6 +175,7 @@ def edit_contact(contact_id):
         }
         mongo.db.contacts.update({"_id": ObjectId(contact_id)}, edited_contact)
         flash("contact Successfully Updated")
+        return redirect(url_for('home', _anchor='services-section'))
 
     contact = mongo.db.contacts.find_one({"_id": ObjectId(contact_id)})
     services = mongo.db.services.find().sort("service-type", 1)
