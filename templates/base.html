@@ -64,7 +64,7 @@
                     <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('home', _anchor='about-section') }}">About</a></li>
                     <li>
-                        <ul class="collapsible collapsible-accordion">
+                        <ul class="collapsible">
                             <li>
                                 <a class="collapsible-header">Services<i class="fas fa-caret-down right"></i></a>
                                 <div class="collapsible-body">
@@ -96,7 +96,7 @@
         </ul>
         
     </header>
-    <main class="container">
+    
         <div class ="flash-msg">
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
@@ -109,17 +109,19 @@
             {% endif %}
         {% endwith %}
     </div>
-            {% block content %}
-            {% endblock %}
-        </main>
-    
-    <footer class="page-footer">
+    {% block content %}
+        <footer class="page-footer">
         <div class="footer-copyright">
             <div class="container">
             <p class="center-align">© 2021 Copyright MeerCQ</p>
             </div>
-          </div>
-    </footer>
+        </div>
+        </footer>
+
+    {% endblock %}
+        
+    
+    
     <!-- script for jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
 

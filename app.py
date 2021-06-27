@@ -121,7 +121,8 @@ def painters():
 def gardeners():
     gardener_contacts = mongo.db.contacts.find(
         {"service_type": "gardeners"})
-    return render_template("gardeners.html", contacts=gardener_contacts, count=gardener_contacts.count()) 
+    reviews = mongo.db.reviews.find()
+    return render_template("gardeners.html", contacts=gardener_contacts, count=gardener_contacts.count(), reviews=reviews) 
 
 
 @app.route("/whitegoods")
@@ -153,7 +154,7 @@ def add_contact():
         }
         mongo.db.contacts.insert_one(contact)
         flash("Your new Contact Successfully Added")
-        return redirect(url_for('home', _anchor='services-section'))
+        return redirect(request.referrer)
 
     services = mongo.db.services.find().sort("service-type", 1)
     ratings = ["1", "2", "3", "4", "5"]

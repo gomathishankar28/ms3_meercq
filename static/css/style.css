@@ -15,7 +15,12 @@
     
 }
 .callout {
-    margin-left: 0;
+     background-image: url("../images/home.jpg");
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     width: 100%;
+     margin-left: -5%;
 }
 /*.hero-image {
     background-image: url("../images/home.jpg");
@@ -55,11 +60,10 @@
     width: 200px;
     radius: 50;
 }
-.contact {
-    margin: 30px;
-}
 .card {
-    height: 100px;
     width: 250px;
-    
+    height: 700px;
+}
+.review_list {
+    overflow-y: scroll;
 }
