@@ -1,28 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="container callout">
-        <div class="row">
-        <div class="col">
-        <div class="row">
-            <div class="col s12 hero-text">
-                <h4 class="center-align">Get things fixed without Hassel.</h4>
-                <h5 class="center-align">Find electricians, plumbers and other handymen professionals for all your
-                    small jobs in and around the
-                    house!
-                </h5>
+    <section class="hero_image">
+        <div>
+        <img class="materialboxed" width="100%" height="500px" src="static/images/home.jpg">
+            <div class="row hero-header">
+                <div class="col s8 hero_caption">
+                    <h4 class="center-align">Get things fixed without Hassel.</h4>
+                    <h5 class="center-align">Find electricians, plumbers and other handymen professionals for all your
+                        small jobs in and around the
+                        house!
+                    </h5>
+                </div>
             </div>
-            <div class="row">
-                <div class="col s12 card-panel grey lighten-3 form-search">
-                    <form action="{{ url_for('search') }}" method="post" class="col s12 grey lighten-3">
-                        <div class="row valign-wrapper center-align">
+            <div class="row hero-header">
+                <div class="col s8 grey lighten-3 search_form grey darken-1">
+                    <form action="{{ url_for('search') }}" method="post" class="col s12">
+                        <div class="row">
                             <div class="input-field col s12 m8">
-                                <i class="fas fa-search prefix grey-text text-darken-3"></i>
+                                <i class="fas fa-search prefix red-text accent-4-text"></i>
                                 <input type="text" name="query" id="query" minlength="3" class="validate"
                                     placeholder="I need an eg:electrician" required>
                                 <label for="query">Search </label>
                             </div>
-                            <div class="col s12 m4">
-                                <button type="submit" class="grey darken-3 btn text-shadow">
+                            <div class="input-field col s12 m4">
+                                <button type="submit" class="red accent-4 btn text-shadow">
                                     <i class="fas fa-search left"></i> Search
                                 </button>
                             </div>
@@ -31,8 +32,8 @@
                 </div>
             </div>
         </div>
-     </div>
-     </div>   
+    </section>
+       
             <div class="container" id="about-section">
                 <h2 class="center-align">About us</h2>
                 <p> We gather recommendations shared in public conversations on social media and
