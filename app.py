@@ -192,6 +192,20 @@ def delete_contact(contact_id):
     return redirect(url_for("electricians"))
 
 
+@app.route("/add_review", methods=["GET", "POST"])
+def add_review():
+    if request.method == "POST":
+        review = {
+            "rating": request.form.get("rating"),
+            "comments": request.form.get("comments"),
+            "company_name": request.form.get("company_name"),
+            "created_by": session["user"]
+        }
+        mongo.db.reviews.insert_one(review)
+        flash("Your review has been added")
+        return redirect(request.referrer)
+    
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
