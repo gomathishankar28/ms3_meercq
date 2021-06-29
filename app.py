@@ -93,7 +93,8 @@ def logout():
 def electricians():
     electrician_contacts = mongo.db.contacts.find(
         {"service_type": "electricians"})
-    return render_template("electricians.html", contacts=electrician_contacts, count=electrician_contacts.count())   
+    reviews = mongo.db.reviews.find()
+    return render_template("electricians.html", contacts=electrician_contacts, count=electrician_contacts.count(), reviews=reviews) 
 
 
 @app.route("/carpenters")
