@@ -1,37 +1,73 @@
 {% extends "base.html" %}
 {% block content %}
-    
-    <div class="row">
-        <div class = "col s12">
-            <h2> Cleaners </h2>
-            <h5> Available contacts: {{ count }} </h5>
-            {% if session["user"] %}
-                <a class="waves-effect waves-light btn medium" href="{{ url_for('add_contact') }}">Add Contact</a>
-            {% endif %}
-        </div>
-    </div>
-    <div class="row">
-        {% for contact in contacts %}
-            <div class="col s12 m4 l3 contact">
-                <div class="card medium grey darken-1">
-                    <div class="card-content white-text">
-                        <span class="card-title"><strong>{{ contact.company_name }}</strong></span>
-                            <h6>Mobile: {{ contact.mobile }} </h6>
-                            <h6>Email: {{ contact.email }}</h6>
-                            <h6>URL: {{ contact.url }}</h6>
-                            <h6>Address: {{ contact.address }}</h6>
+
+    <div class="container services-container">
+    	<div class="row services-header">
+        	<div class = "col s12 center-align">
+            		<h2 class="center-align"> Cleaners </h2>
+            		<h5 class="center-align"> Available contacts: {{ count }} </h5>
+            		{% if session["user"] %}
+                		<a class="waves-effect waves-light btn medium" href="{{ url_for('add_contact') }}">Add Contact</a>
+            		{% endif %}
+        	</div>
+    	</div>
+    	<div class="row contacts">
+            {% for contact in contacts %}
+                <div class="col s12 m6 l4">
+                    <div class="card small grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title"><strong>{{ contact.company_name }}</strong></span>
+                            <p><i class="fas fa-phone-alt orange-text darken-4-text"></i>  {{ contact.mobile }} </p>
+                            <p><i class="fas fa-envelope-square orange-text darken-4-text"></i>  {{ contact.email }}</p>
+                            <p><i class="fas fa-globe-europe orange-text darken-4-text"></i>  {{ contact.url }}</p>
+                            <p><i class="fas fa-map-marker-alt orange-text darken-4-text"></i>  {{ contact.address }}</p>
+                        </div>
+                        <div class="card-action">
+                        	{% if session["user"] %}
+                                <a class="waves-effect waves-light btn small tooltipped" data-position="top" data-tooltip="Edit contact"  
+                                    href="{{ url_for('edit_contact', contact_id=contact._id) }}"><i class="fas fa-edit"></i></a>
+                                <a class="waves-effect waves-light btn small small tooltipped" data-position="top" data-tooltip="Add Review" 
+                                    href="{{ url_for('add_review', contact_id=contact._id) }}"><i class="fas fa-comments"></i></a>
+                                
+                                {% if session["user"]=="admin" %}
+                                    <a class="waves-effect waves-light btn small tooltipped" data-position="top" data-tooltip="Delete Contact"  
+                                        href="{{ url_for('delete_contact', contact_id=contact._id) }}"><i class="fas fa-trash-alt"></i></a>
+                            	{% endif %}
+                        	{% endif %}
+                        </div>
+                        
                     </div>
-                    <div class="card-action">
-                        {% if session["user"] %}
-                            <a class="waves-effect waves-light btn medium" href="{{ url_for('edit_contact', contact_id=contact._id) }}"><i class="fas fa-edit"></i></a>
-                            {% if session["user"]=="admin" %}
-                                <a class="waves-effect waves-light btn medium" href="{{ url_for('delete_contact', contact_id=contact._id) }}"><i class="fas fa-trash-alt"></i></a>
-                            {% endif %}
-                        {% endif %}
+                
+                    <div class="reviews">
+                        <ul class="collapsible">
+                            
+                                <li>
+	                            <div class="collapsible-header black-text">User Reviews<i class="fas fa-caret-down"></i></div>
+		                        <div class="collapsible-body">
+                                    {% for review in reviews %}
+                                        {% if review.company_name==contact.company_name %}
+                                            <div class="row">
+                                        	    <div class="col s2">
+                                                	<i class="fas fa-user"></i>
+                                                </div>
+                                                <div class="sol s10">
+                                                    {% for s in range(0, review.rating |int) %}
+                                                        <span><i class="fas fa-star checked orange-text darken-4-text"></i></span>
+                                                    {% endfor %}
+                                                    <p class="black-text">{{ review.comments}}</p>
+                                                    <p class="black-text right-align"><strong>{{ review.created_by}}</strong></p>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                     {% endfor %} 
+                                </div>
+                            </li>
+                            
+                        </ul>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
-                    
+          
 {% endblock %}

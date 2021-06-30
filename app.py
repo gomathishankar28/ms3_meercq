@@ -93,7 +93,7 @@ def logout():
 def electricians():
     electrician_contacts = mongo.db.contacts.find(
         {"service_type": "electricians"})
-    reviews = mongo.db.reviews.find()
+    reviews =list(mongo.db.reviews.find())
     return render_template("electricians.html", contacts=electrician_contacts, count=electrician_contacts.count(), reviews=reviews) 
 
 
@@ -120,10 +120,10 @@ def painters():
 
 @app.route("/gardeners")
 def gardeners():
-    gardener_contacts = mongo.db.contacts.find(
-        {"service_type": "gardeners"})
+    gardener_contacts = list(mongo.db.contacts.find(
+        {"service_type": "gardeners"}))
     reviews = mongo.db.reviews.find()
-    return render_template("gardeners.html", contacts=gardener_contacts, count=gardener_contacts.count(), reviews=reviews) 
+    return render_template("gardeners.html", contacts=gardener_contacts, count=len(gardener_contacts), reviews=reviews) 
 
 
 @app.route("/whitegoods")
@@ -177,8 +177,7 @@ def edit_contact(contact_id):
         }
         mongo.db.contacts.update({"_id": ObjectId(contact_id)}, edited_contact)
         flash("contact Successfully Updated")
-        return redirect(url_for('home', _anchor='services-section'))
-
+        return redirect(url_for(request.referrer))
     contact = mongo.db.contacts.find_one({"_id": ObjectId(contact_id)})
     services = mongo.db.services.find().sort("service-type", 1)
     ratings = ["1", "2", "3", "4", "5"]
@@ -192,8 +191,8 @@ def delete_contact(contact_id):
     return redirect(url_for("electricians"))
 
 
-@app.route("/add_review", methods=["GET", "POST"])
-def add_review():
+@app.route("/add_review/<contact_id>", methods=["GET", "POST"])
+def add_review(contact_id):
     if request.method == "POST":
         review = {
             "rating": request.form.get("rating"),
@@ -203,13 +202,16 @@ def add_review():
         }
         mongo.db.reviews.insert_one(review)
         flash("Your review has been added")
-        return redirect(request.referrer)
-    
+
+    contact = mongo.db.contacts.find_one({"_id": ObjectId(contact_id)})
+    return render_template("add_review.html", contact=contact)
+
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
     contacts = list(mongo.db.contacts.find({"$text": {"$search": query}}))
+
     return render_template("services.html", contacts=contacts)
 
 

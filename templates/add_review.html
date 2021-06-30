@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}   
+   
+    <div class="row card-panel grey lighten-5">
+        <h4>Add Review</h4>
+                                
+                                        <form method="post" action="{{url_for('add_review', contact_id=contact._id)}}">
+                                            <div class="input-field col s12">
+                                                    <input id="company_name" name="company_name" minlength="5" maxlength="50" type="text" class="validate"
+                                                        value="{{ contact.company_name }}">
+                                                    <label for="comapany_name">Company Name</label>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <select id="rating" name="rating" class="validate" required>
+                                                    <option value="" disabled>give your rating</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                                <label for="rating">Rating</label>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <textarea id="textarea1" name="comments" class="materialize-textarea" maxlength="50" required></textarea>
+                                                <label for="textarea1">comments</label>
+                                            </div>
+                                            <div class="col s6 center-align">
+                                                <button type="submit"
+                                                class="btn-large light-blue darken-1 text-shadow">
+                                                Add Review <i class="fas fa-plus right"></i>
+                                                </button>
+                                            </div>
+                                            <div class="col s6 center-align">
+                                                <button class="btn-large light-blue darken-1 text-shadow"
+                                                    onclick=" window.history.go(-1);">
+                                                    Back<i class="fas fa-angle-left right"></i></a>
+                                            </div>
+                                        </form>
+                                </div>
+    
+{% endblock %}

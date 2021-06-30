@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+
     <div class="container services-container">
     	<div class="row services-header">
         	<div class = "col s12 center-align">
@@ -23,80 +24,50 @@
                         </div>
                         <div class="card-action">
                         	{% if session["user"] %}
-                                <a class="waves-effect waves-light btn medium" href="{{ url_for('edit_contact', contact_id=contact._id) }}"><i class="fas fa-edit"></i></a>
-                                <button data-target="modal1" class="btn modal-trigger">Add Review</button>
-                                <div id="modal1" class="modal">
-                                    <div class="modal-content">
-                                        <form method="post" action="{{url_for('add_review')}}">
-                                            <div class="input-field col s12">
-                                                    <input id="company_name" name="company_name" minlength="5" maxlength="50" type="text" class="validate"
-                                                        value="{{ contact.company_name }}">
-                                                    <label for="comapany_name">Company Name</label>
-                                            </div>
-                                            <div class="input-field col s12">
-                                                <select id="rating" name="rating" class="validate" required>
-                                                    <option value="" disabled>give your rating</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select>
-                                                <label for="rating">Rating</label>
-                                            </div>
-                                            <div class="input-field col s12">
-                                                <textarea id="textarea1" name="comments" class="materialize-textarea" maxlength="50" required></textarea>
-                                                <label for="textarea1">comments</label>
-                                            </div>
-                                            <div class="col s12 center-align">
-                                                <button type="submit"
-                                                class="btn-large light-blue darken-1 text-shadow">
-                                                Add Review <i class="fas fa-plus right"></i>
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a href="{{url_for('gardeners')}}" class="modal-close waves-effect waves-green btn-flat">cancel</a>
-                                    </div>
-                                </div>
-                            	{% if session["user"]=="admin" %}
-                                	<a class="waves-effect waves-light btn medium" href="{{ url_for('delete_contact', contact_id=contact._id) }}"><i class="fas fa-trash-						alt"></i></a>
+                                <a class="waves-effect waves-light btn small tooltipped" data-position="top" data-tooltip="Edit contact"  
+                                    href="{{ url_for('edit_contact', contact_id=contact._id) }}"><i class="fas fa-edit"></i></a>
+                                <a class="waves-effect waves-light btn small small tooltipped" data-position="top" data-tooltip="Add Review" 
+                                    href="{{ url_for('add_review', contact_id=contact._id) }}"><i class="fas fa-comments"></i></a>
+                                
+                                {% if session["user"]=="admin" %}
+                                    <a class="waves-effect waves-light btn small tooltipped" data-position="top" data-tooltip="Delete Contact"  
+                                        href="{{ url_for('delete_contact', contact_id=contact._id) }}"><i class="fas fa-trash-alt"></i></a>
                             	{% endif %}
                         	{% endif %}
-                   		</div>
+                        </div>
+                        
                     </div>
+                
                     <div class="reviews">
-                        <ul class="collapsible" data-collapsible="accordion">
-                            <li>
-	                        <div class="collapsible-header black-text">view Reviews<i class="fas fa-caret-down"></i></div>
-		                    <div class="collapsible-body review_list">
-                                
- 			                        {% for review in reviews %}
-                                        {% if contact.company_name==review.company_name %}
-                                        
-					                        <div class="row">
+                        <ul class="collapsible">
+                            
+                                <li>
+	                            <div class="collapsible-header black-text">User Reviews<i class="fas fa-caret-down"></i></div>
+		                        <div class="collapsible-body">
+                                    {% for review in reviews %}
+                                        {% if review.company_name==contact.company_name %}
+                                            <div class="row">
                                         	    <div class="col s2">
                                                 	<i class="fas fa-user"></i>
                                                 </div>
                                                 <div class="sol s10">
-                                                	{% for s in range(0, review.rating |int) %}
+                                                    {% for s in range(0, review.rating |int) %}
                                                         <span><i class="fas fa-star checked orange-text darken-4-text"></i></span>
                                                     {% endfor %}
                                                     <p class="black-text">{{ review.comments}}</p>
                                                     <p class="black-text right-align"><strong>{{ review.created_by}}</strong></p>
                                                 </div>
                                             </div>
-                                        
-				                        {% endif %}
-                                    {% endfor %}
-                                        </div>
-                                    </div>
-                                
+                                        {% endif %}
+                                     {% endfor %} 
+                                </div>
                             </li>
+                            
                         </ul>
                     </div>
-                {% endfor %}
-            </div>
-        </div>       
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+          
 {% endblock %}

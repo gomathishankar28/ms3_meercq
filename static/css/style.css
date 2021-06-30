@@ -1,5 +1,5 @@
 body {
-    background-color: #bbc1b7;
+    background-color: #d0cfd5;
 }
 
 .sidenav li>a {
@@ -14,12 +14,12 @@ body {
 }
 
 .login {
-     background-color: #bbc1b7;
+     background-color: #d0cfd5;
 }
 .flash-msg {
     line-height: 3;
     padding: 3rem;
-    background-color: #bbc1b7;
+    background-color: #424242;
     border: 0;
 }
 .hero-header {
