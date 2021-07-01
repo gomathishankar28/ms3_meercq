@@ -91,53 +91,58 @@ def logout():
 
 @app.route("/electicians")
 def electricians():
-    electrician_contacts = mongo.db.contacts.find(
-        {"service_type": "electricians"})
+    electrician_contacts = list(mongo.db.contacts.find(
+        {"service_type": "electricians"}))
     reviews =list(mongo.db.reviews.find())
-    return render_template("electricians.html", contacts=electrician_contacts, count=electrician_contacts.count(), reviews=reviews) 
+    return render_template("electricians.html", contacts=electrician_contacts, count=len(electrician_contacts), reviews=reviews) 
 
 
 @app.route("/carpenters")
 def carpenters():
-    carpenter_contacts = mongo.db.contacts.find(
-        {"service_type": "carpenters"})
-    return render_template("carpenters.html", contacts=carpenter_contacts, count=carpenter_contacts.count()) 
+    carpenter_contacts = list(mongo.db.contacts.find(
+        {"service_type": "carpenters"}))
+    reviews =list(mongo.db.reviews.find())
+    return render_template("carpenters.html", contacts=carpenter_contacts, count=len(carpenter_contacts), reviews=reviews) 
 
 
 @app.route("/plumbers")
 def plumbers():
-    plumber_contacts = mongo.db.contacts.find(
-        {"service_type": "plumbers"})
-    return render_template("plumbers.html", contacts=plumber_contacts, count=plumber_contacts.count()) 
+    plumber_contacts = list(mongo.db.contacts.find(
+        {"service_type": "plumbers"}))
+    reviews =list(mongo.db.reviews.find())
+    return render_template("plumbers.html", contacts=plumber_contacts, count=len(plumber_contacts), reviews=reviews) 
 
 
 @app.route("/painters")
 def painters():
-    painter_contacts = mongo.db.contacts.find(
-        {"service_type": "painters"})
-    return render_template("painters.html", contacts=painter_contacts, count=painter_contacts.count()) 
+    painter_contacts = list(mongo.db.contacts.find(
+        {"service_type": "painters"}))
+    reviews =list(mongo.db.reviews.find())
+    return render_template("painters.html", contacts=painter_contacts, count=len(painter_contacts), reviews=reviews) 
 
 
 @app.route("/gardeners")
 def gardeners():
     gardener_contacts = list(mongo.db.contacts.find(
         {"service_type": "gardeners"}))
-    reviews = mongo.db.reviews.find()
+    reviews = list(mongo.db.reviews.find())
     return render_template("gardeners.html", contacts=gardener_contacts, count=len(gardener_contacts), reviews=reviews) 
 
 
 @app.route("/whitegoods")
 def whitegoods():
-    whitegoods_contacts = mongo.db.contacts.find(
-        {"service_type": "whitegoods"})
-    return render_template("whitegoods.html", contacts=whitegoods_contacts, count=whitegoods_contacts.count()) 
+    whitegoods_contacts = list(mongo.db.contacts.find(
+        {"service_type": "whitegoods"}))
+    reviews =list(mongo.db.reviews.find())
+    return render_template("whitegoods.html", contacts=whitegoods_contacts, count=len(whitegoods_contacts), reviews=reviews) 
 
 
 @app.route("/cleaners")
 def cleaners():
-    cleaner_contacts = mongo.db.contacts.find(
-        {"service_type": "cleaners"})
-    return render_template("cleaners.html", contacts=cleaner_contacts, count=cleaner_contacts.count()) 
+    cleaner_contacts = list(mongo.db.contacts.find(
+        {"service_type": "cleaners"}))
+    reviews =list(mongo.db.reviews.find())
+    return render_template("cleaners.html", contacts=cleaner_contacts, count=len(cleaner_contacts), reviews=reviews) 
 
 
 @app.route("/add_contact", methods=["GET", "POST"])
@@ -177,7 +182,7 @@ def edit_contact(contact_id):
         }
         mongo.db.contacts.update({"_id": ObjectId(contact_id)}, edited_contact)
         flash("contact Successfully Updated")
-        return redirect(url_for(request.referrer))
+        
     contact = mongo.db.contacts.find_one({"_id": ObjectId(contact_id)})
     services = mongo.db.services.find().sort("service-type", 1)
     ratings = ["1", "2", "3", "4", "5"]
