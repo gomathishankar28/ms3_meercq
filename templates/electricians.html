@@ -21,6 +21,9 @@
                             <p><i class="fas fa-envelope-square orange-text darken-4-text"></i>  {{ contact.email }}</p>
                             <p><i class="fas fa-globe-europe orange-text darken-4-text"></i>  {{ contact.url }}</p>
                             <p><i class="fas fa-map-marker-alt orange-text darken-4-text"></i>  {{ contact.address }}</p>
+                            {% for averagerating in averageratings %}
+                                {% if contac.company_name == averagerating["id"]}
+                                <p>{{ averagerating["avgRating"] }}</p>
                         </div>
                         <div class="card-action">
                         	{% if session["user"] %}
@@ -46,6 +49,9 @@
 		                        <div class="collapsible-body">
                                     {% for review in reviews %}
                                         {% if review.company_name==contact.company_name %}
+                                            <div class="row">
+                                                {{ averagerating }}
+                                            </div>
                                             <div class="row">
                                         	    <div class="col s2">
                                                 	<i class="fas fa-user"></i>

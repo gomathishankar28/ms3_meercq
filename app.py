@@ -95,7 +95,7 @@ def electricians():
     electrician_contacts = list(mongo.db.contacts.find(
         {"service_type": "electricians"}))
     reviews =list(mongo.db.reviews.find())
-    return render_template("electricians.html", contacts=electrician_contacts, count=len(electrician_contacts), reviews=reviews) 
+    return render_template("electricians.html", contacts=electrician_contacts, count=len(electrician_contacts), reviews=reviews, averageratings=average_rating) 
 
 
 @app.route("/carpenters")
