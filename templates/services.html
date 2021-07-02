@@ -4,13 +4,17 @@
     <div class="container services-container">
     	<div class="row services-header">
         	<div class = "col s12 center-align">
-            		<h2 class="center-align"> We have found the following match: </h2>
-            		<h5 class="center-align"> Available contacts: {{ count }} </h5>
-            		{% if session["user"] %}
+                {% if(contacts) %}
+            		<h2 class="center-align"> your Search Results: </h2>
+                    {% if session["user"] %}
                 		<a class="waves-effect waves-light btn medium" href="{{ url_for('add_contact') }}">Add Contact</a>
             		{% endif %}
-        	</div>
+                {% else %}
+                    <h2 class="center-align"> No matching Results found</h2>
+                {% endif %}
+            </div>
     	</div>
+    	
     	<div class="row contacts">
             {% for contact in contacts %}
                 <div class="col s12 m6 l4">

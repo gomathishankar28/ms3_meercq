@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from urllib.parse import urlparse
 if os.path.exists("env.py"):
     import env
 
@@ -109,16 +110,17 @@ def carpenters():
 def plumbers():
     plumber_contacts = list(mongo.db.contacts.find(
         {"service_type": "plumbers"}))
-    reviews =list(mongo.db.reviews.find())
-    return render_template("plumbers.html", contacts=plumber_contacts, count=len(plumber_contacts), reviews=reviews) 
+    reviews =list(mongo.db.reviews.find())   
+    return render_template("plumbers.html", contacts=plumber_contacts, count=len(plumber_contacts), reviews=reviews)
 
 
 @app.route("/painters")
 def painters():
     painter_contacts = list(mongo.db.contacts.find(
         {"service_type": "painters"}))
-    reviews =list(mongo.db.reviews.find())
-    return render_template("painters.html", contacts=painter_contacts, count=len(painter_contacts), reviews=reviews) 
+    reviews =list(mongo.db.reviews.find()) 
+    return render_template("painters.html", contacts=painter_contacts, count=len(painter_contacts), reviews=reviews)
+ 
 
 
 @app.route("/gardeners")
@@ -133,16 +135,16 @@ def gardeners():
 def whitegoods():
     whitegoods_contacts = list(mongo.db.contacts.find(
         {"service_type": "whitegoods"}))
-    reviews =list(mongo.db.reviews.find())
-    return render_template("whitegoods.html", contacts=whitegoods_contacts, count=len(whitegoods_contacts), reviews=reviews) 
+    reviews = list(mongo.db.reviews.find())
+    return render_template("whitegoods.html", contacts=whitegoods_contacts, count=len(whitegoods_contacts), reviews=reviews)  
 
 
 @app.route("/cleaners")
 def cleaners():
     cleaner_contacts = list(mongo.db.contacts.find(
         {"service_type": "cleaners"}))
-    reviews =list(mongo.db.reviews.find())
-    return render_template("cleaners.html", contacts=cleaner_contacts, count=len(cleaner_contacts), reviews=reviews) 
+    reviews = list(mongo.db.reviews.find())
+    return render_template("cleaners.html", contacts=cleaner_contacts, count=len(cleaner_contacts), reviews=reviews)  
 
 
 @app.route("/add_contact", methods=["GET", "POST"])
@@ -170,6 +172,10 @@ def add_contact():
 @app.route("/edit_contact/<contact_id>", methods=["GET", "POST"])
 def edit_contact(contact_id):
     if request.method == "POST":
+        full_url = request.referrer
+        parts = urlparse(full_url)
+        path =  "/{}".format(request.form.get("service_type"))
+        baseurl = "{}://{}{}".format(parts.scheme, parts.netloc, path)
         edited_contact = {
             "service_type": request.form.get("service_type"),
             "company_name": request.form.get("company_name"),
@@ -182,7 +188,7 @@ def edit_contact(contact_id):
         }
         mongo.db.contacts.update({"_id": ObjectId(contact_id)}, edited_contact)
         flash("contact Successfully Updated")
-        
+        return redirect(baseurl)
     contact = mongo.db.contacts.find_one({"_id": ObjectId(contact_id)})
     services = mongo.db.services.find().sort("service-type", 1)
     ratings = ["1", "2", "3", "4", "5"]
@@ -199,6 +205,10 @@ def delete_contact(contact_id):
 @app.route("/add_review/<contact_id>", methods=["GET", "POST"])
 def add_review(contact_id):
     if request.method == "POST":
+        full_url = request.referrer
+        parts = urlparse(full_url)
+        path =  "/{}".format(request.form.get("service_type"))
+        baseurl = "{}://{}{}".format(parts.scheme, parts.netloc, path)
         review = {
             "rating": request.form.get("rating"),
             "comments": request.form.get("comments"),
@@ -207,9 +217,10 @@ def add_review(contact_id):
         }
         mongo.db.reviews.insert_one(review)
         flash("Your review has been added")
-
+        return redirect(baseurl)
     contact = mongo.db.contacts.find_one({"_id": ObjectId(contact_id)})
-    return render_template("add_review.html", contact=contact)
+    services = mongo.db.services.find().sort("service-type", 1)
+    return render_template("add_review.html", contact=contact, services=services,)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -223,5 +234,4 @@ def search():
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
-        
+            debug=True)       
