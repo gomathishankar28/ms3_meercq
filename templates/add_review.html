@@ -11,6 +11,21 @@
                                                     <label for="comapany_name">Company Name</label>
                                             </div>
                                             <div class="input-field col s12">
+                                                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                                                    <select id="service_type" name="service_type" class="validate" required>
+                                                        <option value="" disabled>Choose a Service</option>
+                                                        {% for service in services %}
+                                                            {% if service.service_type == contact.service_type %}
+                                                                <option value="{{ service.service_type }}" selected>{{ service.service_type }}</option>
+                                                            {% else %}
+                                                                <option value="{{ service.service_type }}" >{{ service.service_type }}</option>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </select>
+                                                    <label for="service_type">Service Type</label>
+                                            </div>
+                                            
+                                            <div class="input-field col s12">
                                                 <select id="rating" name="rating" class="validate" required>
                                                     <option value="" disabled>give your rating</option>
                                                     <option value="1">1</option>
