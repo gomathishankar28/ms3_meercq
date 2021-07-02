@@ -1,6 +1,14 @@
 body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
     background-color: #d0cfd5;
-}
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+      
 
 .sidenav li>a {
     padding:0 32px !important
