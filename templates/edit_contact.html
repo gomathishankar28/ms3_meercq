@@ -64,22 +64,6 @@
                 </div>
             </div>
             <div class="row">
-                 <div class="input-field col s12">
-                    <i class="fas fa-star prefix light-blue-text text-darken-4"></i>
-                    <select id="rating" name="rating" class="validate" required>
-                        <option value="" disabled>give your rating</option>
-                        {% for rating in ratings %}
-                            {% if contact.rating == rating %}
-                                <option value="{{ contact.rating }}" selected>{{ contact.rating }}</option>
-                            {% else %}
-                                <option value="{{ rating }}">{{ rating }}</option>
-                            {% endif %}
-                        {% endfor %}
-                    </select>
-                    <label for="rating">Rating</label>
-                </div>
-            </div>
-            <div class="row">
                 <div class="col s6 center-align">
                     <button type="submit" class="btn-large light-blue darken-1 text-shadow">
                         Update Contact <i class="fas fa-edit right"></i>

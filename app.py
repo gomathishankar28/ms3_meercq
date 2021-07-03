@@ -95,7 +95,7 @@ def electricians():
     electrician_contacts = list(mongo.db.contacts.find(
         {"service_type": "electricians"}))
     reviews =list(mongo.db.reviews.find())
-    return render_template("electricians.html", contacts=electrician_contacts, count=len(electrician_contacts), reviews=reviews, averageratings=average_rating) 
+    return render_template("electricians.html", contacts=electrician_contacts, count=len(electrician_contacts), reviews=reviews) 
 
 
 @app.route("/carpenters")
@@ -199,7 +199,7 @@ def edit_contact(contact_id):
 def delete_contact(contact_id):
     mongo.db.contacts.remove({"_id": ObjectId(contact_id)})
     flash("contact Successfully Deleted")
-    return redirect(url_for("electricians"))
+    return redirect(request.referrer)
 
 
 @app.route("/add_review/<contact_id>", methods=["GET", "POST"])

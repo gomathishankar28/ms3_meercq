@@ -6,9 +6,10 @@
                                 
                                         <form method="post" action="{{url_for('add_review', contact_id=contact._id)}}">
                                             <div class="input-field col s12">
-                                                    <input id="company_name" name="company_name" minlength="5" maxlength="50" type="text" class="validate"
-                                                        value="{{ contact.company_name }}">
-                                                    <label for="comapany_name">Company Name</label>
+                                                <i class="fas fa-building prefix light-blue-text text-darken-4"></i>
+                                                <input id="company_name" name="company_name" minlength="5" maxlength="50" type="text" class="validate"
+                                                    value="{{ contact.company_name }}">
+                                                <label for="comapany_name">Company Name</label>
                                             </div>
                                             <div class="input-field col s12">
                                                     <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
@@ -26,6 +27,7 @@
                                             </div>
                                             
                                             <div class="input-field col s12">
+                                                <i class="fas fa-star-half-alt prefix light-blue-text text-darken-4"></i>
                                                 <select id="rating" name="rating" class="validate" required>
                                                     <option value="" disabled>give your rating</option>
                                                     <option value="1">1</option>
@@ -37,6 +39,7 @@
                                                 <label for="rating">Rating</label>
                                             </div>
                                             <div class="input-field col s12">
+                                                <i class="far fa-comment prefix light-blue-text text-darken-4"></i>
                                                 <textarea id="textarea1" name="comments" class="materialize-textarea" maxlength="50" required></textarea>
                                                 <label for="textarea1">comments</label>
                                             </div>
