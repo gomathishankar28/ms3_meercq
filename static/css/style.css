@@ -9,7 +9,7 @@ body {
   main {
     flex: 1 0 auto;
   }
-.navbg, .footer_bg {
+.navbg, .footer_bg, .formbg {
     background-color: #426f9d;
 }  
 .navtext {
@@ -18,6 +18,17 @@ body {
 
 nav .brand-logo {
     padding-left: 5px;
+}
+.navdropdown {
+    background-color: rgb(66, 111, 157) !important;
+    overflow-x: hidden;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+    
+    color: white;
+    font-size: 14px;
+    
 }
 .search_text {
     color: white;
@@ -36,6 +47,9 @@ div#placeholder {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
+.form_label {
+    color: #426f9d;
+}  
 .card.small {
     height: 300px;
     width: 250px;
@@ -44,7 +58,7 @@ div#placeholder {
 }
 
 .login {
-     background-color: #d0cfd5;
+     background-color: #d0e3f5;
 }
 .flash-msg {
     line-height: 3;
@@ -58,12 +72,12 @@ div#placeholder {
 .hero_caption {
     text-align: center;
     position: absolute;
-    top: 15%;
+    top: 25%;
     left: 50%;
     color: black;  
 }
 .search_form {
-    top: 30%;
+    top: 50%;
     position: absolute;
     background-color: #426f9d;
 }
