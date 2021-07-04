@@ -3,7 +3,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: #d0e3f5;
+    background-color: #769fd3;
   }
 
   main {
@@ -55,10 +55,16 @@ div#placeholder {
     width: 250px;
     margin-left: -10px;
     margin-bottom: 0;
+    background-color: #426f9d;
 }
 
-.login {
-     background-color: #d0e3f5;
+.login, .register {
+     background-color: #769fd3;
+}
+.card-panel {
+    margin-left: 15%;
+    margin-right: 15%;
+    
 }
 .flash-msg {
     line-height: 3;
@@ -92,14 +98,21 @@ div#placeholder {
 }
 .card {
     width: 270px;
-    height: 300px;
+    height: 350px;
+    margin: 10px;
    
 }
-
-.reviews {
-    width: 270px;
+.contactcards {
+    margin: 10px!important;
 }
-
+.reviews {
+    width: 250px;
+    margin-left: -4%;
+    
+}
+.collapsible-header {
+    background-color: #426f9d;
+}
 .page-footer {
     bottom: 0;
 }

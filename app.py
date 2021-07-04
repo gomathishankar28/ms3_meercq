@@ -94,8 +94,16 @@ def logout():
 def electricians():
     electrician_contacts = list(mongo.db.contacts.find(
         {"service_type": "electricians"}))
-    reviews =list(mongo.db.reviews.find())
-    return render_template("electricians.html", contacts=electrician_contacts, count=len(electrician_contacts), reviews=reviews) 
+    ratings = mongo.db.reviews.aggregate(
+        [{ "$group":
+         {
+            "_id": "$company_name",
+            "avgRating": { "$avg": "$rating" }
+         }
+        }]
+    )
+    reviews = list(mongo.db.reviews.find())
+    return render_template("electricians.html", contacts=electrician_contacts, count=len(electrician_contacts), reviews=reviews, ratings=ratings) 
 
 
 @app.route("/carpenters")
@@ -127,8 +135,20 @@ def painters():
 def gardeners():
     gardener_contacts = list(mongo.db.contacts.find(
         {"service_type": "gardeners"}))
+    rating = mongo.db.reviews.aggregate(
+        [{ "$group":
+         {
+            "_id": "$company_name",
+            "avgRating": { "$avg": "$rating" }
+         }
+        }]
+    )
+    ratings = []
+    for rate in rating:
+        ratings.append(rate["avgRating"])
+    print(ratings)
     reviews = list(mongo.db.reviews.find())
-    return render_template("gardeners.html", contacts=gardener_contacts, count=len(gardener_contacts), reviews=reviews) 
+    return render_template("gardeners.html", contacts=gardener_contacts, count=len(gardener_contacts), reviews=reviews, ratings=ratings) 
 
 
 @app.route("/whitegoods")

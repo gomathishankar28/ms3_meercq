@@ -39,6 +39,11 @@
                     </div>
                 
                     <div class="reviews">
+                        {% for rating in ratings %}
+                            {% if rating["_id"]==contact.company_name %}
+                                <p>AverageRating:{{ rating["avgRating"] }}</p>
+                            {% endif %}
+                        {% endfor %}
                         <ul class="collapsible">
                             
                                 <li>
