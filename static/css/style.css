@@ -81,7 +81,15 @@ div#placeholder {
     position: absolute;
     background-color: #426f9d;
 }
-
+#about-section {
+    margin: 1% 3%;
+    padding:1%;
+    margin-left: 5%;
+    
+}
+.services {
+    margin-left: 10%
+}
 .card {
     width: 270px;
     height: 300px;
