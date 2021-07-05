@@ -136,11 +136,16 @@ def gardeners():
     gardener_contacts = list(mongo.db.contacts.find(
         {"service_type": "gardeners"}))
     rating = mongo.db.reviews.aggregate(
-        [{ "$group":
-         {
-            "_id": "$company_name",
-            "avgRating": { "$avg": "$rating" }
-         }
+        [{ 
+            "$group":
+                {
+                    "_id": "$company_name",
+                    "avgRating": { "$avg": "$rating" },
+        }},{
+                "$addFields": 
+                {
+                    "avgRating": { "$round": ["$avgRating", 1] },
+                },
         }]
     )
     ratings = list(rating)
