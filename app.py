@@ -143,10 +143,8 @@ def gardeners():
          }
         }]
     )
-    ratings = []
-    for rate in rating:
-        ratings.append(rate["avgRating"])
-    print(ratings)
+    ratings = list(rating)
+    
     reviews = list(mongo.db.reviews.find())
     return render_template("gardeners.html", contacts=gardener_contacts, count=len(gardener_contacts), reviews=reviews, ratings=ratings) 
 

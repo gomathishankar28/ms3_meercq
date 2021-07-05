@@ -17,6 +17,11 @@
                     <div class="card small grey darken-1">
                         <div class="card-content white-text">
                             <span class="card-title"><strong>{{ contact.company_name }}</strong></span>
+                            {% for rating in ratings %}
+                                {% if rating["_id"]==contact.company_name %}
+                                    <p class="avgRating">AverageRating:{{ rating["avgRating"] }}</p>
+                                {% endif %}
+                            {% endfor %}
                             <p><i class="fas fa-phone-alt orange-text darken-4-text"></i>  {{ contact.mobile }} </p>
                             <p><i class="fas fa-envelope-square orange-text darken-4-text"></i>  {{ contact.email }}</p>
                             <p><i class="fas fa-globe-europe orange-text darken-4-text"></i>  {{ contact.url }}</p>
@@ -39,11 +44,7 @@
                     </div>
                 
                     <div class="reviews">
-                        {% for rating in ratings %}
-                            {% if rating["_id"]==contact.company_name %}
-                                <p>AverageRating:{{ rating["avgRating"] }}</p>
-                            {% endif %}
-                        {% endfor %}
+                        
                         <ul class="collapsible">
                             
                                 <li>
