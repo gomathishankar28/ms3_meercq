@@ -4,23 +4,28 @@
     <div class="container services-container">
     	<div class="row services-header">
         	<div class = "col s12 center-align">
-            		<h2 class="center-align"> Cleaners</h2>
+            		<h2 class="center-align"> Cleaners </h2>
             		<h5 class="center-align"> Available contacts: {{ count }} </h5>
             		{% if session["user"] %}
-                		<a class="waves-effect waves-light btn medium" href="{{ url_for('add_contact') }}">Add Contact</a>
+                		<a class="waves-effect waves-light btn medium" href="{{ url_for('add_contact') }}">Add New Contact</a>
             		{% endif %}
         	</div>
     	</div>
     	<div class="row contacts">
             {% for contact in contacts %}
                 <div class="col s12 m6 l4">
-                    <div class="card small grey darken-1">
+                    <div class="card small">
                         <div class="card-content white-text">
-                            <span class="card-title"><strong>{{ contact.company_name }}</strong></span>
-                            <p><i class="fas fa-phone-alt orange-text darken-4-text"></i>  {{ contact.mobile }} </p>
-                            <p><i class="fas fa-envelope-square orange-text darken-4-text"></i>  {{ contact.email }}</p>
-                            <p><i class="fas fa-globe-europe orange-text darken-4-text"></i>  {{ contact.url }}</p>
-                            <p><i class="fas fa-map-marker-alt orange-text darken-4-text"></i>  {{ contact.address }}</p>
+                            <span class="card-title center-align"><strong>{{ contact.company_name }}</strong></span>
+                            {% for rating in ratings %}
+                                {% if rating["_id"]==contact.company_name %}
+                                    <p>Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">{{ rating["avgRating"] }}</strong></p>
+                                {% endif %}
+                            {% endfor %}
+                            <p><i class="fas fa-phone-alt contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.mobile }} </p>
+                            <p><i class="fas fa-envelope-square contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.email }}</p>
+                            <p><i class="fas fa-globe-europe contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.url }}</p>
+                            <p><i class="fas fa-map-marker-alt contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.address }}</p>
                         </div>
                         <div class="card-action">
                         	{% if session["user"] %}
@@ -39,10 +44,11 @@
                     </div>
                 
                     <div class="reviews">
+                        
                         <ul class="collapsible">
                             
                                 <li>
-	                            <div class="collapsible-header black-text">User Reviews<i class="fas fa-caret-down"></i></div>
+	                            <div class="collapsible-header white-text">User Reviews<i class="fas fa-caret-down"></i></div>
 		                        <div class="collapsible-body">
                                     {% for review in reviews %}
                                         {% if review.company_name==contact.company_name %}
@@ -52,7 +58,7 @@
                                                 </div>
                                                 <div class="sol s10">
                                                     {% for s in range(0, review.rating |int) %}
-                                                        <span><i class="fas fa-star checked orange-text darken-4-text"></i></span>
+                                                        <span><i class="fas fa-star checked"></i></span>
                                                     {% endfor %}
                                                     <p class="black-text">{{ review.comments}}</p>
                                                     <p class="black-text right-align"><strong>{{ review.created_by}}</strong></p>
