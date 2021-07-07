@@ -57,7 +57,7 @@ div#placeholder {
      background-color: #769fd3;
 }
 .flash-msg {
-    line-height: 3;
+    line-height: 1;
     padding: 3rem;
     background-color: #769fd3;
     border: 0;

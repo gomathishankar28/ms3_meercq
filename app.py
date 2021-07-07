@@ -250,8 +250,24 @@ def add_review(contact_id):
 def search():
     query = request.form.get("query")
     contacts = list(mongo.db.contacts.find({"$text": {"$search": query}}))
-
-    return render_template("services.html", contacts=contacts)
+    if (contacts):
+        for contact in contacts:
+            if contact["service_type"] == "electricians":
+                return redirect(url_for('electricians'))
+            elif contact["service_type"] == "painters":
+                return redirect(url_for('painters'))
+            elif contact["service_type"] == "plumbers":
+                return redirect(url_for('plumbers'))
+            elif contact["service_type"] == "cleaners":
+                return redirect(url_for('cleaners'))
+            elif contact["service_type"] == "gardeners":
+                return redirect(url_for('gardeners'))
+            elif contact["service_type"] == "whitegoods":
+                return redirect(url_for('whitegoods'))
+            elif contact["service_type"] == "carpenters":
+                return redirect(url_for('carpenters'))
+    else:
+        return render_template("services.html")
 
 
 if __name__ == "__main__":
