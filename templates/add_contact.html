@@ -1,8 +1,10 @@
 {% extends "base.html" %}
-{% block content %}   
+{% block content %}  
+<div class="container add_contact">
+    <h4 class="center-align">Add New contact</h4>
     <div class="row white">
-        <div class="col s12 add_contact">
-        <h4 class="center-align">Add New contact</h4>
+        <div class="col s12">
+        
         <form class="col s12" method="POST" action="{{ url_for('add_contact') }}">
             <!-- service_type selection -->
             <div class="row">
@@ -72,4 +74,5 @@
         </form>
     </div>
 </div>
+</div> 
 {% endblock %}

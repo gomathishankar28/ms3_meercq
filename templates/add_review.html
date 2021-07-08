@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}   
-
-    <div class="row add_review">
+    <div class="container">
         <h4 class="center-align">Add Review</h4>
+    <div class="row add_review">
+        
                                 
                                         <form method="post" action="{{url_for('add_review', contact_id=contact._id)}}">
                                             <div class="input-field col s12">
@@ -56,5 +57,5 @@
                                             </div>
                                         </form>
                                 </div>
-    
+                            </div>
 {% endblock %}

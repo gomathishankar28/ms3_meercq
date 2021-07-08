@@ -329,7 +329,8 @@ p {
         
     }
     .add_contact, .edit_contact, .add_review {
-        margin-top: 15%
+        margin-top: 5%
+        margin-left: 100px;
     }
 }
 @media (min-width: 1080px) {
@@ -363,6 +364,10 @@ p {
 .reviews {
     width: 400px;
     
+}
+.add_contact,.edit_contact,.add_review {
+    margin-top: 5%
+    margin-left: 200px;
 }
 
 }

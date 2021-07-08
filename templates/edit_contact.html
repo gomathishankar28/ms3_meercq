@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}   
-
+    <div class="container">
+    <h4 class="center-align">EDIT CONTACT</h4>
     <div class="row edit_contact">
-        <h4 class="center-align">EDIT CONTACT</h4>
+        
         <form class="col s12" method="POST" action="{{ url_for('edit_contact', contact_id=contact._id) }}">
             <!-- service_type selection -->
             <div class="row">
@@ -75,5 +76,5 @@
             </div>
         </form>
     </div>
-
+</div>
 {% endblock %}
