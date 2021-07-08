@@ -50,7 +50,8 @@ div#placeholder {
     color: #426f9d;
 }  
 p {
-    line-height: 2rem;;
+    line-height: 2rem;
+    font-size: 16px;
 }
 .card.small {
     height: 450px;
@@ -182,9 +183,13 @@ p {
         font-size: 14px;
     }
     
+    
 }
     
 @media (min-width: 320px) {
+    .search_form {
+        top: 52%;
+    }
     .card.small {
         width: 280px;
         margin-left: -20px!important
@@ -208,8 +213,29 @@ p {
     input, optgroup, select, textarea {
         font-size: 12px!important;
     }
+    .btn {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 }
-    
+@media (min-width: 360px) {
+    .search_form {
+        top: 45%;
+    }
+    .btn {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+@media (min-width: 375x) and (max-width: 415px) {
+        .search_form {
+            top: 40%;
+        }
+        .btn {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+}
 @media (min-width: 540px) {
    
     .main-heading2 {
@@ -218,13 +244,71 @@ p {
     .search_form {
         top:60%
     }
+    .search_text {
+        font-size: 20px;
+    }
+    .services {
+        margin-left: 70px;
+    }
+    input, optgroup, select, textarea {
+        font-size: 16px!important;
+    }
+    .contacts {
+        margin-left: 40px;
+    }
+    .card.small {
+        width: 400px;
+        
+    }
+    .reviews {
+        width: 400px;
+        
+    }
+    .btn {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    p {
+        font-size: 18px;
+    }
 }
 @media (min-width: 768px) {
-    
-    .main-heading1 {
-        font-size: 34px;
+    .hero_caption {
+        top: 15%;
     }
+    .main-heading1 {
+        font-size: 44px;
+    }
+    .main-heading2 {
+        font-size: 36px;
+    }
+    
     .search_form {
-        width: 300px;
+        width: 100%;
+        top: 45%;
+    }
+    input, optgroup, select, textarea {
+        font-size: 24px!important;
+        line-height: 5rem;
+    }
+}
+@media (min-width: 1024px) {
+    .hero_caption {
+        top: 10%;
+    }
+    .main-heading1 {
+        font-size: 48px;
+    }
+    .main-heading2 {
+        font-size: 38px;
+    }
+    
+    .search_form {
+        width: 100%;
+        top: 35%;
+    }
+    input, optgroup, select, textarea {
+        font-size: 30px!important;
+        
     }
 }
