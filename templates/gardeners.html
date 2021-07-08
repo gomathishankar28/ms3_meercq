@@ -1,25 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
-
     <div class="container services-container">
     	<div class="row services-header">
         	<div class = "col s12 center-align">
             		<h2 class="center-align"> Gardeners </h2>
             		<h5 class="center-align"> Available contacts: {{ count }} </h5>
             		{% if session["user"] %}
-                		<a class="waves-effect waves-light btn medium" href="{{ url_for('add_contact') }}"><strong class="add">Add New Contact</strong></a>
+                		<a class="waves-effect waves-light btn medium" href="{{ url_for('add_contact') }}">Add New Contact</a>
             		{% endif %}
         	</div>
     	</div>
     	<div class="row contacts">
             {% for contact in contacts %}
-                <div class="col s12 m6 l4">
+                <div class="col s12 m12 l4">
                     <div class="card small">
                         <div class="card-content white-text">
                             <span class="card-title center-align"><strong>{{ contact.company_name }}</strong></span>
                             {% for rating in ratings %}
                                 {% if rating["_id"]==contact.company_name %}
-                                    <p>Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">{{ rating["avgRating"] }}</strong></p>
+                                    <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">{{ rating["avgRating"] }}</strong></p>
                                 {% endif %}
                             {% endfor %}
                             <p><i class="fas fa-phone-alt contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.mobile }} </p>
@@ -27,7 +26,7 @@
                             <p><i class="fas fa-globe-europe contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.url }}</p>
                             <p><i class="fas fa-map-marker-alt contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.address }}</p>
                         </div>
-                        <div class="card-action">
+                        <div class="card-action center-align">
                         	{% if session["user"] %}
                                 <a class="waves-effect waves-light btn small tooltipped" data-position="top" data-tooltip="Edit contact"  
                                     href="{{ url_for('edit_contact', contact_id=contact._id) }}"><i class="fas fa-edit"></i></a>

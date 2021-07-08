@@ -291,10 +291,13 @@ p {
         font-size: 24px!important;
         line-height: 5rem;
     }
+    .services {
+        margin-left: 50px;
+    }
 }
 @media (min-width: 1024px) {
     .hero_caption {
-        top: 10%;
+        top: 20%;
     }
     .main-heading1 {
         font-size: 48px;
@@ -305,10 +308,61 @@ p {
     
     .search_form {
         width: 100%;
-        top: 35%;
+        top: 45%;
     }
     input, optgroup, select, textarea {
         font-size: 30px!important;
         
     }
+    .contacts {
+        
+            margin-left: -110px!important;
+            margin-right: -110px!important;
+    }
+
+    .card.small {
+        width: 300px;
+        
+    }
+    .reviews {
+        width: 300px;
+        
+    }
+    .add_contact, .edit_contact, .add_review {
+        margin-top: 15%
+    }
+}
+@media (min-width: 1080px) {
+    .hero_caption {
+        top: 20%;
+    }
+    .main-heading1 {
+        font-size: 48px;
+    }
+    .main-heading2 {
+        font-size: 38px;
+    }
+    
+    .search_form {
+        width: 100%;
+        top: 45%;
+    }
+    input, optgroup, select, textarea {
+        font-size: 30px!important;
+        
+    }
+    .contacts {
+        
+        margin-left: 0;
+        margin-right: 0;
+}
+.card.small {
+    width: 400px;
+    
+}
+.reviews {
+    width: 400px;
+    
+}
+
 }

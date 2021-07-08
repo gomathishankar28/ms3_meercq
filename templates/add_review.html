@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}   
 
-    <div class="row card-panel grey lighten-5">
-        <h4>Add Review</h4>
+    <div class="row add_review">
+        <h4 class="center-align">Add Review</h4>
                                 
                                         <form method="post" action="{{url_for('add_review', contact_id=contact._id)}}">
                                             <div class="input-field col s12">
