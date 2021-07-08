@@ -3,7 +3,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: #769fd3;
+    background-color: rgb(255 255 255 / 70%);
 }
 main {
     flex: 1 0 auto;
@@ -42,10 +42,16 @@ div#placeholder {
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
-
+.add_contact {
+    margin: 5px;
+    padding: 5px;
+}
 .form_label {
     color: #426f9d;
 }  
+p {
+    line-height: 2rem;;
+}
 .card.small {
     height: 450px;
     width: 300px;
@@ -53,13 +59,12 @@ div#placeholder {
     margin-bottom: 0;
     background-color: #426f9d;
 }
-.login, .register {
-     background-color: #769fd3;
-}
+
+
 .flash-msg {
     line-height: 1;
-    padding: 3rem;
-    background-color: #769fd3;
+    padding: 1rem;
+    background-color: rgb(255 255 255 / 70%);
     border: 0;
 }
 .hero-header {
@@ -84,7 +89,7 @@ div#placeholder {
     color: black!important;
 }
 .btn {
-    background-color: white!important;
+    background-color: #f3b61b!important;
     color: black;
 }
 .fa-star {

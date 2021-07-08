@@ -1,24 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<div class ="flash-msg">
-    <!-- flash messages -->
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <div class="row flashes">
-                    <h5 class="center-align grey-text text-darken-4">{{ message }}</h5>
-                </div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-</div>
+
     <div class="container services-container">
     	<div class="row services-header">
         	<div class = "col s12 center-align">
             		<h2 class="center-align"> Gardeners </h2>
             		<h5 class="center-align"> Available contacts: {{ count }} </h5>
             		{% if session["user"] %}
-                		<a class="waves-effect waves-light btn medium" href="{{ url_for('add_contact') }}"><strong>Add New Contact</strong></a>
+                		<a class="waves-effect waves-light btn medium" href="{{ url_for('add_contact') }}"><strong class="add">Add New Contact</strong></a>
             		{% endif %}
         	</div>
     	</div>

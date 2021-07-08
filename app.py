@@ -116,8 +116,22 @@ def electricians():
 def carpenters():
     carpenter_contacts = list(mongo.db.contacts.find(
         {"service_type": "carpenters"}))
+    rating = mongo.db.reviews.aggregate(
+        [{ 
+            "$group":
+                {
+                    "_id": "$company_name",
+                    "avgRating": { "$avg": "$rating" },
+        }},{
+                "$addFields": 
+                {
+                    "avgRating": { "$round": ["$avgRating", 1] },
+                },
+        }]
+    )
+    ratings = list(rating)
     reviews =list(mongo.db.reviews.find())
-    return render_template("carpenters.html", contacts=carpenter_contacts, count=len(carpenter_contacts), reviews=reviews) 
+    return render_template("carpenters.html", contacts=carpenter_contacts, count=len(carpenter_contacts), reviews=reviews, ratings=ratings) 
 
 
 @app.route("/plumbers")
@@ -160,6 +174,7 @@ def painters():
         }]
     )
     ratings = list(rating)
+    print(ratings)
     reviews =list(mongo.db.reviews.find()) 
     return render_template("painters.html", contacts=painter_contacts, count=len(painter_contacts), reviews=reviews, ratings=ratings)
  
@@ -294,7 +309,7 @@ def add_review(contact_id):
         path =  "/{}".format(request.form.get("service_type"))
         baseurl = "{}://{}{}".format(parts.scheme, parts.netloc, path)
         review = {
-            "rating": request.form.get("rating"),
+            "rating": int(request.form.get("rating")),
             "comments": request.form.get("comments"),
             "company_name": request.form.get("company_name"),
             "created_by": session["user"]

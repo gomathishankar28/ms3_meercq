@@ -15,14 +15,14 @@
             <div class="row hero-header">
                 <div class="col s10 search_form">
                     <form action="{{ url_for('search') }}" method="post" class="col s12">
-                        <div class="row search-input">
-                            <div class="input-field col s12 m8 l6 center-align">
+                        <div class="row">
+                            <div class="input-field col s12 m6 l6 center-align search-input">
                                 <i class="fas fa-search prefix search_text"></i>
                                 <input type="text" id="autocomplete-input" class="autocomplete search_text" name="query" id="query" minlength="3" class="validate"
                                     placeholder="I need an eg:plumber" required>
                                 <label for="query">Search </label>
                             </div>
-                            <div class="input-field col s12 m4 l2 center-align">
+                            <div class="input-field col s12 m2 l2 center-align">
                                 <button type="submit" class="red accent-4 btn text-shadow center-align search">
                                      Search
                                 </button>

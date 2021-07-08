@@ -1,17 +1,6 @@
 {% extends "base.html" %}
 {% block content %}   
-<div class ="flash-msg">
-    <!-- flash messages -->
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <div class="row flashes">
-                    <h5 class="center-align grey-text text-darken-4">{{ message }}</h5>
-                </div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-</div>
+
     <div class="row card-panel grey lighten-5">
         <h4>Add Review</h4>
                                 
@@ -39,13 +28,13 @@
                                             
                                             <div class="input-field col s12">
                                                 <i class="fas fa-star-half-alt prefix light-blue-text text-darken-4"></i>
-                                                <select id="rating" name="rating" class="validate" required>
+                                                <select id="rating" name="rating" class="validate" type="number" required>
                                                     <option value="" disabled>give your rating</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
+                                                    <option value=1>1</option>
+                                                    <option value=2>2</option>
+                                                    <option value=3>3</option>
+                                                    <option value=4>4</option>
+                                                    <option value=5>5</option>
                                                 </select>
                                                 <label for="rating">Rating</label>
                                             </div>
@@ -56,12 +45,12 @@
                                             </div>
                                             <div class="col s6 center-align">
                                                 <button type="submit"
-                                                class="btn-large text-shadow">
+                                                class="btn-large formbg text-shadow">
                                                 Add Review <i class="fas fa-plus right"></i>
                                                 </button>
                                             </div>
                                             <div class="col s6 center-align">
-                                                <button class="btn-large text-shadow"
+                                                <button class="btn-large formbg text-shadow"
                                                     onclick=" window.history.go(-1);">
                                                     Back<i class="fas fa-angle-left right"></i></a>
                                             </div>
