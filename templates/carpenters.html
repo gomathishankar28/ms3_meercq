@@ -17,6 +17,7 @@
                     <div class="card small">
                         <div class="card-content white-text">
                             <span class="card-title center-align"><strong>{{ contact.company_name }}</strong></span>
+                            
                             {% for rating in ratings %}
                                 {% if rating["_id"]==contact.company_name %}
                                     <p>Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">{{ rating["avgRating"] }}</strong></p>

@@ -90,7 +90,7 @@ p {
 }
 .btn {
     background-color: #f3b61b!important;
-    color: black;
+    color: white;
 }
 .fa-star {
     color: #cb120d
@@ -159,8 +159,7 @@ p {
     }
     .reviews {
         width: 230px;
-}
-@media (min-width: 280px) and (max-width: 414px) {
+    }
     .main-heading1 {
         font-size: 28px;
     }
@@ -170,14 +169,54 @@ p {
     .main-heading2 {
         display: none;
     }
+    .services {
+        margin-left: 20px;
+    }
+    .services-header h2, .add_contact h4, .edit_contact h4 {
+        font-size: 24px;
+    }
+    input, optgroup, select, textarea {
+        font-size: 8px!important;
+    }
     .search_text {
         font-size: 14px;
     }
     
 }
+    
+@media (min-width: 320px) {
+    .card.small {
+        width: 280px;
+        margin-left: -20px!important
+    }
+    .reviews {
+        width: 280px;
+        margin-left: -20px!important
+    }
+    .main-heading2 {
+        display: none;
+    }
+    .services {
+        margin-left: 20px;
+    }
+    .services-header h2 {
+        font-size: 30px;
+    }
+    .services-header h2, .add_contact h4, .edit_contact h4 {
+        font-size: 30px;
+    }
+    input, optgroup, select, textarea {
+        font-size: 12px!important;
+    }
+}
+    
 @media (min-width: 540px) {
+   
+    .main-heading2 {
+        display: block;
+    }
     .search_form {
-        top:70%
+        top:60%
     }
 }
 @media (min-width: 768px) {
