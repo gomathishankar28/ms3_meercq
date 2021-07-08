@@ -338,10 +338,10 @@ p {
         top: 20%;
     }
     .main-heading1 {
-        font-size: 48px;
+        font-size: 34px;
     }
     .main-heading2 {
-        font-size: 38px;
+        font-size: 28px;
     }
     
     .search_form {
@@ -349,7 +349,7 @@ p {
         top: 45%;
     }
     input, optgroup, select, textarea {
-        font-size: 30px!important;
+        font-size: 22px!important;
         
     }
     .contacts {
