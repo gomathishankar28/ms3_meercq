@@ -84,7 +84,8 @@ div#placeholder {
     color: black!important;
 }
 .btn {
-    background-color: #4b5554!important;
+    background-color: white!important;
+    color: black;
 }
 .fa-star {
     color: #cb120d

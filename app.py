@@ -94,14 +94,20 @@ def logout():
 def electricians():
     electrician_contacts = list(mongo.db.contacts.find(
         {"service_type": "electricians"}))
-    ratings = mongo.db.reviews.aggregate(
-        [{ "$group":
-         {
-            "_id": "$company_name",
-            "avgRating": { "$avg": "$rating" }
-         }
+    rating = mongo.db.reviews.aggregate(
+        [{ 
+            "$group":
+                {
+                    "_id": "$company_name",
+                    "avgRating": { "$avg": "$rating" },
+        }},{
+                "$addFields": 
+                {
+                    "avgRating": { "$round": ["$avgRating", 1] },
+                },
         }]
     )
+    ratings = list(rating)
     reviews = list(mongo.db.reviews.find())
     return render_template("electricians.html", contacts=electrician_contacts, count=len(electrician_contacts), reviews=reviews, ratings=ratings) 
 
@@ -118,16 +124,44 @@ def carpenters():
 def plumbers():
     plumber_contacts = list(mongo.db.contacts.find(
         {"service_type": "plumbers"}))
+    rating = mongo.db.reviews.aggregate(
+        [{ 
+            "$group":
+                {
+                    "_id": "$company_name",
+                    "avgRating": { "$avg": "$rating" },
+        }},{
+                "$addFields": 
+                {
+                    "avgRating": { "$round": ["$avgRating", 1] },
+                },
+        }]
+    )
+    ratings = list(rating)
     reviews =list(mongo.db.reviews.find())   
-    return render_template("plumbers.html", contacts=plumber_contacts, count=len(plumber_contacts), reviews=reviews)
+    return render_template("plumbers.html", contacts=plumber_contacts, count=len(plumber_contacts), reviews=reviews, ratings=ratings)
 
 
 @app.route("/painters")
 def painters():
     painter_contacts = list(mongo.db.contacts.find(
         {"service_type": "painters"}))
+    rating = mongo.db.reviews.aggregate(
+        [{ 
+            "$group":
+                {
+                    "_id": "$company_name",
+                    "avgRating": { "$avg": "$rating" },
+        }},{
+                "$addFields": 
+                {
+                    "avgRating": { "$round": ["$avgRating", 1] },
+                },
+        }]
+    )
+    ratings = list(rating)
     reviews =list(mongo.db.reviews.find()) 
-    return render_template("painters.html", contacts=painter_contacts, count=len(painter_contacts), reviews=reviews)
+    return render_template("painters.html", contacts=painter_contacts, count=len(painter_contacts), reviews=reviews, ratings=ratings)
  
 
 
@@ -149,7 +183,6 @@ def gardeners():
         }]
     )
     ratings = list(rating)
-    
     reviews = list(mongo.db.reviews.find())
     return render_template("gardeners.html", contacts=gardener_contacts, count=len(gardener_contacts), reviews=reviews, ratings=ratings) 
 
@@ -158,16 +191,44 @@ def gardeners():
 def whitegoods():
     whitegoods_contacts = list(mongo.db.contacts.find(
         {"service_type": "whitegoods"}))
+    rating = mongo.db.reviews.aggregate(
+        [{ 
+            "$group":
+                {
+                    "_id": "$company_name",
+                    "avgRating": { "$avg": "$rating" },
+        }},{
+                "$addFields": 
+                {
+                    "avgRating": { "$round": ["$avgRating", 1] },
+                },
+        }]
+    )
+    ratings = list(rating)
     reviews = list(mongo.db.reviews.find())
-    return render_template("whitegoods.html", contacts=whitegoods_contacts, count=len(whitegoods_contacts), reviews=reviews)  
+    return render_template("whitegoods.html", contacts=whitegoods_contacts, count=len(whitegoods_contacts), reviews=reviews, ratings-ratings)  
 
 
 @app.route("/cleaners")
 def cleaners():
     cleaner_contacts = list(mongo.db.contacts.find(
         {"service_type": "cleaners"}))
+    rating = mongo.db.reviews.aggregate(
+        [{ 
+            "$group":
+                {
+                    "_id": "$company_name",
+                    "avgRating": { "$avg": "$rating" },
+        }},{
+                "$addFields": 
+                {
+                    "avgRating": { "$round": ["$avgRating", 1] },
+                },
+        }]
+    )
+    ratings = list(rating)
     reviews = list(mongo.db.reviews.find())
-    return render_template("cleaners.html", contacts=cleaner_contacts, count=len(cleaner_contacts), reviews=reviews)  
+    return render_template("cleaners.html", contacts=cleaner_contacts, count=len(cleaner_contacts), reviews=reviews, ratings=ratings)  
 
 
 @app.route("/add_contact", methods=["GET", "POST"])
@@ -267,7 +328,7 @@ def search():
             elif contact["service_type"] == "carpenters":
                 return redirect(url_for('carpenters'))
     else:
-        return render_template("services.html")
+        return render_template("no_results.html")
 
 
 if __name__ == "__main__":
