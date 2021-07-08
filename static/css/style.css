@@ -153,6 +153,12 @@ p {
     .search_form {
         top: 50%;
     }
+    .card.small {
+        width: 230px;
+        margin-left: -10px!important;
+    }
+    .reviews {
+        width: 230px;
 }
 @media (min-width: 280px) and (max-width: 414px) {
     .main-heading1 {
@@ -169,7 +175,13 @@ p {
     }
     
 }
+@media (min-width: 540px) {
+    .search_form {
+        top:70%
+    }
+}
 @media (min-width: 768px) {
+    
     .main-heading1 {
         font-size: 34px;
     }
