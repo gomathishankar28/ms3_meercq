@@ -206,7 +206,7 @@ def whitegoods():
     )
     ratings = list(rating)
     reviews = list(mongo.db.reviews.find())
-    return render_template("whitegoods.html", contacts=whitegoods_contacts, count=len(whitegoods_contacts), reviews=reviews, ratings-ratings)  
+    return render_template("whitegoods.html", contacts=whitegoods_contacts, count=len(whitegoods_contacts), reviews=reviews, ratings=ratings)  
 
 
 @app.route("/cleaners")
