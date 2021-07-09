@@ -164,9 +164,9 @@ Please find attached Wireframe for Home page , place order form and acknowledgem
 
 **Wirefame mockups**
 
-[Home]()
+[Home]
 
-[services]()
+[services]
 
 [Login]
 
@@ -212,62 +212,60 @@ All images have been resized and compressed in order to boost the UX flow.
 Icons like plus, pen,star, comments, back arrow have been used throughout the website to improve the efficiency of UX.
 
 ## **Features**
-Each page in the website features a responsive navigation bar on the right with conventional placing of Brand Name on the top left. Each page has a footer with copyright information, contact details of the Desi Wagon and links to social media.
+Each page in the website features a responsive navigation bar on the right with conventional placing of Brand Name on the top left. Each page has a very simple footer with just the copyright information.
 
 ### **Home**
-The Home page features 3 sections areas apart from the header and footer.
+The Home page features 2 sections areas apart from the header and footer.
 
 
-### **Carousel**
-This is the  first section (call out section)- which features a carousel of 3 images which talks about, what this Desi Wagon does, What they deliver and a call to action for placing the orders respectively.
+**Hero image with qucik search bar**
+This is the  first section (call out section)- which features a handyman professional with the tools. Upon which is placed a "Call out text" describing the purpose of the website. It also features a search bar that enables the user to quickly find a contact for a service.
 
-### **Schedule**
-This is second section of the Home page. This section elaborates on the delivery schedule of the Desi Wagon. The wagon is scheduled to visit 1 city a day, accounting to 5 different cities in a week. This section showcases a table that would detail the scheduled visits of the wagon on each week day including the visit timing. This is displayed in a table for large and medium screens. However table is not advised as a good UX for smaller screens, so this section is displayed as an accordion in smaller screens for better reponsiveness, good UX and readability. Also, to indicate the wagon’s location on any given weekeday, there is a flashing wagon in the schedule for better interpretation.
+**About**
+This is second section of the Home page. This section elaborates the purpose  and the uses of this website. It also higlights the services for which the contacts are available.
 
-### **Location**
-This is third section of the Home page. The wagon visits 5 cities in a week and this section gives the address details of each location at which the wagon will be stationed. This is achieved with the help of Google Maps API. This section contains 2 columns on large and medium screens(col-lg-6, col-md-6) on which the first column displays the map with markers on 5 different cities this wagon would visit every week. The second column displaying a card with details of address, landmark , timings and day when each marker is clicked for better usability. This is done in smaller screen with 2 (col-12) columns.
+### **Services**
+This page displays the following:
 
-### **Place order**
-This page presents a form to the user which helps them to send in their grocery list in advance. An email will be sent to Desi wagon and copy of it will be sent to the user as well.
-The form has the following fields.
-1.  **Name** - Text input field for the name of the user initiating the request.
-2.  **Email** - Text input field for the mail ID of the user. a copy of their grocery list is sent to this mail ID.
-3.  **Mobile** - Number input field for the Mobile number of the user.
-4.  **Location** -  A drop down box showing 5 cities the Wagon visits.
-5.  **Address**  - Text Input field which auto populates the address on choosing a specific location from the above field.
-6.  **Groceries** - A drop down that contains a list of Indian groceries grouped under four different categories like fruits, vegetables, wholegrains and spices ,for the users to choose from.
-7.  **Quantity** - A drop down that contains numbers from 1 to 10.
-8.  **Add to List** - Button that adds the grocery item and quantity to the grocery list
-9.  **Dynamic InputElement** - An readonly input element conatining the added grocery item along with Quantity and a span element beside it for delete option ("X") 
-10. **TextArea** - A hidden text area where the final list of all grocery items along with quantity is created. The value of this field is used to send email via emailJS.
-11. **Submit** - A submit button which sends an email with the username and thier grocery list to desiwagon and a copy of it is send to the user as well.
-    This is acheived by using EmailJs API.
+***Cards*** for each company containing  information such as Average Rating,company name, mobile number, address, email, website if any etc. based on one of the 7 services chosen. 
 
-### **Acknowledgement**
-This page is seen on successful completion of placing the order. It displays a Thank you image from Desi Wagon to the user for placing the order with them. It also contains text to say that order has been received successfully and the user needs to check the schedule to pick the order. A link to the schedule is also provided for convenience.
+***Add New Contact*** Button to enable registered users to add new contact under a service.
+
+***Edit Contact*** Button to enable registered users to edit existing contact such as mobile number, address or email.
+
+***Delete Contact*** Button for the admin to delete any obsolete contacts.
+
+***Add Review***Button to enable registered users to give rating and comments for a company based on their experience with that contact.
+
+***User Reviews*** To view th rating and user comments added by users against each company.
+
+### **Login**
+This page is used for the registered users to login and thereby perform operations like adding new contact, editing existing contact, deleting a contact(only for admin user), adding user reviews etc. This page contains a form with 2 input fields 1. username and 2. password. It also has a link to "Register" page for New users to register
+
+
+### **Register**
+This page is used for first time users or new users who wish to register themselves. It contains a form with 3 input fields such as username, password and email. It also provides a link to Login to enable the user to login once they are registered.
+
 
 ### **Footer**
-The footer displays the following:
-*   copyright information 
-*   additional details to say that they are closed on weekends and timings they ar availale on weekdays.
-*   Contact Information  with mobilenumber, e-mail and country details.
-*   links Social media like facebook, linkedln, twitter , instagram and pinInterest.
+The footer displays the copyright information 
 
 ##  **Existing Features**
 
-*   **Title** - Allows the user to easily recognise the brand of “Desi Wagon”. If the user clicks on the logo, it will return the users to the “Home” section as they would expect.
+*   **Title** - Allows the user to easily recognise the brand of “MeerCQ”. If the user clicks on the logo, it will return the users to the “Home” section as they would expect.
 *   **Navigation Bar** - Allows the user to easily navigate the website's sections and find what they are looking for with ease 
-*   **Landing Page** - Allows the user to know about Desiwagon. carousel with 3 slides showing who they are, what they offer and a CTA button to place the order respectively.
-*   **Schedule** - Allows user to know the Schedule of the wagon for a week.
-*   **Location** - Allows the user to know the  the address details of the stationed wagon.
-*   **Place Order** - Allows the user to place prior orders for their groceries. Also enables the user to send an email to desiwagon with their grocery list.
-*   **Acknowledgement** - Provides the user with an acknowledgement message on successful placement of the order
+*   **Landing Page** - Allows the user to know the purpose of MeerCQ. 
+*   **Search bar** which gives the user a quick search option.
+*   **About** - Allows user to know about MeerCQ and the services for which contacts are provided.
+*   **Contact Cards** - Used to display contact information for a company under each service.
+*   **Add New Contact** - Allows the user to add new contact under each service type. 
+*   **Edit Contact** - Allows the user to edit existing Contact information.
+*   **Delete Contact** - Allows admin to delete an absolete contact.
+*   **Add Review**  - Allows user to give a rating and add comments about a contact based on theor experience.
 *   **Footer**  -   Allows user to access contact info and Social links.
 
 ## **Features to be implemented in future**
-*   A google sign in to place the  order for user validation.
-*   Auto populate items based on order history.
-*   Autocomplete option for form fields in place_order form.
+
  
  ## Technologies Used
 - This project is primarily built using HTML5 semantic markup, CSS stylesheets, Javascript, Python, Flask and MongoDB.
@@ -314,26 +312,34 @@ The footer displays the following:
     - Dbdiagram.io was used to create the Database Schema presented in this document.
 - [StackOverflow](https://stackoverflow.com/)
     - Stack Overflow was used as a general reference resource. 
+-[Geeksforgeeks]https://www.geeksforgeeks.org/python-mongodb-group-aggregation/)
+    - geeksforgeeks was used as a reference resource for calculating average rating. 
 
-## Testing
+## **Testing**
 Testing information can be found here in the separate [TESTING.md file](TESTING.md)
 
-## Deployment
-This project was developed using [Gitpod IDE](https://gitpod.io) and pushed to Github using the in-built terminal. However, because Github can only host static websites it was necessary to deploy this project to Heroku because it is a compatible hosting platform for a back-end focused site like MotherFolklore. 
+## **Deployment**
+This project was developed using [Gitpod IDE](https://gitpod.io) and pushed to Github using the in-built terminal. However, because Github can only host static websites it was necessary to deploy this project to Heroku because it is a compatible hosting platform for a back-end focused site like MeerCQ. 
 
 This project was deployed using Heroku and stored in GitHub.
 
+### **3 steps to be done in workspace before deploying**
 Before deploying the website to Heroku, the following three must be followed to allow the app to work in Heroku:
+
 1. Create requirements.txt file that contains the names of packages being used in Python. It is important to update this file if other packages or modules are installed during project development by using the following command:
 
     - pip freeze --local > requirements.txt
 
-2. Create Procfile that contains the name of the application file so that Heroku knows what to run. If the Procfile has a blank line when it is created remove this as this may cause problems.
+2. Create Procfile that contains the name of the application file so that Heroku knows what to run.The file should contain the following:
+
+        web: python app.py
+
+ Make sure Procfile does not have any blank line follwing the above line when it is created.
 
 3. Push these files to GitHub.
 Once those steps are done, the website can be deployed in Heroku using the steps listed below:
 
-### Deployment Steps
+**Deployment Steps**
 
 1. Log into Heroku.
 2. Click the New button.
@@ -341,7 +347,7 @@ Once those steps are done, the website can be deployed in Heroku using the steps
 4. Enter the app name in lowercase letters.
 5. Select the correct geographical region.
 
-### Set environment variables:
+**Set environment variables**
 
 Navigate to the settings tab and then click the Reveal Config Vars button and add the following:
 
@@ -354,16 +360,16 @@ Navigate to the settings tab and then click the Reveal Config Vars button and ad
  * Click the connect button.
  * Select the connect you application button.
  *  Copy the link provided to your application and ensure you have substituted the password and dbname with the correct values).
-5. key: SECRET_KEY, value: (This is a custom secret key set up for configuration to keep client-side sessions secure).
+5. key: SECRET_KEY, value: (This is a custom secret key set up for configuration to keep client-side sessions secure.Randomkeygen was used to generate a secret key).
 
 
-### Enable automatic deployment:
+**Enable automatic deployment**
 
 1. Click the Deploy tab
 2. In the Automatic deploys section, choose the branch you want to deploy from then click Enable Automation Deploys.
 
 
-### Connect app to Github Repository
+**Connect app to Github Repository**
 
 1. Click the deploy tab and connect to GitHub.
 2. Type the name of the repository into the search bar presented.
@@ -372,12 +378,12 @@ Navigate to the settings tab and then click the Reveal Config Vars button and ad
 
 
 
-### Making a clone to run locally
+### **Making a clone to run locally**
 
 It is important to note that this project will not run locally unless an env.py file has been set up by the user which contains the IP, PORT, MONGO_DBNAME, MONGO_URI and SECRET_KEY which have all been kept secret in keeping with best security practices. 
 
 1. Log into GitHub.
-2. Select the [respository](https://github.com/AideenM12/MotherFolklore-MS3).
+2. Select the [respository](https://github.com/gomathishakar28/ms3_meercq).
 3. Click the Code dropdown button next to the green Gitpod button.
 4. Download ZIP file and unpackage locally and open with IDE. Alternatively copy the URL in the HTTPS box.
 5. Open the alternative editor and terminal window.
@@ -388,8 +394,46 @@ Once the project been loaded into the IDE it is necessary to install the necessa
 
     -pip install -r requirements.txt
 
-### How to Fork the respository.
+### **How to Fork the respository**
 
 1. Log into GitHub.
-2. In Github go to (https://github.com/AideenM12/MotherFolklore-MS3).
+2. In Github go to (https://github.com//gomathishakar28/ms3_meercq).
 3. In the top right hand corner click "Fork".
+
+### **Credits**
+* **Content**
+
+	* [Zoofy](https://zoofy.nl/)  as a general inspiration.
+
+* **Media**
+
+    * [WallpaperAccess](https://wallpaperaccess.com) for the hero image.
+    * [BusinessPartner](https://businesspartner.com) - for electrician image
+    * [Thumbtack](https://thumbtack.com)- for plumber image
+    * [Stockvault](https://stockvault.net)- for carpenter image.
+    * [DepositPhotos](https://depositphotos.com)- for cleaner image.
+    * [ecoticias](https://ecoticias.com)- for gardener image.
+    * [Homebli](https://hombli.com)- for painter image.
+    * [StlitsIreland](https://stiltsireland.net)- for Whitegoods image
+
+
+* **Code**
+
+	* [Materialize](https://materializecss.com/) for navbar, collapsible, cards, form input fields
+
+	* [W3Schools](https://www.w3schools.com/) as a general source.
+
+    * [geekforgeeks](https://www.geekforgeeks.com/) for $group function in pymongo
+
+    * [stackoverflow](https://stackoverflow.com/) for aggregate and $round function to calculate average rating in pymongo
+
+    * [code Institute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+IFD101+2017_T3/courseware/03d3f6524ad249d9b33e3336d156dfd0/3b2af8636ea54a4d9dc45126f7498633/) for login, register and delete views.
+
+    
+
+	
+### **Acknowledgements**
+    
+* **My mentor: Nishant kumar** by giving lot of inputs and useful tips to improve.
+* **The Slack community** of Code Institute for a peer code review.
+* **My Family and Friends** who provided their honest feedback by testing the website across different devices and different OS.
