@@ -7,7 +7,12 @@ body {
 	font-family: 'Akaya Telivigala', cursive, sans-serif;
 	background-color: rgb(255 255 255 / 70%);
 }
-
+input,
+	optgroup,
+	select,
+	textarea {
+		font-family: 'Akaya Telivigala', cursive, sans-serif;
+	}
 main {
 	flex: 1 0 auto;
 }
@@ -78,12 +83,15 @@ p {
 	margin-left: -10px;
 	margin-bottom: 0;
 	background-color: #426f9d;
+	border: 2px solid transparent;
+	
 }
+
 
 .flash-msg {
 	line-height: 1;
 	padding: 1rem;
-	background-color: rgb(255 255 255 / 70%);
+	background-color: rgb(66, 111, 157);
 	border: 0;
 }
 
@@ -164,6 +172,7 @@ p {
 
 .collapsible-header {
 	background-color: #426f9d;
+	border: 2px solid transparent;
 }
 
 .page-footer {
