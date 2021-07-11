@@ -1,7 +1,10 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
 body {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
+	font-family: 'Akaya Telivigala', cursive, sans-serif;
 	background-color: rgb(255 255 255 / 70%);
 }
 
@@ -175,6 +178,45 @@ p {
 	color: white;
 	padding: 10px;
 }
+
+/*------------hover effect on service image ------------*/
+.services {
+	position: relative;
+	width: 100%;
+  }
+.image {
+	opacity: 1;
+	display: block;
+	width: 100%;
+	height: auto;
+	transition: .5s ease;
+	backface-visibility: hidden;
+  }
+  
+  .middle {
+	transition: .5s ease;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	text-align: center;
+  }
+  
+  .image:hover {
+	opacity: 0.3;
+  }
+  
+  .services:hover .middle {
+	opacity: 1;
+  }
+  
+  .text {
+	color: black;
+	font-size: 16px;
+	padding: 16px 32px;
+  }
 
 @media (max-width: 280px) {
 	.search_form {

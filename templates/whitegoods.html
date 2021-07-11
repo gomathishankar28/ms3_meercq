@@ -18,7 +18,7 @@
                             <span class="card-title center-align"><strong>{{ contact.company_name }}</strong></span>
                             {% for rating in ratings %}
                                 {% if rating["_id"]==contact.company_name %}
-                                    <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">{{ rating["avgRating"] }}</strong></p>
+                                    <p class="center-align rating">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">{{ rating["avgRating"] }}</strong></p>
                                 {% endif %}
                             {% endfor %}
                             <p><i class="fas fa-phone-alt contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.mobile }} </p>
