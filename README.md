@@ -180,7 +180,7 @@ Please find attached Wireframe for Home page , place order form and acknowledgem
 
 ### Database Schema
 
-<img src="static/images/database_schema.png" width="900" height="300" alt="database schema">
+<img src="static/images/dbschema.png" width="900" height="300" alt="database schema">
 
 * The site contains **four** collections which are stored in MongoDB. The **users** collection stores the user's username and password which enables the user to create an account and have a profile page. The **services** collection stores all the different type of services that it provides contacts for.The **contacts** collection that stores all the contact details for a company like service type, mobile number, email, website, address etc. The **Reviews** section stores the rating, user comments for each company name.
 
