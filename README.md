@@ -180,7 +180,7 @@ Please find attached Wireframe for Home page , place order form and acknowledgem
 
 ### Database Schema
 
-<img src="assets/documentation/doc-images/dbschema.png" width="900" height="300" alt="database schema">
+<img src="static/images/database_schema.png" width="900" height="300" alt="database schema">
 
 * The site contains **four** collections which are stored in MongoDB. The **users** collection stores the user's username and password which enables the user to create an account and have a profile page. The **services** collection stores all the different type of services that it provides contacts for.The **contacts** collection that stores all the contact details for a company like service type, mobile number, email, website, address etc. The **Reviews** section stores the rating, user comments for each company name.
 
@@ -267,25 +267,34 @@ The footer displays the copyright information
 ## **Features to be implemented in future**
 
  
- ## Technologies Used
-- This project is primarily built using HTML5 semantic markup, CSS stylesheets, Javascript, Python, Flask and MongoDB.
+ ## **Technologies Used**
+
+ ### **Languages**
+*   HTML
+*   CSS
+*   Javascript
+*   python
+
+### **Libraries & Frameworks**
+- [Materializecss](https://materializecss.com/)
+   - Various aspects of this website were structured using Materialize.
+   - Materialize was used to make this website responsive
+- [Fontawesome](https://fontawesome.com/)
+    - The icons used on this page were found in Fontawesome.
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/)
     - Flask was used as the main python framework in the building of this project.
 - [jQuery](https://jquery.com/)
     - This framework was used to create some of the site's interactive functions.
+- [Google fonts](https://fonts.google.com/) 
+    - The font styles used on this website were chosen from Google fonts.
+
+### **Tools**
 - [Gitpod](https://gitpod.io)
     - This project was built using Gitpod as the IDE.
 - [Github](https://github.com/)
     - Github was used for online version control and storing files and documents.
 - [Heroku](https://id.heroku.com/)
     - Heroku was used as a cloud based platform to deploy this site.
-- [Google fonts](https://fonts.google.com/) 
-    - The font styles used on this website were chosen from Google fonts.
-- [Materializecss](https://materializecss.com/)
-   - Various aspects of this website were structured using Materialize.
-   - Materialize was used to make this website responsive
-- [Fontawesome](https://fontawesome.com/)
-    - The icons used on this page were found in Fontawesome.
 - [MongoDB](https://www.mongodb.com/)
     - MongoDB Atlas was used as the database for the creation of this project.
 - [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
@@ -302,18 +311,30 @@ The footer displays the copyright information
     - Google Dev Tools was extensively used throughout the project for various styling and testing purposes. Its lighthouse feature was used as one of the main testing tools for this project.
 - [CSS-Tricks](https://css-tricks.com/)
     - This was used as a general reference resource.
-- [Favicon.io](https://favicon.io/) 
-    - This was used to create the site's favicon.
+- [JSHint Validator](https://jshint.com/)** 
+    - For detecting errors and potential problems in your **JavaScript code.**
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse)** 
+    - For testing the **performance of the website.**
 - [Am I Responsive](http://ami.responsivedesign.is/)
     - This was used to test the responsiveness of the site and also to create the mock-up image presented at the start of this document.
 - [Beautifier.io](https://beautifier.io/)
     - Beautifier.io was used to format all javascript files in this project.
-- [Dbdiagram.io](https://dbdiagram.io/home)
-    - Dbdiagram.io was used to create the Database Schema presented in this document.
-- [StackOverflow](https://stackoverflow.com/)
-    - Stack Overflow was used as a general reference resource. 
--[Geeksforgeeks]https://www.geeksforgeeks.org/python-mongodb-group-aggregation/)
-    - geeksforgeeks was used as a reference resource for calculating average rating. 
+- [QuickDBD](https://app.quickdatabasediagrams.com/)
+    - QuickDBD was used to create the Database Schema presented in this document.
+
+### **Media**
+
+- [WallpaperAccess](https://wallpaperaccess.com) for the hero image.
+- [BusinessPartner](https://businesspartner.com) - for electrician image
+- [Thumbtack](https://thumbtack.com)- for plumber image
+- [Stockvault](https://stockvault.net)- for carpenter image.
+- [DepositPhotos](https://depositphotos.com)- for cleaner image.
+- [ecoticias](https://ecoticias.com)- for gardener image.
+- [Homebli](https://hombli.com)- for painter image.
+- [StlitsIreland](https://stiltsireland.net)- for Whitegoods image.
+- [Econations](https://eco-nations.com)- for No results found image.
+
+
 
 ## **Testing**
 Testing information can be found here in the separate [TESTING.md file](TESTING.md)
@@ -415,6 +436,8 @@ Once the project been loaded into the IDE it is necessary to install the necessa
     * [ecoticias](https://ecoticias.com)- for gardener image.
     * [Homebli](https://hombli.com)- for painter image.
     * [StlitsIreland](https://stiltsireland.net)- for Whitegoods image
+    * [BeFunky](https://www.befunky.com/ )** for **resizing and editing images**.
+    * [TinyPNG](https://tinypng.com/)** for **Compressing images**. 
 
 
 * **Code**
@@ -426,6 +449,8 @@ Once the project been loaded into the IDE it is necessary to install the necessa
     * [geekforgeeks](https://www.geekforgeeks.com/) for $group function in pymongo
 
     * [stackoverflow](https://stackoverflow.com/) for aggregate and $round function to calculate average rating in pymongo
+
+    * [Githubgist](https://gist.github.com/) as reference for  collapsible menu on side nav.
 
     * [code Institute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+IFD101+2017_T3/courseware/03d3f6524ad249d9b33e3336d156dfd0/3b2af8636ea54a4d9dc45126f7498633/) for login, register and delete views.
 
