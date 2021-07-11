@@ -6,13 +6,13 @@
             		<h2 class="center-align"> Electricians </h2>
             		<h5 class="center-align"> Available contacts: {{ count }} </h5>
             		{% if session["user"] %}
-                		<a class="waves-effect waves-light btn medium" href="{{ url_for('add_contact') }}">Add New Contact</a>
+                		<a class="waves-effect waves-light btn medium black-text" href="{{ url_for('add_contact') }}"><strong>Add New Contact</strong></a>
             		{% endif %}
         	</div>
     	</div>
     	<div class="row contacts">
             {% for contact in contacts %}
-                <div class="col s12 m12 l4">
+                <div class="col s12 m12 l4 fcard">
                     <div class="card small">
                         <div class="card-content white-text">
                             <span class="card-title center-align"><strong>{{ contact.company_name }}</strong></span>

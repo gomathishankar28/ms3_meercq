@@ -181,11 +181,12 @@ p {
 		top: 50%;
 	}
 	.card.small {
-		width: 230px;
-		margin-left: -10px!important;
+		width: 250px;
+		margin-left: -22px!important;
 	}
 	.reviews {
-		width: 230px;
+		width: 250px;
+		margin-left: -22px!important;
 	}
 	.main-heading1 {
 		font-size: 28px;
@@ -261,9 +262,17 @@ p {
 		margin-left: 5px;
 		margin-right: 5px;
 	}
+	.card.small {
+		width: 300px;
+		margin-left: -10px!important
+	}
+	.reviews {
+		width: 300px;
+		margin-left: -10px!important
+	}
 }
 
-@media (min-width: 375x) and (max-width: 415px) {
+@media (min-width: 375x) {
 	.search_form {
 		top: 40%;
 	}
@@ -275,14 +284,23 @@ p {
 		margin-left: 20px!important;
 	}
 	.card.small {
-		width: 300px;
-		margin-left: 20px!important;
+		width: 330px;
+		margin-left: 10px!important;
 	}
 	.reviews {
-		width: 300px;
+		width: 330px;
 	}
 }
-
+@media (min-width: 411px) {
+	.card.small {
+		width: 350px;
+		margin-left: -15px!important;
+	}
+	.reviews {
+		width: 350px;
+		margin-left: -15px!important;
+	}
+}
 @media (min-width: 540px) {
 	.main-heading2 {
 		display: block;
@@ -344,9 +362,20 @@ p {
 	.services {
 		margin-left: 50px;
 	}
+	.card.small {
+		width: 600px;
+		margin-left: -40px!important;
+	}
+	.reviews {
+		width: 600px;
+		margin-left: -40px!important;
+	}
 }
 
 @media (min-width: 1024px) {
+	nav .brand-logo {
+		padding-left: 25px;
+	}
 	.hero_caption {
 		top: 20%;
 	}
@@ -366,15 +395,24 @@ p {
 	textarea {
 		font-size: 30px!important;
 	}
+	.services {
+		margin-left: 100px;
+	}
+	
+	.fcard {
+		margin-left: -10px!important;
+	}
 	.contacts {
 		margin-left: -110px!important;
 		margin-right: -110px!important;
 	}
 	.card.small {
 		width: 300px;
+		margin-left: 5px!important;
 	}
 	.reviews {
 		width: 300px;
+		margin-left: 5px!important;
 	}
 	.add_contact,
 	.edit_contact,
@@ -384,6 +422,7 @@ p {
 }
 
 @media (min-width: 1080px) {
+	
 	.hero_caption {
 		top: 20%;
 	}

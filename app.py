@@ -90,7 +90,7 @@ def logout():
     return redirect(url_for("home"))
 
 
-@app.route("/electicians")
+@app.route("/electricians")
 def electricians():
     electrician_contacts = list(mongo.db.contacts.find(
         {"service_type": "electricians"}))
