@@ -163,8 +163,9 @@ The content is organized and segregated into sections from top to bottom. The na
 Please find attached Wireframe for Home page , place order form and acknowledgement page for Large, medium and Small devices. 
 
 **Wirefame mockups**
+Wireframe mockups for Home, Login, Register, Add New Contact, Edit Contact, Add Review for small, meidium and Large screens have been given below.
 
-[Home]
+[Wireframe for all pages for SMALL screen](/workspace/ms3_meercq/static/images/wireframes/Large.pdf)
 
 [services]
 
