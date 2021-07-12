@@ -94,13 +94,13 @@ Js files were validated with [Jshint](https://jshint.com/). Only 3 warnings occu
 14. ***As a customer, I would like to see an average rating for each contact that would help me to choose a better professional service provider.***
     >   This is acheieved by creating a contact card and displaying the Average Rating as part of the card content.
 
-15. ***As a Prospective customer I want to add a new contact to a particular service when I find a new reliable contact so that the other users can profit from my experience. ***
+15. ***As a Prospective customer I want to add a new contact to a particular service when I find a new reliable contact so that the other users can profit from my experience.***
     >   This is acheieved by creating a Add Contact form and enable the user to give the contact details for the chosen service type.
 
 16. ***As a prospective customer to the website, I want to edit all the contact details of the service provider so that the other users have the latest information about the service provider.***
     >   This is acheieved by creating a Edit Contact form and enable the user to update the contact details chosen to edit.
 
-17. ***As a prospective customer to the website, I want provide feedback /comments about each service provider so that it helps other users to choose the best contact from the available list. ***
+17. ***As a prospective customer to the website, I want provide feedback /comments about each service provider so that it helps other users to choose the best contact from the available list.***
      >   This is acheieved by creating a "user Reviews" collapsible element which when collapsed shows the rating and comments added by all users for that service provider.
 
 18. ***As an Administrator to the website, I want to delete a contact which is fake, never exists or stopped providing any service.***
@@ -115,7 +115,7 @@ Js files were validated with [Jshint](https://jshint.com/). Only 3 warnings occu
 21. ***As an Administrator, I would like to restrict only the logged in users to edit a contact or add a comment so that unauthorized/ untraceable changes are prevented.***
     >   This is acheived by displaying the Edit contact, add review button on the contact card to be visible only when the user is logged in .Otherwise no buttons are seen.
 
-22. ***As an administrator, only registered users with a valid password should be allowed to log in so that unauthorized changes can be prevented.
+22. ***As an administrator, only registered users with a valid password should be allowed to log in so that unauthorized changes can be prevented.***
     >   This is acheived by using Check password hash method.
 
 23. ***As an administrator, both unregistered and registered users should be able to view the contact of service providers and the user reviews so that the display of information is not restricted for unregistered users.***
@@ -212,16 +212,17 @@ Website was tested in different OS listed below and results were satisfying.
 
 Performance has been tested using the Lighthouse tool of Google Chrome. The results are shown below.
 
->  ![Perfomance Results](https://github.com/gomathishankar28/ms2_desi_wagon/blob/e73bba2942c61209e9600d41068fe3a600950920/assets/images/Testing/perfomance.jpg?raw=true)
+>  ![Perfomance Results](/workspace/ms3_meercq/static/images/testing/performance.jpg)
 
 ## **Accessibility Testing**
 
 The website's accessibility was also tested using Lighthouse. The result are shown below.
->  ![Accessibility](https://github.com/gomathishankar28/ms2_desi_wagon/blob/e73bba2942c61209e9600d41068fe3a600950920/assets/images/Testing/Accessibility.jpg?raw=true)
+>  ![Accessibility](/workspace/ms3_meercq/static/images/testing/accessibility.jpg)
 
 ## **Best Practices and SEO Results**
->  ![BestPractices](https://github.com/gomathishankar28/ms2_desi_wagon/blob/e73bba2942c61209e9600d41068fe3a600950920/assets/images/Testing/bestpractices.jpg?raw=true)
->  ![SEO](https://github.com/gomathishankar28/ms2_desi_wagon/blob/e73bba2942c61209e9600d41068fe3a600950920/assets/images/Testing/SEO.jpg?raw=true)
+>  ![BestPractices](/workspace/ms3_meercq/static/images/testing/best_practices.jpg)
+
+>  ![SEO](/workspace/ms3_meercq/static/images/testing/SEO.jpg)
 
 Spelling was checked thoroughly using [W3C Spell Checker](https://www.w3.org/2002/01/spellchecker). The results are satisfying.
 
