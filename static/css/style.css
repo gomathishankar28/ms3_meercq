@@ -5,13 +5,14 @@ body {
 	min-height: 100vh;
 	flex-direction: column;
 	font-family: 'Akaya Telivigala', cursive, sans-serif;
-	background-color: rgb(255 255 255 / 70%);
+	background-color: #426f9d;
 }
 input,
 	optgroup,
 	select,
 	textarea {
 		font-family: 'Akaya Telivigala', cursive, sans-serif;
+		color: white;
 	}
 main {
 	flex: 1 0 auto;
@@ -66,6 +67,7 @@ div#placeholder {
 .add_contact {
 	margin: 5px;
 	padding: 5px;
+	margin-left: 12px;
 }
 
 .form_label {
@@ -266,6 +268,9 @@ p {
 	.search_text {
 		font-size: 14px;
 	}
+	.fa-plus-square, .fa-angle-left {
+		display: none;
+	}
 }
 
 @media (min-width: 320px) {
@@ -321,6 +326,10 @@ p {
 	.reviews {
 		width: 300px;
 		margin-left: -10px!important
+	}
+	.add_contact, .edit_contact,
+	.add_review {
+		margin-left: 15px;
 	}
 }
 
@@ -388,6 +397,10 @@ p {
 	p {
 		font-size: 18px;
 	}
+	.add_contact, .edit_contact,
+	 .add_review {
+		margin-left: 25px;
+	}
 }
 
 @media (min-width: 768px) {
@@ -421,6 +434,10 @@ p {
 	.reviews {
 		width: 600px;
 		margin-left: -40px!important;
+	}
+	.add_contact,.edit_contact,
+	.add_review {
+		margin-left: 50px;
 	}
 }
 
@@ -466,10 +483,10 @@ p {
 		width: 300px;
 		margin-left: 5px!important;
 	}
-	.add_contact,
-	.edit_contact,
+	
+	.add_contact,.edit_contact,
 	.add_review {
-		margin-top: 5% margin-left: 100px;
+		margin-left: 150px;
 	}
 }
 
@@ -507,6 +524,9 @@ p {
 	.add_contact,
 	.edit_contact,
 	.add_review {
-		margin-top: 5% margin-left: 200px;
+		margin-top: 5%;
+	}
+	.add_contact {
+	margin-left: 200px;
 	}
 }

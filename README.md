@@ -355,7 +355,7 @@ The footer displays the copyright information
 
 
 ## **Testing**
-Testing information can be found here in the separate [TESTING.md file](TESTING.md)
+Testing information can be found here in the separate [TESTING.md file](/workspace/ms3_meercq/testing.md)
 
 ## **Deployment**
 This project was developed using [Gitpod IDE](https://gitpod.io) and pushed to Github using the in-built terminal. However, because Github can only host static websites it was necessary to deploy this project to Heroku because it is a compatible hosting platform for a back-end focused site like MeerCQ. 
