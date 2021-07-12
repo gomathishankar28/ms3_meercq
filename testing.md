@@ -52,38 +52,80 @@ Js files were validated with [Jshint](https://jshint.com/). Only 3 warnings occu
         Fixed by adding /*jshint esversion: 6 */ at the top of every js file.
 
 ##  **User Stories Testing**
-1.  ***As a prospective customer to the website, I want to easily navigate the site, so that I can easily find the details about Desiwagon so that I am assured about their service.***
+1.  ***As a prospective customer to the website, I want to easily navigate the site, so that I can easily find the details about MeerCQ so that I am assured about their service.***
     >   As the Website is launched, On the Top left is the Navigation bar which is categorized to show different details about the website that the customer is looking for.
 
-2.  ***As a prospective customer to the website, I want to precisely know what items are offered so that I have enough information to avail their service.***
-    >   This is acheieved by the Carousel section of the Home page which has three slides with each slide talking about who they are, what they offer and how to place the order.  
+2.  ***As a prospective customer to the website, I want to precisely know what services are offered so that I have enough information to avail their service***
+    >   This is acheieved by a Hero Banner displayed on the Hero image of the Landing page talking about what MeerCQ is all about and what can it offer. 
 
-3.  ***As a new customer to the website, I want to know the schedule of the delivery truck so that i would know on what day Desi Wagon is in my city.***
-    >   This is acheived by the Schedule section of the Home page which has a table displaying the day, time and place . It also highlights row of  the current day by a blinking truck icon.
+3.  ***As a prospective customer to the website, I should be able to search based on keywords so that I can get the desired information quickly***
+    >   This is acheived by providing a search bar on the Hero image of the Landing page.Search can be based on services, usernames who created contacts or Company name.
 
-4.  ***As a customer to the website, I want to know the location or address details where the wagon would be stationed so that it will be easy to locate it.***
-    >   This is acheieved by an information card in location section which displays the address details and landmark where the Wagon would be stationed for each city marker
+4.  ***As a prospective customer, I would like to receive suggestions in the search field so that I can narrow down my search easily.***
+    >   This is acheieved by providing an auto complete option from materialise framework. By typing an alphabet suggests a list of services having that particular letter in them.
 
-5.  ***As a customer, I would like to visually locate the delivery address on a map so that it will assist in getting there faster.***
-    >   This is acheieved by Google Maps API wherein markers are placed in 5 different city, clicking on which gives the address details.
+5.  ***As a prospective customer, I should be able to avail the contacts of services from a list as well as through visual tiles so that this information is easily accessible.***
+    >   This is acheieved by dropdown nav menu which lists down all the available services for which contacts are available. And also the About section has image tiles for each service which on hovering displays the name of the service.
 
-6.  ***As a customer, I would like to order the grocery items through the website so that I do not have to search for other ways of placing the order.***
-    >   Navbar and the carousel both have the link to "Place order" form whcih helps user to place their orders online.
+6.  ***As a new customer to the website, I want to know for what kind of services, the contact details are provided.***
+    >   This is again acheieved by dropdown nav menu which lists down all the available services for which contacts are available. And also the About section has image tiles for each service which on hovering displays the name of the service.
 
-7.  ***As a customer, I would like to have an option to exactly specify the units for each item being ordered so that there is no ambiguity in my order.***
-    >   Place order form is provded with a Quantity field for the customer to choose the quantity for every grocery item chosen.
+7.  ***As a new customer, I want to know the contact details of service providers based on the service type chosen, so that I do not see contacts of services that I do not need.***
+    >   This is acheived by creating a seperate view for each service and rendering a seperate html page for each service called.
 
-8.  ***As a customer I want a provision to delete items in the order so that I can correct any erroneous items from the list.***
-    >   Every grocery item added is provided with an delete icon "X".Clicking on which deletes the item from the list.
+8.  ***As a new customer to website, I want to know how many contacts are available under each service.***
+    >   This is acheived by displaying "Available contacts" for each service on top of the contacts cards listed on the page.
 
-9.  ***As a prospective customer to the website, I want a copy of my order in my personal mail so that I can use it for reference and future use.***
-    >   This is acheieved by including the user's maildID in cc section of emailJS template.
+9.  ***As a customer to the website, I want to know the name of the person/company as part of the contact details.***
+    >   This is acheieved by creating a contact card and displaying the company anme as te card -title.
 
-10. ***As a business user, I want the orders of each customer to be delivered as an email so that it is easy to fulfil them.***
-    >   On successful submission of the order by the user, mail will be sent to dw.orders123@gmail.com (Email created for Desiwagon).
+10. ***As a customer, I would like to know the address of the company so that I have the physical location to reach in case of any issues.***
+    >   This is acheieved by creating a contact card and displaying the address information as part of card content.
 
-11. ***As a business user, I want to list all the items that can be ordered along with the unit of measure so that it is easy to backfill the consolidated requests.***
-    >   This is acheieved as the mail sent to dw.order123@gmail.com  also contains the grocery list details of the user and the user name.
+11. ***As a customer, I would like to know the mobile number in order to contact and fix an appointment..***
+    >   This is acheieved by creating a contact card and displaying the mobile number as part of card content.
+
+12. ***As a customer, I would like to know the email ID of the Service provider for future correspondences and invoice sharing.***
+    >   This is acheieved by creating a contact card and displaying the emailID as part of card content.
+
+13. ***As a customer who has experience with a particular service provider, I would like to provide a rating so that I can quantify my recommendation to other users.***
+    >   This is acheieved by creating a Add Review form and enable the user to give the rating and comments for a service provider.
+
+14. ***As a customer, I would like to see an average rating for each contact that would help me to choose a better professional service provider.***
+    >   This is acheieved by creating a contact card and displaying the Average Rating as part of the card content.
+
+15. ***As a Prospective customer I want to add a new contact to a particular service when I find a new reliable contact so that the other users can profit from my experience. ***
+    >   This is acheieved by creating a Add Contact form and enable the user to give the contact details for the chosen service type.
+
+16. ***As a prospective customer to the website, I want to edit all the contact details of the service provider so that the other users have the latest information about the service provider.***
+    >   This is acheieved by creating a Edit Contact form and enable the user to update the contact details chosen to edit.
+
+17. ***As a prospective customer to the website, I want provide feedback /comments about each service provider so that it helps other users to choose the best contact from the available list. ***
+     >   This is acheieved by creating a "user Reviews" collapsible element which when collapsed shows the rating and comments added by all users for that service provider.
+
+18. ***As an Administrator to the website, I want to delete a contact which is fake, never exists or stopped providing any service.***
+    >   This is acheived by placing "Delete" button on the contact card as part of card action.
+
+19. ***As an administrator I want to provide the option of user log in so that changes done to contacts are tracked.***
+    >   This is acheived by Login Form which asks for a valid username and password.
+
+20. ***As an administror, the system should allow new contacts to be added only by registered user so that there is accountability on the records created.***
+    >   This is acheived by Register Form which asks for a  username, password and email details for user to get registered which is then stored in DB.
+
+21. ***As an Administrator, I would like to restrict only the logged in users to edit a contact or add a comment so that unauthorized/ untraceable changes are prevented.***
+    >   This is acheived by displaying the Edit contact, add review button on the contact card to be visible only when the user is logged in .Otherwise no buttons are seen.
+
+22. ***As an administrator, only registered users with a valid password should be allowed to log in so that unauthorized changes can be prevented.
+    >   This is acheived by using Check password hash method.
+
+23. ***As an administrator, both unregistered and registered users should be able to view the contact of service providers and the user reviews so that the display of information is not restricted for unregistered users.***
+    >   This is acheived by search bar on Landing page which will help any user to search for contacts without logging in.
+
+24. ***As an administrator, I should allow registered users to log out so that unauthorized accesses are prevented.***
+    >   This is acheived by an Logout option on Nav menu which is visible only for logged in users.
+
+25. ***As an administrator, I would like to have field level validations on the contact entry so that incorrect or incomplete information is avoided.***
+    >   This is acheived by using Materialize framework's Validate method.
 
 ##  **Functional Testing**
 Functional testing was done by testing induvidual features of the website to see if they meet their intended purpose.

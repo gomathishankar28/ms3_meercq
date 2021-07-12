@@ -71,33 +71,56 @@ As a customer, I would like
 *   To see the user reviews for each company,so that i can pick the best choice up. 
 
 ##  **User stories**
-*   As a prospective customer to the website, I want to easily navigate the site, so that I can easily find the details about MeerCQ so that I am assured about their service. 
+*   As a prospective customer to the website, I want to easily navigate the site, so that I can easily find the details about MeerCQ so that I am assured about their service.
 
-*   As a prospective customer to the website, I want to precisely know what services are offered so that I have enough information to avail their service
+*   As a prospective customer to the website, I want to precisely know what services are offered so that I have enough information to avail their service.
 
-*   As a new customer to the website, I want to know for what kind of services, the contact deatils are provided.
+*   As a prospective customer to the website, I should be able to search based on keywords so that I can get the desired information quickly.
 
-*   As a new customer to the website, I want to know the contact details based on the service type chosen.
+*   As a prospective customer, I would like to receive suggestions in the search field so that I can narrow down my search easily.
+
+*   As a prospective customer, I should be able to avail the contacts of services from a list as well as through visual tiles so that this information is easily accessible.
+
+*   As a new customer to the website, I want to know for what kind of services, the contact details are provided.
+
+*   As a new customer, I want to know the contact details of service providers based on the service type chosen, so that I do not see contacts of services that I do not need.
 
 *   As a new customer to website, I want to know how many contacts are available under each service.
 
-*   As a customer to the website, I want to know the name of the person/company as part of the contact deatils
+*   As a customer to the website, I want to know the name of the person/company as part of the contact details.
 
-*   As a customer, I would like to know the address of the company so that I have a place to reach incase of any issue..
+*   As a customer, I would like to know the address of the company so that I have the physical location to reach in case of any issues.
 
 *   As a customer, I would like to know the mobile number in order to contact and fix an appointment.
 
-*   As a customer, I would like to know the emailID of the contact for future communication and invoice sharing.
+*   As a customer, I would like to know the email ID of the Service provider for future correspondences and invoice sharing.
 
-*   As a customer, I would like to see a rating for each contact that would help me to choose a better contact profesional.
+*   As a customer who has experience with a particular service provider, I would like to provide a rating so that I can quantify my recommendation to other users.
 
-*   As a Prospective customer I want to add a new contact to the service when I find a new reliable contact and wishes to suggest the same to others.
+*   As a customer, I would like to see an average rating for each contact that would help me to choose a better professional service provider.
 
-*   As a prospective customer to the website, I want to edit a contact when the address or mobile number changes.
+*   As a Prospective customer I want to add a new contact to a particular service when I find a new reliable contact so that the other users can profit from my experience.
 
-*   As a  prospective customer to the website, I want to edit a contact to add review comments wich helps other users to choose the best contact from the available list.
+*   As a prospective customer to the website, I want to edit all the contact details of the service provider so that the other users have the latest information about the service provider.
 
-*   As a  admin to the website, I want to delete a contact which is fake, never exists or stopped providing any service.
+*   As a prospective customer to the website, I want provide feedback /comments about each service provider so that it helps other users to choose the best contact from the available list.
+
+*   As an Administrator to the website, I want to delete a contact which is fake, never exists or stopped providing any service.
+
+*   As an administrator I want to provide the option of user log in so that changes done to contacts are tracked.
+
+*   As an administror, the system should allow new contacts to be added only by registered user so that there is accountability on the records created.
+
+*   As an Administrator, I would like to restrict only the logged in users to edit a contact or add a comment so that unauthorized/ untraceable changes are prevented.
+
+*   As an administrator, only registered users with a valid password should be allowed to log in so that unauthorized changes can be prevented.
+
+*   As an administrator, both unregistered and registered users should be able to view the contact of service providers and the user reviews so that the display of information is not restricted for unregistered users.
+
+*   As an administrator, I should allow registered users to log out so that unauthorized accesses are prevented.
+
+*   As an administrator, I would like to have field level validations on the contact entry so that incorrect or incomplete information is avoided.
+ 
 
 ## **UX**
 ### Ideal client
@@ -165,19 +188,13 @@ Please find attached Wireframe for Home page , place order form and acknowledgem
 **Wirefame mockups**
 Wireframe mockups for Home, Login, Register, Add New Contact, Edit Contact, Add Review for small, meidium and Large screens have been given below.
 
-[Wireframe for all pages for SMALL screen](/workspace/ms3_meercq/static/images/wireframes/Large.pdf)
+[SMALL screen](/workspace/ms3_meercq/static/images/wireframes/Small.pdf)
 
-[services]
+[MEDIUM screen](/workspace/ms3_meercq/static/images/wireframes/Medium.pdf)
 
-[Login]
+[LARGE screen](/workspace/ms3_meercq/static/images/wireframes/Large.pdf)
 
-[Register]
 
-[Add New Contact]
-
-[Edit Contact]
-
-[Add Review]
 
 ### Database Schema
 
