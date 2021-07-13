@@ -162,28 +162,66 @@ Functional testing was done by testing induvidual features of the website to see
     * checked to see if  the total number of Available contacts is displayed for each service and tallies with the number of contact cards listed for that service..
 
 5.   ***Add New Contact***
+     * Checked to see if this button is visible only for users who are logged in.
+     * Checked to see if cliking on "Add New Contact" invokes the Add new contact form.
      * Checked to see if the company name field when left empty prompts an error.
      * Checked to see if the mobile number field takes only numbers as input if not prompts an error.
      * Checked to see if the email field displays an error for an invalid input.
      * Checked to see there is no error prompted for address and website fields when left empty.
      * Checked to see if clicking on back button takes you to the previous service page.
-     * checked to see if clicking on ADD button displays a flash message when contact is successfully added to database.
-     * Checked to see if the new contact card is displayed on the service page after hitting the ADD button.
+     * checked to see if clicking on ADD button displays a flash message when contact is successfully added.
+     * Checked to see if the new contact card is displayed under the corresponding service page.
      * Checked to see if "N/A" is displayed for address and website details of the contact card when left empty while adding the details.
+     * Checked to see if the Available Contacts" gets updated accordingly.
 
 6.  ***Edit Contact***
+     * Checked to see if this button is visible only for users who are logged in.
+     * Checked to see if hovering on Edit Icon displays a tool tip "Edit Contact".
+     * Checked to see if cliking on "Edit Contact" button inside each card invokes the Edit contact form.
+     * Checked to see if all the details of the contact chosen to edit are displayed automatically on the Edit form.
+     * Checked to see if the company name field when left empty prompts an error.
+     * Checked to see if the mobile number field takes only numbers as input if not prompts an error.
+     * Checked to see if the email field displays an error for an invalid input.
+     * Checked to see there is no error prompted for address and website fields when left empty.
+     * Checked to see if clicking on back button takes you to the previous service page.
+     * checked to see if clicking on Update button displays a flash message when contact is successfully updated.
+     * Checked to see if the contact card is displayed  with the updated details under the corresponding service page.
+     * Checked to see if "N/A" is displayed for address and website details of the contact card when left empty while adding the details.
 
 7. ***Delete Contact***
+    * Checked to see if this button is visible only for admin user.
+    * Checked to see if hovering on Delete Icon displays a tool tip "Delete Contact".
+    * checked to see if clicking on Delete button displays a flash message when contact is successfully deleted.
+    * Checked to see if the contact card is removed under the corresponding service page.
+    * Checked to see if the Available Contacts" gets updated accordingly.
+
 
 8. ***Add Review***
+    * Checked to see if this button is visible only for users who are logged in.
+    * Checked to see if hovering on comments Icon displays a tool tip "Add Review".
+    * Checked to see if cliking on "Add Review" inside each card invokes the Add Review form.
+    * Checked to see if the company name and service type of the chosen contact gets populated automatically in the form
+    * Checked to see if the comments field when left empty prompts an error.
+    * Checked to see if the rating field displays a drop down containing numbers from 1 to 5.
 
 9.***User Reviews***
+    * Checked to see if this section is visible for both registered and unregistered users.
+    * Checked to see if all the reviews pertaining to the service provider/company are listed in an collapsible view
+    * Checked to see if the number of stars displayed is corresponding to the number given in the rating field.
+    * Checked to see if the correct name of the user who added that review is displayed.
 
 10. ***Login***
+    * Checked to see if clicking on Login from nav menu invokes the Login form.
+    * Checked to see if there is an error message  username/password  combination is invalid.  
 
 11. ***Register***
+    * Checked to see if clicking on Register from nav menu invokes the Register form.
+    * Checked to see if the username accepts a combination of alphabets and numbers and a maximum of 15 characters.
+    * Checked to see if the password accepts a combination of alphabets and numbers and a maximum of 15 characters.
+    * Checked to see if the email field displays an error for an invalid emailid input.
 
 12. ***Logout***
+    * checked to see if Clicking on Logout from nav menu displays a flash message to the user for successfully logging out.
 
 ## **Responsiveness Testing**
 ***Devices Testing***
