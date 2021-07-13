@@ -136,44 +136,49 @@ Functional testing was done by testing induvidual features of the website to see
 2. **Navigation Bar**
 
     * Checked to see if the navigation links are highlighted according to the active page.
-    * At the launch, Home link of the nav bar has to be higlighted with an underline.
+    * At the launch, Home link of the nav bar has to be higlighted with a relatively dark background color.
 
 3. **Home Page**
 
     ***Call out Section***
-    * checked to see if each slide on the carousel gets displayed for the time that can help user to read the information on it.
-    * Checked to see if prev button on the carousel takes to the desired slide.
-    * Checked to see if next button on the carousel takes to the desired slide.
+    * checked to see if the main hero banner is visible on all size screens
+    * Checked to see if the hero text is visible on medium and large screens and hidden on small screens.
+    * Checked to see if the input field in the search bar of the hero image triggers an autocomplete on text input.
+    * Checked to see if the search for a particular servce displays the corresponding contacts cards.
+    * Checked to see if the no results page is displayed when there are no contacts found relavent to th search option. 
 
-    ***Schedule section***
-    * Checked to see if the truck icon appears on the row of the current day in large screen.
-    * Checked to see if the truck appears on the accordion of the current day in small and medium screens.
-    * Checked to see if the truck is blinking.
-    * Checked to see if the accordion of the currnt day is collapsed.
-    * Checked to see if the address button the accordion leads to Location section of the page
+    ***About section***
+    * Checked to see if the hovering on each service image displays the name of that service.
+    * Checked to see if clicking on particular service displays corresponding service page with contact cards.
 
-4.  ***Location Section***  
-    * checked to see if the google map is displayed with 5 markers.
-    * Checked to see if the clicking on each markers displays the city name, address, landmark and day and timing details.
-    * Checked to see if there is image displayed for each city only on large and medium screens.
-    * checked to see if the zooming out of the map creates clusters.
-    * checked to see if hovering on each marker displays the city name.
+4.  ***Services Section***  
+    * checked to see if choosing "Electricians" from service dropdown displays a service page with contacts whose service type is electricians. 
+    * checked to see if choosing "Carpenters" from service dropdown displays a service page with contacts whose service type is Carpenters.
+    * checked to see if choosing "Plumbers" from service dropdown displays a service page with contacts whose service type is Plumbers.
+    * checked to see if choosing "Gardeners" from service dropdown displays a service page with contacts whose service type is Gardeners.
+    * checked to see if choosing "Painters" from service dropdown displays a service page with contacts whose service type is Painters.
+    * checked to see if choosing "Whitegoods" from service dropdown displays a service page with contacts whose service type is Whitegoods.
+    * checked to see if choosing "Cleaners" from service dropdown displays a service page with contacts whose service type is Cleaners.
 
-5.   ***Place Order***
+5.   ***Add New Contact***
      * Checked to see if name field takes only alphabets and prompts an error when left empty or given an invalid input.
-     * checked to see if there is an error for an invalid email field.
-     * Checked to see if the mobile number field does not take more than 10 digits.
-     * checked to see if the mobile number field takes only numbers.
-     * Checked to see the if the form has an address field which gets auto-populated based on the Location field.
-     * Checked to see when an item is chosen from Groceries drop down and Quantity from QTY dropdown and "Add to List" button is clicked an inputbox is created.
-     * Checked to see if there is a delete button beside very new input element being added.
-     * Checked to see if each item is being created in a new line.
-     * checked to see if input item is not editable.
-     * checked to see if clicking on the delete "X" button deletes the item.
-     * Checked to see On successful submission of the form, an Acknowlegement message is displayed on the same page.
-     * Checked to see if the mail has been sent to dw.orders123@gmail.com 
-     * Checked to see if the mail contains the name and grocery List of the user.
 
+6.  ***Add New Contact***
+     * Checked to see if name field takes only alphabets and prompts an error when left empty or given an invalid input.     
+
+7.  ***Edit Contact***
+
+8. ***Delete Contact***
+
+9. ***Add Review***
+
+10.***User Reviews***
+
+11. ***Login***
+
+12. ***Register***
+
+13. ***Logout***
 ## **Responsiveness Testing**
 ***Devices Testing***
 
@@ -212,7 +217,7 @@ Website was tested in different OS listed below and results were satisfying.
 
 Performance has been tested using the Lighthouse tool of Google Chrome. The results are shown below.
 
->  ![Perfomance Results](/workspace/ms3_meercq/static/images/testing/performance.jpg)
+>  ![Perfomance Results](/workspace/ms3_meercq/static/images/testing/performance.jpg?raw=true)
 
 ## **Accessibility Testing**
 

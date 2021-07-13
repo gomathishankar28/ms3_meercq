@@ -17,6 +17,9 @@ input,
 main {
 	flex: 1 0 auto;
 }
+.input-field>label {
+    color: #d1d1d1;
+}
 
 .navbg,
 .footer_bg,
@@ -191,6 +194,11 @@ p {
 	padding: 10px;
 }
 
+/*-------- Hover effect on nav links---------------*/
+active,#navbar-items a {
+    text-decoration-line: underline;
+}
+
 /*------------hover effect on service image ------------*/
 .services {
 	position: relative;
@@ -225,8 +233,8 @@ p {
   }
   
   .text {
-	color: black;
-	font-size: 16px;
+	color: white;
+	font-size: 20px;
 	padding: 16px 32px;
   }
 
