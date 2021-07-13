@@ -179,6 +179,7 @@ Functional testing was done by testing induvidual features of the website to see
 12. ***Register***
 
 13. ***Logout***
+
 ## **Responsiveness Testing**
 ***Devices Testing***
 
