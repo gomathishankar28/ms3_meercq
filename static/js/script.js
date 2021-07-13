@@ -20,5 +20,6 @@ $(document).ready(function () {
           "whitegoods": null
         },
       });
+     
 });
 

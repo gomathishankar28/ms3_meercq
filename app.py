@@ -254,9 +254,8 @@ def add_contact():
             "company_name": request.form.get("company_name"),
             "mobile": request.form.get("mobile"),
             "email": request.form.get("email"),
-            "url": request.form.get("url"),
-	        "address": request.form.get("address"),
-            "rating": request.form.get("rating"),
+            "url": ((request.form.get("url") if(request.form.get("url")) else "N/A")),
+	        "address": ((request.form.get("address") if(request.form.get("address")) else "N/A")),
             "created_by": session["user"]
         }
         mongo.db.contacts.insert_one(contact)

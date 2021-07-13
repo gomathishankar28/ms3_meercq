@@ -31,9 +31,10 @@
              <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-phone-alt prefix white-text"></i>
-                    <input id="mobile" name="mobile" type="number" class="validate"
-                        required>
+                    <input id="mobile" name="mobile" type="number" pattern="/(+316){4}\d{8}" minlength="12" maxlength="12" class="validate"
+                    placeholder="eg:+31687241357" required>
                     <label for="mobile">Contact Number</label>
+                    
                 </div>
             </div>
             <div class="row">
@@ -47,16 +48,14 @@
             <div class="row">
                  <div class="input-field col s12">
                     <i class="fas fa-map-marker-alt prefix white-text"></i>
-                    <input id="address" name="address" type="text" class="validate"
-                        required>
+                    <input id="address" name="address" type="text" class="validate">
                     <label for="address">Address</label>
                 </div>
             </div>
             <div class="row">
                  <div class="input-field col s12">
                     <i class="fas fa-globe-europe prefix white-text"></i>
-                    <input id="url" name="url" type="text" class="validate"
-                        required>
+                    <input id="url" name="url" type="text" class="validate">
                     <label for="url">Website</label>
                 </div>
             </div>

@@ -159,26 +159,31 @@ Functional testing was done by testing induvidual features of the website to see
     * checked to see if choosing "Painters" from service dropdown displays a service page with contacts whose service type is Painters.
     * checked to see if choosing "Whitegoods" from service dropdown displays a service page with contacts whose service type is Whitegoods.
     * checked to see if choosing "Cleaners" from service dropdown displays a service page with contacts whose service type is Cleaners.
+    * checked to see if  the total number of Available contacts is displayed for each service and tallies with the number of contact cards listed for that service..
 
 5.   ***Add New Contact***
-     * Checked to see if name field takes only alphabets and prompts an error when left empty or given an invalid input.
+     * Checked to see if the company name field when left empty prompts an error.
+     * Checked to see if the mobile number field takes only numbers as input if not prompts an error.
+     * Checked to see if the email field displays an error for an invalid input.
+     * Checked to see there is no error prompted for address and website fields when left empty.
+     * Checked to see if clicking on back button takes you to the previous service page.
+     * checked to see if clicking on ADD button displays a flash message when contact is successfully added to database.
+     * Checked to see if the new contact card is displayed on the service page after hitting the ADD button.
+     * Checked to see if "N/A" is displayed for address and website details of the contact card when left empty while adding the details.
 
-6.  ***Add New Contact***
-     * Checked to see if name field takes only alphabets and prompts an error when left empty or given an invalid input.     
+6.  ***Edit Contact***
 
-7.  ***Edit Contact***
+7. ***Delete Contact***
 
-8. ***Delete Contact***
+8. ***Add Review***
 
-9. ***Add Review***
+9.***User Reviews***
 
-10.***User Reviews***
+10. ***Login***
 
-11. ***Login***
+11. ***Register***
 
-12. ***Register***
-
-13. ***Logout***
+12. ***Logout***
 
 ## **Responsiveness Testing**
 ***Devices Testing***
