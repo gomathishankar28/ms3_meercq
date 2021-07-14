@@ -198,7 +198,7 @@ Wireframe mockups for Home, Login, Register, Add New Contact, Edit Contact, Add 
 
 ### Database Schema
 
-<img src="static/images/dbschema.png" width="900" height="300" alt="database schema">
+<img src="static/images/readme/dbschema.png" width="900" height="300" alt="database schema">
 
 * The site contains **four** collections which are stored in MongoDB. The **users** collection stores the user's username and password which enables the user to create an account and have a profile page. The **services** collection stores all the different type of services that it provides contacts for.The **contacts** collection that stores all the contact details for a company like service type, mobile number, email, website, address etc. The **Reviews** section stores the rating, user comments for each company name.
 
@@ -468,7 +468,7 @@ Once the project been loaded into the IDE it is necessary to install the necessa
 
     * [stackoverflow](https://stackoverflow.com/) for aggregate and $round function to calculate average rating in pymongo
 
-    * [Githubgist](https://gist.github.com/) as reference for  collapsible menu on side nav.
+    * [Githubgist](https://gist.github.com/) as reference for collapsible menu on side nav.
 
     * [code Institute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+IFD101+2017_T3/courseware/03d3f6524ad249d9b33e3336d156dfd0/3b2af8636ea54a4d9dc45126f7498633/) for login, register and delete views.
 

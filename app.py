@@ -279,8 +279,8 @@ def edit_contact(contact_id):
             "company_name": request.form.get("company_name"),
             "mobile": request.form.get("mobile"),
             "email": request.form.get("email"),
-            "address": request.form.get("address"),
-            "url": request.form.get("url"),
+            "url": ((request.form.get("url") if(request.form.get("url")) else "N/A")),
+	        "address": ((request.form.get("address") if(request.form.get("address")) else "N/A")),
             "rating": request.form.get("rating"),
             "created_by": session["user"]
         }
