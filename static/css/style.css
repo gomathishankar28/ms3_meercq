@@ -6,6 +6,7 @@ body {
 	flex-direction: column;
 	font-family: 'Akaya Telivigala', cursive, sans-serif;
 	background-color: #426f9d;
+	overflow-x: hidden;
 }
 input,
 	optgroup,
@@ -112,6 +113,25 @@ p {
 	left: 50%;
 	color: black;
 }
+.no_results {
+	text-align: center;
+	position: absolute;
+	top: 30%;
+	margin-left: -5%!important;
+	color: black;
+	
+}
+.no_results h4 {
+	padding: 20px!important;
+}
+.try_again {
+	text-align: center;
+	position: absolute;
+	top: 60%;
+	margin: 10%;
+	margin-left: 20%;
+	
+}
 
 .search_form {
 	top: 50%;
@@ -194,6 +214,11 @@ p {
 	padding: 10px;
 }
 
+.select-wrapper .caret {
+    
+    fill: rgb(255 255 255);
+}
+
 /*-------- Hover effect on nav links---------------*/
 active,#navbar-items a {
     text-decoration-line: underline;
@@ -208,9 +233,10 @@ active,#navbar-items a {
 	opacity: 1;
 	display: block;
 	width: 100%;
-	height: auto;
+	height: 300px;
 	transition: .5s ease;
 	backface-visibility: hidden;
+	margin-top: 15px;
   }
   
   .middle {
@@ -359,6 +385,13 @@ active,#navbar-items a {
 	.reviews {
 		width: 330px;
 	}
+	.try_again {
+		
+		position: absolute;
+		top: 35%;
+		
+		
+	}
 }
 @media (min-width: 411px) {
 	.card.small {
@@ -409,6 +442,15 @@ active,#navbar-items a {
 	 .add_review {
 		margin-left: 25px;
 	}
+	.no_results h4 {
+		margin: 10px!important;
+		margin-left: 40px!important;
+		padding: 5px!important;
+	}
+	.try_again a {
+		top: -100px!important;
+    	position: relative;
+	}
 }
 
 @media (min-width: 768px) {
@@ -446,6 +488,10 @@ active,#navbar-items a {
 	.add_contact,.edit_contact,
 	.add_review {
 		margin-left: 50px;
+	}
+	.try_again a {
+		top: -200px!important;
+    	position: relative;
 	}
 }
 
@@ -496,6 +542,10 @@ active,#navbar-items a {
 	.add_review {
 		margin-left: 150px;
 	}
+	.try_again a{
+		top: -400px!important;
+    	position: relative;
+	}
 }
 
 @media (min-width: 1080px) {
@@ -536,5 +586,9 @@ active,#navbar-items a {
 	}
 	.add_contact {
 	margin-left: 200px;
+	}
+	.try_again a {
+		top: -700px!important;
+    	position: relative;
 	}
 }

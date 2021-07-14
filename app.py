@@ -50,8 +50,8 @@ def register():
         mongo.db.users.insert_one(register)
 
         # put the new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
-        flash("Hi {} , your Registration is Successful!".format(request.form.get("username")))
+        
+        flash("Hi {} , your Registration is Successful! Please Login to continue".format(request.form.get("username")))
         return render_template("login.html")
     return render_template("register.html")
 
