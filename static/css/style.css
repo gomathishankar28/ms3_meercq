@@ -39,6 +39,11 @@ nav .brand-logo {
 .navdropdown {
 	background-color: rgb(66, 111, 157) !important;
 	overflow-x: hidden;
+	line-height: 55px;
+	margin-top: -5px;
+}
+.service-icon {
+	margin-top: 10px;
 }
 
 .dropdown-content li>a,
@@ -74,6 +79,9 @@ div#placeholder {
 	margin-left: 12px;
 }
 
+.edit_form, .review_form {
+	margin-left: -20px;
+}
 .form_label {
 	color: #426f9d;
 }
@@ -241,6 +249,7 @@ active,#navbar-items a {
 	transition: .5s ease;
 	backface-visibility: hidden;
 	margin-top: 15px;
+	margin-left: -20px;
   }
   
   .middle {
@@ -455,6 +464,9 @@ active,#navbar-items a {
 		top: -100px!important;
     	position: relative;
 	}
+	.image {
+		margin-left: -50px;
+	}
 	
 }
 
@@ -535,12 +547,12 @@ active,#navbar-items a {
 		margin-right: -110px!important;
 	}
 	.card.small {
-		width: 300px;
-		margin-left: 5px!important;
+		width: 290px;
+		margin-left: 10px!important;
 	}
 	.reviews {
-		width: 300px;
-		margin-left: 5px!important;
+		width: 290px;
+		margin-left: 10px!important;
 	}
 	
 	.add_contact,.edit_contact,
@@ -550,6 +562,9 @@ active,#navbar-items a {
 	.try_again a{
 		top: -400px!important;
     	position: relative;
+	}
+	.image {
+		margin-left: 0;
 	}
 }
 

@@ -48,7 +48,7 @@
                     <li class=active><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('home', _anchor='about-section') }}">About</a></li>
                     <li><a class="dropdown-trigger navdropdown" href="#!" data-target="dropdown1">Services
-                        <i class="fas fa-caret-down"></i></a></li>
+                        <i class="fas fa-caret-down services-icon"></i></a></li>
 					{% if session.user %}
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
