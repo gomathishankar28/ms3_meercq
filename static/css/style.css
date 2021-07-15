@@ -50,6 +50,7 @@ nav .brand-logo {
 .dropdown-content li>span {
 	color: black;
 	font-size: 14px;
+	display: unset;
 }
 
 .sidenav li>a {
