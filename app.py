@@ -6,6 +6,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from urllib.parse import urlparse
+from datetime import datetime
 if os.path.exists("env.py"):
     import env
 
@@ -311,6 +312,7 @@ def add_review(contact_id):
             "rating": int(request.form.get("rating")),
             "comments": request.form.get("comments"),
             "company_name": request.form.get("company_name"),
+            "date": datetime.now().strftime("%b %d %Y %H:%M:%S"),
             "created_by": session["user"]
         }
         mongo.db.reviews.insert_one(review)
@@ -319,6 +321,13 @@ def add_review(contact_id):
     contact = mongo.db.contacts.find_one({"_id": ObjectId(contact_id)})
     services = mongo.db.services.find().sort("service-type", 1)
     return render_template("add_review.html", contact=contact, services=services,)
+
+
+@app.route("/delete_review/<review_id>")
+def delete_review(review_id):
+    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+    flash("review Successfully Deleted")
+    return redirect(request.referrer)
 
 
 @app.route("/search", methods=["GET", "POST"])

@@ -155,6 +155,10 @@ p {
 	color: #cb120d
 }
 
+.review_icon {
+	margin-left: 50px;
+    margin-top: 15px;
+}
 #about-section {
 	margin: 1% 3%;
 	padding: 1%;
@@ -451,6 +455,7 @@ active,#navbar-items a {
 		top: -100px!important;
     	position: relative;
 	}
+	
 }
 
 @media (min-width: 768px) {
