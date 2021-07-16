@@ -289,10 +289,7 @@ def add_contact():
         service_type = request.form.get("service_type")
         contacts = list(mongo.db.contacts.find(
         {"service_type": service_type}))
-        print(contacts)
         companies = [contact["company_name"] for contact in contacts]
-        print(companies)
-        
         if company_name not in companies:
             contact = {
             "service_type": request.form.get("service_type"),
@@ -307,10 +304,8 @@ def add_contact():
             flash("Your new Contact Successfully Added")
             return redirect(request.referrer)
         flash("company name already exists under {} service type".format(request.form.get("service_type")))
-
     services = mongo.db.services.find().sort("service-type", 1)
-    ratings = ["1", "2", "3", "4", "5"]
-    return render_template("add_contact.html", services=services, ratings=ratings)
+    return render_template("add_contact.html", services=services)
 
 
 @app.route("/edit_contact/<contact_id>", methods=["GET", "POST"])
@@ -325,9 +320,8 @@ def edit_contact(contact_id):
             "company_name": request.form.get("company_name"),
             "mobile": request.form.get("mobile"),
             "email": request.form.get("email"),
-            "url": ((request.form.get("url") if(request.form.get("url")) else "N/A")),
-	        "address": ((request.form.get("address") if(request.form.get("address")) else "N/A")),
-            "rating": request.form.get("rating"),
+            "address": request.form.get("address"),
+            "url": request.form.get("url"), 
             "created_by": session["user"]
         }
         mongo.db.contacts.update({"_id": ObjectId(contact_id)}, edited_contact)
@@ -335,8 +329,7 @@ def edit_contact(contact_id):
         return redirect(baseurl)
     contact = mongo.db.contacts.find_one({"_id": ObjectId(contact_id)})
     services = mongo.db.services.find().sort("service-type", 1)
-    ratings = ["1", "2", "3", "4", "5"]
-    return render_template("edit_contact.html", contact=contact, services=services, ratings=ratings)
+    return render_template("edit_contact.html", contact=contact, services=services)
     
     
 @app.route("/delete_contact/<contact_id>")

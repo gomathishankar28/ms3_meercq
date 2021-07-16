@@ -16,11 +16,15 @@
                     <div class="card small">
                         <div class="card-content white-text">
                             <span class="card-title center-align"><strong>{{ contact.company_name }}</strong></span>
-                            {% for rating in ratings %}
-                                {% if rating["_id"]==contact.company_name %}
-                                    <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">{{ rating["avgRating"] }}</strong></p>
-                                {% endif %}
-                            {% endfor %}
+                            {% if contact.company_name in review_companies %}
+                                {% for rating in ratings %}
+                                    {% if rating["_id"]==contact.company_name %}
+                                        <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">{{ rating["avgRating"] }}</strong></p>
+                                    {% endif %}
+                                {% endfor %}
+                            {% elif contact.company_name in no_review_companies %}
+                                <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">N/A</strong></p>
+                            {% endif %}
                             <p><i class="fas fa-phone-alt contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.mobile }} </p>
                             <p><i class="fas fa-envelope-square contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.email }}</p>
                             <p><i class="fas fa-globe-europe contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.url }}</p>
@@ -39,7 +43,7 @@
                                 </div>
                                 {% if session["user"]=="admin" %}
                                     <div class="col s4">
-                                        <a class="waves-effect waves-light btn small tooltipped black-text" data-position="top" data-tooltip="Delete Contact"  
+                                        <a class="waves-effect waves-light btn small tooltipped black-text" data-position="top" data-tooltip="Delete contact"  
                                         href="{{ url_for('delete_contact', contact_id=contact._id) }}"><i class="fas fa-trash-alt"></i></a>
                                     </div>
                             	{% endif %}
@@ -70,7 +74,7 @@
                                             <div class="col s3">
                                                 {% if session["user"] %}
                                                     {% if session["user"]==review.created_by %}
-                                                        <a class="waves-effect waves-light btn small tooltipped" data-position="top" data-tooltip="Delete Contact"  
+                                                        <a class="waves-effect waves-light btn small tooltipped" data-position="top" data-tooltip="Delete review"  
                                                         href="{{ url_for('delete_review', review_id=review._id) }}"><i class="fas fa-trash-alt"></i></a>
                                                     {% endif %}
                                                 {% endif %}
