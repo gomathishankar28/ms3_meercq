@@ -249,8 +249,17 @@ def cleaners():
 
 @app.route("/add_contact", methods=["GET", "POST"])
 def add_contact():
-    if request.method == "POST":
-        contact = {
+    if request.method == "POST":  
+        company_name = request.form.get("company_name")
+        service_type = request.form.get("service_type")
+        contacts = list(mongo.db.contacts.find(
+        {"service_type": service_type}))
+        print(contacts)
+        companies = [contact["company_name"] for contact in contacts]
+        print(companies)
+        
+        if company_name not in companies:
+            contact = {
             "service_type": request.form.get("service_type"),
             "company_name": request.form.get("company_name"),
             "mobile": request.form.get("mobile"),
@@ -258,10 +267,11 @@ def add_contact():
             "url": ((request.form.get("url") if(request.form.get("url")) else "N/A")),
 	        "address": ((request.form.get("address") if(request.form.get("address")) else "N/A")),
             "created_by": session["user"]
-        }
-        mongo.db.contacts.insert_one(contact)
-        flash("Your new Contact Successfully Added")
-        return redirect(request.referrer)
+            }
+            mongo.db.contacts.insert_one(contact)
+            flash("Your new Contact Successfully Added")
+            return redirect(request.referrer)
+        flash("company name already exists under {} service type".format(request.form.get("service_type")))
 
     services = mongo.db.services.find().sort("service-type", 1)
     ratings = ["1", "2", "3", "4", "5"]
