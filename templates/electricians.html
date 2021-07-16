@@ -16,11 +16,15 @@
                     <div class="card small">
                         <div class="card-content white-text">
                             <span class="card-title center-align"><strong>{{ contact.company_name }}</strong></span>
-                            {% for rating in ratings %}
-                                {% if rating["_id"]==contact.company_name %}
-                                    <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">{{ rating["avgRating"] }}</strong></p>
-                                {% endif %}
-                            {% endfor %}
+                            {% if contact.company_name in review_companies %}
+                                {% for rating in ratings %}
+                                    {% if rating["_id"]==contact.company_name %}
+                                        <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">{{ rating["avgRating"] }}</strong></p>
+                                    {% endif %}
+                                {% endfor %}
+                            {% elif contact.company_name in no_review_companies %}
+                                <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">N/A</strong></p>
+                            {% endif %}
                             <p><i class="fas fa-phone-alt contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.mobile }} </p>
                             <p><i class="fas fa-envelope-square contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.email }}</p>
                             <p><i class="fas fa-globe-europe contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.url }}</p>
@@ -49,6 +53,7 @@
                                 <li>
 	                            <div class="collapsible-header white-text"><h5>User Reviews</h5><i class="fas fa-caret-down review_icon"></i></div>
 		                        <div class="collapsible-body">
+                                
                                     {% for review in reviews %}
                                         {% if review.company_name==contact.company_name %}
                                             <div class="row">
@@ -80,6 +85,7 @@
                                         {% endif %}
                                         
                                      {% endfor %} 
+                                    
                                 </div>
                             </li>
                             

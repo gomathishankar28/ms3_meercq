@@ -110,7 +110,12 @@ def electricians():
     )
     ratings = list(rating)
     reviews = list(mongo.db.reviews.find())
-    return render_template("electricians.html", contacts=electrician_contacts, count=len(electrician_contacts), reviews=reviews, ratings=ratings) 
+    review_companies = [review["company_name"] for review in reviews]
+    contacts = list(mongo.db.contacts.find())
+    all_companies = [contact["company_name"] for contact in contacts]
+    no_review_companies = list(set(all_companies) - set(review_companies))
+    return render_template(
+        "electricians.html", contacts=electrician_contacts, count=len(electrician_contacts), reviews=reviews, ratings=ratings, review_companies=review_companies, no_review_companies=no_review_companies) 
 
 
 @app.route("/carpenters")
@@ -131,8 +136,13 @@ def carpenters():
         }]
     )
     ratings = list(rating)
-    reviews =list(mongo.db.reviews.find())
-    return render_template("carpenters.html", contacts=carpenter_contacts, count=len(carpenter_contacts), reviews=reviews, ratings=ratings) 
+    reviews = list(mongo.db.reviews.find())
+    review_companies = [review["company_name"] for review in reviews]
+    contacts = list(mongo.db.contacts.find())
+    all_companies = [contact["company_name"] for contact in contacts]
+    no_review_companies = list(set(all_companies) - set(review_companies))
+    return render_template(
+        "carpenters.html", contacts=carpenter_contacts, count=len(carpenter_contacts), reviews=reviews, ratings=ratings, review_companies=review_companies, no_review_companies=no_review_companies) 
 
 
 @app.route("/plumbers")
@@ -154,7 +164,12 @@ def plumbers():
     )
     ratings = list(rating)
     reviews =list(mongo.db.reviews.find())   
-    return render_template("plumbers.html", contacts=plumber_contacts, count=len(plumber_contacts), reviews=reviews, ratings=ratings)
+    review_companies = [review["company_name"] for review in reviews]
+    contacts = list(mongo.db.contacts.find())
+    all_companies = [contact["company_name"] for contact in contacts]
+    no_review_companies = list(set(all_companies) - set(review_companies))
+    return render_template(
+        "plumbers.html", contacts=plumber_contacts, count=len(plumber_contacts), reviews=reviews, ratings=ratings, review_companies=review_companies, no_review_companies=no_review_companies)
 
 
 @app.route("/painters")
@@ -177,7 +192,12 @@ def painters():
     ratings = list(rating)
     print(ratings)
     reviews =list(mongo.db.reviews.find()) 
-    return render_template("painters.html", contacts=painter_contacts, count=len(painter_contacts), reviews=reviews, ratings=ratings)
+    review_companies = [review["company_name"] for review in reviews]
+    contacts = list(mongo.db.contacts.find())
+    all_companies = [contact["company_name"] for contact in contacts]
+    no_review_companies = list(set(all_companies) - set(review_companies))
+    return render_template(
+        "painters.html", contacts=painter_contacts, count=len(painter_contacts), reviews=reviews, ratings=ratings, review_companies=review_companies, no_review_companies=no_review_companies)
  
 
 
@@ -200,7 +220,12 @@ def gardeners():
     )
     ratings = list(rating)
     reviews = list(mongo.db.reviews.find())
-    return render_template("gardeners.html", contacts=gardener_contacts, count=len(gardener_contacts), reviews=reviews, ratings=ratings) 
+    review_companies = [review["company_name"] for review in reviews]
+    contacts = list(mongo.db.contacts.find())
+    all_companies = [contact["company_name"] for contact in contacts]
+    no_review_companies = list(set(all_companies) - set(review_companies))
+    return render_template(
+        "gardeners.html", contacts=gardener_contacts, count=len(gardener_contacts), reviews=reviews, ratings=ratings, review_companies=review_companies, no_review_companies=no_review_companies) 
 
 
 @app.route("/whitegoods")
@@ -222,7 +247,12 @@ def whitegoods():
     )
     ratings = list(rating)
     reviews = list(mongo.db.reviews.find())
-    return render_template("whitegoods.html", contacts=whitegoods_contacts, count=len(whitegoods_contacts), reviews=reviews, ratings=ratings)  
+    review_companies = [review["company_name"] for review in reviews]
+    contacts = list(mongo.db.contacts.find())
+    all_companies = [contact["company_name"] for contact in contacts]
+    no_review_companies = list(set(all_companies) - set(review_companies))
+    return render_template(
+        "whitegoods.html", contacts=whitegoods_contacts, count=len(whitegoods_contacts), reviews=reviews, ratings=ratings, review_companies=review_companies, no_review_companies=no_review_companies)  
 
 
 @app.route("/cleaners")
@@ -244,7 +274,12 @@ def cleaners():
     )
     ratings = list(rating)
     reviews = list(mongo.db.reviews.find())
-    return render_template("cleaners.html", contacts=cleaner_contacts, count=len(cleaner_contacts), reviews=reviews, ratings=ratings)  
+    review_companies = [review["company_name"] for review in reviews]
+    contacts = list(mongo.db.contacts.find())
+    all_companies = [contact["company_name"] for contact in contacts]
+    no_review_companies = list(set(all_companies) - set(review_companies))
+    return render_template(
+        "cleaners.html", contacts=cleaner_contacts, count=len(cleaner_contacts), reviews=reviews, ratings=ratings, review_companies=review_companies, no_review_companies=no_review_companies)  
 
 
 @app.route("/add_contact", methods=["GET", "POST"])
