@@ -301,8 +301,13 @@ def add_contact():
             "created_by": session["user"]
             }
             mongo.db.contacts.insert_one(contact)
+            full_url = request.referrer
+            parts = urlparse(full_url)
+            path =  "/{}".format(request.form.get("service_type"))
+            baseurl = "{}://{}{}".format(parts.scheme, parts.netloc, path)
             flash("Your new Contact Successfully Added")
-            return redirect(request.referrer)
+            return redirect(baseurl)
+            
         flash("company name already exists under {} service type".format(request.form.get("service_type")))
     services = mongo.db.services.find().sort("service-type", 1)
     return render_template("add_contact.html", services=services)
