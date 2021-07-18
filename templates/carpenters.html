@@ -62,29 +62,35 @@
 		                        <div class="collapsible-body">
                                     {% for review in reviews %}
                                     {% if review.company_name==contact.company_name %}
-                                        <div class="row">
+                                        <div class="row review-row">
                                             <div class="col s2">
                                                 <i class="fas fa-user"></i>
                                             </div>
-                                            <div class="col s7">
+                                            <div class="col s3 review_user">
+                                                <span class="white-text">{{ review.created_by}}</span>
+                                                
+                                            </div>
+                                            <div class="col s7 ">
                                                 {% for s in range(0, review.rating |int) %}
                                                     <span><i class="fas fa-star checked"></i></span>
                                                 {% endfor %}
+                                                
                                             </div>
-                                            <div class="col s3">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <p>{{ review.date }}</p>
+                                            </div>
+                                            <div class="col s12">
+                                                <p class="white-text">{{ review.comments}}</p>
+                                            </div>
+                                            <div class="col s12 right-align">
                                                 {% if session["user"] %}
                                                     {% if session["user"]==review.created_by %}
                                                         <a class="waves-effect waves-light btn small tooltipped" data-position="top" data-tooltip="Delete review"  
                                                         href="{{ url_for('delete_review', review_id=review._id) }}"><i class="fas fa-trash-alt"></i></a>
                                                     {% endif %}
                                                 {% endif %}
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col s12">
-                                                <p>{{ review.date }}</p>
-                                                <p class="white-text">{{ review.comments}}</p>
-                                                <p class="white-text right-align"><strong>{{ review.created_by}}</strong></p>
                                             </div>
                                         </div>
                                         <div class="row divider"></div>
