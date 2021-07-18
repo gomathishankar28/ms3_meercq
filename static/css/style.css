@@ -23,18 +23,25 @@ main {
 }
 
 .navbg,
-.footer_bg,
 .formbg {
 	background-color: #426f9d;
 }
-.page-footer {
-	border: 1px solid transparent;
+.footer_bg {
+	background-color: #dedee0;
+}
+.copyright {
+	margin-left: 30px;
+	color: #426f9d;
+}
+.meercq {
+	color: #426f9d;
 }
 
 .links {
 	margin-left: 15px;
 	margin-right: 15px;
 	font-size: 24px;
+	color: #426f9d;
 }
 .links:hover {
     transform: scale(1.15); 
@@ -50,6 +57,7 @@ main {
 
 nav .brand-logo {
 	padding-left: 5px;
+	font-size: xxx-large;
 }
 
 .navdropdown {
@@ -247,12 +255,8 @@ h2 {
 	background-color: #395b7f;
 }
 
-.page-footer {
-	bottom: 0;
-}
-.copyright {
-	margin-left: 30px;
-}
+
+
 
 .avgRating {
 	font-size: 20px;
@@ -413,6 +417,10 @@ active,#navbar-items a {
 		margin-left: 100px;
 		margin-right: -50px!important;
 		}
+	.copyright {
+		margin-left: 50px;
+		
+	}
 }
 
 @media (min-width: 360px) {
@@ -443,6 +451,9 @@ active,#navbar-items a {
 		margin-left: 120px;
 		margin-right: -50px!important;
 		}
+	.copyright {
+		margin-left: 70px;
+	}
 }
 
 @media (min-width: 375px) {
@@ -490,7 +501,9 @@ active,#navbar-items a {
 		margin-left: 150px;
 		margin-right: -50px!important;
 		}
-	
+	.copyright {
+		margin-left: 90px;
+	}
 }
 @media (min-width: 540px) {
 	.main-heading1 {
@@ -560,8 +573,10 @@ active,#navbar-items a {
 	.review_icon {
 		margin-left: 200px;
 		margin-right: -50px!important;
-		}
-	
+	}
+	.copyright {
+		margin-left: 150px;
+	}	
 }
 
 @media (min-width: 768px) {
@@ -607,7 +622,10 @@ active,#navbar-items a {
 	.review_icon {
 		margin-left: 400px;
 		margin-right: -50px!important;
-		}
+	}
+	.copyright {
+		margin-left: 230px;
+	}
 }
 
 @media (min-width: 1024px) {
@@ -688,6 +706,9 @@ active,#navbar-items a {
 	.review_icon {
 	margin-left: 100px;
     margin-right: -50px!important;
+	}
+	.copyright {
+		margin-left: 0;
 	}
 }
 
