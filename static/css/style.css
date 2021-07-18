@@ -254,10 +254,12 @@ h2 {
 .collapsible-body {
 	background-color: #395b7f;
 }
-
-
-
-
+.review-row {
+	margin-bottom: 0;
+}
+.review-comments {
+	margin-top: 0;
+}
 .avgRating {
 	font-size: 20px;
 	font-weight: 500;
