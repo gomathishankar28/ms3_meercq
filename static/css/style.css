@@ -418,8 +418,12 @@ active,#navbar-items a {
 	}
 }
 @media (min-width: 540px) {
+	.main-heading1 {
+		font-size: 44px;
+	}
 	.main-heading2 {
 		display: block;
+		font-size: 18px;
 	}
 	.search_form {
 		top: 60%
@@ -476,10 +480,10 @@ active,#navbar-items a {
 		top: 15%;
 	}
 	.main-heading1 {
-		font-size: 44px;
+		font-size: 60px;
 	}
 	.main-heading2 {
-		font-size: 36px;
+		font-size: 18px;
 	}
 	.search_form {
 		width: 100%;
@@ -521,14 +525,31 @@ active,#navbar-items a {
 		top: 20%;
 	}
 	.main-heading1 {
-		font-size: 48px;
+		font-size: 70px;
 	}
 	.main-heading2 {
-		font-size: 38px;
+		font-size: 26px;
 	}
 	.search_form {
 		width: 100%;
 		top: 45%;
+	}
+	.search {
+		margin-left: -250px;
+		margin-top: 20px;
+	}
+	::-webkit-input-placeholder {
+		color: white;
+		font-size: 22px;
+	}
+	.search_text {
+		margin-top: 20px;
+		padding-left: -40px;
+		font-size: 12px;
+		width: calc(100% - 50px);
+	}
+	.fas fa-search {
+		margin-top: 5px;
 	}
 	input,
 	optgroup,
@@ -575,10 +596,10 @@ active,#navbar-items a {
 		top: 20%;
 	}
 	.main-heading1 {
-		font-size: 34px;
+		font-size: 60px;
 	}
 	.main-heading2 {
-		font-size: 28px;
+		font-size: 18px;
 	}
 	.search_form {
 		width: 100%;
@@ -588,8 +609,24 @@ active,#navbar-items a {
 	optgroup,
 	select,
 	textarea {
-		font-size: 22px!important;
+		font-size: 18px!important;
 	}
+	.search {
+		margin-left: -300px;
+		margin-top: 20px;
+	}
+	.search_text {
+		
+		padding-left: -100px;
+		font-size: 18px;
+		width: calc(100% - 300px);
+	}
+	::-webkit-input-placeholder {
+		color: white;
+		font-size: 18px;
+		padding-left: 20px;
+	}
+	
 	.contacts {
 		margin-left: 0;
 		margin-right: 0;
