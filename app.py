@@ -52,8 +52,8 @@ def register():
 
         # put the new user into 'session' cookie
         
-        flash("Hi {} , your Registration is Successful! Please Login to continue".format(request.form.get("username")))
-        return render_template("login.html")
+        flash("Hi {} , your Registration is Successful!".format(request.form.get("username")))
+        return render_template("index.html")
     return render_template("register.html")
 
 

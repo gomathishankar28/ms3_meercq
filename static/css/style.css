@@ -97,7 +97,7 @@ p {
 	width: 300px;
 	margin-left: -10px;
 	margin-bottom: 0;
-	background-color: #426f9d;
+	background-color: #395b7f;
 	border: 2px solid transparent;
 	
 }
@@ -178,13 +178,27 @@ p {
 	margin-left: 10%
 }
 
+h2 {
+	text-decoration: underline;
+	text-transform: uppercase;
+	font-size: 50px;
+	font-weight: 700;
+	
+}
+.about {
+	font-size: 40px;
+	font-weight: 500;
+	text-decoration: none;
+	margin-left: -15px;
+}
+
 .card {
 	margin: 10px;
 	background-color: #426f9d;
 }
 
 .card-title {
-	text-decoration: underline;
+	
 	text-transform: uppercase;
 }
 
@@ -210,8 +224,11 @@ p {
 }
 
 .collapsible-header {
-	background-color: #426f9d;
+	background-color: #395b7f;
 	border: 2px solid transparent;
+}
+.collapsible-body {
+	background-color: #395b7f;
 }
 
 .page-footer {
@@ -225,6 +242,9 @@ p {
 	border-radius: 50%;
 	color: white;
 	padding: 10px;
+}
+.noavg {
+	background-color: transparent;
 }
 
 .select-wrapper .caret {
@@ -365,6 +385,10 @@ active,#navbar-items a {
 		
     	margin-left: 65px!important;
 	}
+	.review_icon {
+		margin-left: 100px;
+		margin-right: -50px!important;
+		}
 }
 
 @media (min-width: 360px) {
@@ -391,6 +415,10 @@ active,#navbar-items a {
 		
     	margin-left: 80px!important;
 	}
+	.review_icon {
+		margin-left: 120px;
+		margin-right: -50px!important;
+		}
 }
 
 @media (min-width: 375px) {
@@ -405,11 +433,12 @@ active,#navbar-items a {
 		margin-left: 20px!important;
 	}
 	.card.small {
-		width: 330px;
-		margin-left: 10px!important;
+		width: 300px;
+		margin-left: -20px!important;
 	}
 	.reviews {
-		width: 330px;
+		width: 300px;
+		margin-left: -20px!important;
 	}
 	.try_again {
 		
@@ -419,19 +448,25 @@ active,#navbar-items a {
 	.login-btn, .register-btn {
     	margin-left: 90px!important;
 	}
+	
 }
 @media (min-width: 411px) {
 	.card.small {
 		width: 350px;
-		margin-left: -15px!important;
+		margin-left: -30px!important;
 	}
 	.reviews {
 		width: 350px;
-		margin-left: -15px!important;
+		margin-left: -30px!important;
 	}
 	.login-btn, .register-btn {
     	margin-left: 100px!important;
 	}
+	.review_icon {
+		margin-left: 150px;
+		margin-right: -50px!important;
+		}
+	
 }
 @media (min-width: 540px) {
 	.main-heading1 {
@@ -461,9 +496,15 @@ active,#navbar-items a {
 	}
 	.card.small {
 		width: 400px;
+		margin-left: 5px!important;
+		
+		
 	}
 	.reviews {
 		width: 400px;
+		margin-left: 5px!important;
+		
+		
 	}
 	.btn {
 		margin-left: 5px;
@@ -492,6 +533,10 @@ active,#navbar-items a {
 		
     	margin-left: 160px!important;
 	}
+	.review_icon {
+		margin-left: 200px;
+		margin-right: -50px!important;
+		}
 	
 }
 
@@ -521,11 +566,11 @@ active,#navbar-items a {
 	}
 	.card.small {
 		width: 600px;
-		margin-left: -40px!important;
+		margin-left: -15px!important;
 	}
 	.reviews {
 		width: 600px;
-		margin-left: -40px!important;
+		margin-left: -15px!important;
 	}
 	.add_contact,.edit_contact,
 	.add_review {
@@ -535,6 +580,10 @@ active,#navbar-items a {
 		top: -200px!important;
     	position: relative;
 	}
+	.review_icon {
+		margin-left: 400px;
+		margin-right: -50px!important;
+		}
 }
 
 @media (min-width: 1024px) {
@@ -612,6 +661,10 @@ active,#navbar-items a {
 		
     	margin-left: 250px!important;
 	}
+	.review_icon {
+	margin-left: 100px;
+    margin-right: -50px!important;
+	}
 }
 
 @media (min-width: 1080px) {
@@ -673,8 +726,15 @@ active,#navbar-items a {
 		top: -700px!important;
     	position: relative;
 	}
+	.image {
+		margin-left: 5px;
+	}
 	.login-btn, .register-btn {
 		
     	margin-left: 400px!important;
 	}
+	.review_icon {
+		margin-left: 200px;
+		margin-right: -50px!important;
+		}
 }

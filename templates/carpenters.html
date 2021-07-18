@@ -3,7 +3,7 @@
     <div class="container services-container">
     	<div class="row services-header">
         	<div class = "col s12 center-align">
-            		<h2 class="center-align"> Carpenters </h2>
+            		<h2 class="center-align">Carpenters</h2>
             		<h5 class="center-align"> Available contacts: {{ count }} </h5>
             		{% if session["user"] %}
                 		<a class="waves-effect waves-light btn medium black-text" href="{{ url_for('add_contact') }}"><strong>Add New Contact</strong></a>
@@ -23,7 +23,7 @@
                                     {% endif %}
                                 {% endfor %}
                             {% elif contact.company_name in no_review_companies %}
-                                <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">N/A</strong></p>
+                                <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating noavg">N/A</strong></p>
                             {% endif %}
                             <p><i class="fas fa-phone-alt contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.mobile }} </p>
                             <p><i class="fas fa-envelope-square contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.email }}</p>
