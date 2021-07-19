@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container services-container">
+    	<div class="row services-header">
+        	<div class = "col s12 center-align">
+            		<h2 class="center-align">Electricians</h2>
+            		<h5 class="center-align"> Available contacts: {{ count }} </h5>
+            		{% if session["user"] %}
+                		<a class="waves-effect waves-light btn medium black-text" href="{{ url_for('add_contact') }}"><strong>Add New Contact</strong></a>
+            		{% endif %}
+        	</div>
+    	</div>
+        <div class="contacts row">
+            <ul class="collapsible">
+                {% for contact in contacts %}
+                    <li>
+                        <div class="collapsible-header">{{ loop.index }}&nbsp;&nbsp;&nbsp;{{ contact.company_name }}</div>
+                        <div class="collapsible-body">
+                            <div class ="row">
+                                <div class="col s12 m6 l6">
+                            <img src="{{ contact.company_image}}">
+                            {% if contact.company_name in review_companies %}
+                                {% for rating in ratings %}
+                                    {% if rating["_id"]==contact.company_name %}
+                                        <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">{{ rating["avgRating"] }}</strong></p>
+                                    {% endif %}
+                                {% endfor %}
+                            {% elif contact.company_name in no_review_companies %}
+                                <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating noavg">N/A</strong></p>
+                            {% endif %}
+                            <p><i class="fas fa-phone-alt contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.mobile }} </p>
+                            <p><i class="fas fa-envelope-square contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.email }}</p>
+                            <p><i class="fas fa-globe-europe contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.url }}</p>
+                            <p><i class="fas fa-map-marker-alt contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.address }}</p>
+                            <div class="row">
+                                {% if session["user"] %}
+                                    <div class="col s4">
+                                        <a class="waves-effect waves-light btn small tooltipped black-text" data-position="top" data-tooltip="Edit contact"  
+                                        href="{{ url_for('edit_contact', contact_id=contact._id) }}"><i class="fas fa-edit"></i></a>
+                                    </div>
+                                    <div class="col s4">
+                                        <a class="waves-effect waves-light btn small small tooltipped black-text" data-position="top" data-tooltip="Add Review" 
+                                        href="{{ url_for('add_review', contact_id=contact._id) }}"><i class="fas fa-comments"></i></a>
+                                    </div>
+                                    {% if session["user"]=="admin" %}
+                                        <div class="col s4">
+                                            <a class="waves-effect waves-light btn small tooltipped black-text" data-position="top" data-tooltip="Delete contact"  
+                                            href="{{ url_for('delete_contact', contact_id=contact._id) }}"><i class="fas fa-trash-alt"></i></a>
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                   
+                        </div>
+                        <div class="col s12 m6 l6">
+                            {% for review in reviews %}
+                                    {% if review.company_name==contact.company_name %}
+                                        <div class="row review-row">
+                                            <div class="col s2">
+                                                <i class="fas fa-user"></i>
+                                            </div>
+                                            <div class="col s3 review_user">
+                                                <span class="white-text">{{ review.created_by}}</span>
+                                                
+                                            </div>
+                                            <div class="col s7 ">
+                                                {% for s in range(0, review.rating |int) %}
+                                                    <span><i class="fas fa-star checked"></i></span>
+                                                {% endfor %}
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="row review-row">
+                                            <div class="col s10">
+                                                <p>{{ review.date }}</p>
+                                            </div>
+                                            <div class="col s2 right-align">
+                                                {% if session["user"] %}
+                                                    {% if session["user"]==review.created_by %}
+                                                        <a class="waves-effect waves-light btn small tooltipped" data-position="top" data-tooltip="Delete review"  
+                                                        href="{{ url_for('delete_review', review_id=review._id) }}"><i class="fas fa-trash-alt"></i></a>
+                                                    {% endif %}
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="row review-row">
+                                            <div class="col s12">
+                                                <p class="white-text review-comments">{{ review.comments}}</p>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    {% endif %}
+                                    
+                                 {% endfor %} 
+                            </div>
+                                
+                                </div>
+                            </div>
+                            </li>
+                {% endfor %}
+            </ul>
+        </div>
+        </div>
+        {% endblock %}

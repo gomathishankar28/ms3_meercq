@@ -146,7 +146,7 @@ def carpenters():
     all_companies = [contact["company_name"] for contact in contacts]
     no_review_companies = list(set(all_companies) - set(review_companies))
     return render_template(
-        "carpenters.html", contacts=carpenter_contacts, count=len(carpenter_contacts), reviews=reviews, ratings=ratings, review_companies=review_companies, no_review_companies=no_review_companies) 
+        "service1.html", contacts=carpenter_contacts, count=len(carpenter_contacts), reviews=reviews, ratings=ratings, review_companies=review_companies, no_review_companies=no_review_companies) 
 
 
 @app.route("/plumbers")
@@ -333,6 +333,7 @@ def edit_contact(contact_id):
         parts = urlparse(full_url)
         path =  "/{}".format(request.form.get("service_type"))
         baseurl = "{}://{}{}".format(parts.scheme, parts.netloc, path)
+        img_upload = upload(request.files['file'])
         edited_contact = {
             "service_type": request.form.get("service_type"),
             "company_name": request.form.get("company_name"),
@@ -340,7 +341,8 @@ def edit_contact(contact_id):
             "email": request.form.get("email"),
             "address": request.form.get("address"),
             "url": request.form.get("url"), 
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "company_image": img_upload["secure_url"]
         }
         mongo.db.contacts.update({"_id": ObjectId(contact_id)}, edited_contact)
         flash("contact Successfully Updated")

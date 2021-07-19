@@ -1,5 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+
+/*------------Generic styles----------------*/
 body {
 	display: flex;
 	min-height: 100vh;
@@ -21,11 +23,29 @@ main {
 .input-field>label {
     color: #d1d1d1;
 }
-
+/*------------navbar styles----------------*/
 .navbg,
 .formbg {
 	background-color: #426f9d;
 }
+
+.navtext {
+	color: black;
+}
+
+nav .brand-logo {
+	padding-left: 5px;
+	font-size: xxx-large;
+}
+
+.navdropdown {
+	background-color: rgb(66, 111, 157) !important;
+	overflow-x: hidden;
+	line-height: 55px;
+	margin-top: -5px;
+}
+
+/*------------Footer styles-------------------*/
 .footer_bg {
 	background-color: #dedee0;
 }
@@ -51,21 +71,7 @@ main {
     -webkit-transition: all 0.35s ease-in-out;
     -o-transition: all 0.35s ease-in-out;
 }
-.navtext {
-	color: black;
-}
 
-nav .brand-logo {
-	padding-left: 5px;
-	font-size: xxx-large;
-}
-
-.navdropdown {
-	background-color: rgb(66, 111, 157) !important;
-	overflow-x: hidden;
-	line-height: 55px;
-	margin-top: -5px;
-}
 .service-icon {
 	margin-top: 10px;
 }
@@ -214,6 +220,11 @@ h2 {
 	font-weight: 500;
 	text-decoration: none;
 	margin-left: -15px;
+}
+.file-upload {
+    padding: 5px;
+    margin-right: 30px;
+    margin-left: 30px;
 }
 
 .card {
