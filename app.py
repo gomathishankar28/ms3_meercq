@@ -146,7 +146,7 @@ def carpenters():
     all_companies = [contact["company_name"] for contact in contacts]
     no_review_companies = list(set(all_companies) - set(review_companies))
     return render_template(
-        "service1.html", contacts=carpenter_contacts, count=len(carpenter_contacts), reviews=reviews, ratings=ratings, review_companies=review_companies, no_review_companies=no_review_companies) 
+        "carpenters.html", contacts=carpenter_contacts, count=len(carpenter_contacts), reviews=reviews, ratings=ratings, review_companies=review_companies, no_review_companies=no_review_companies) 
 
 
 @app.route("/plumbers")
@@ -311,6 +311,7 @@ def add_contact():
             "url": ((request.form.get("url") if(request.form.get("url")) else "N/A")),
 	        "address": ((request.form.get("address") if(request.form.get("address")) else "N/A")),
             "created_by": session["user"],
+            "created_date": datetime.now().strftime("%b %d %Y"),
             "company_image": img_upload["secure_url"]
             }
             mongo.db.contacts.insert_one(contact)

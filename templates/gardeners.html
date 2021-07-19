@@ -3,7 +3,7 @@
     <div class="container services-container">
     	<div class="row services-header">
         	<div class = "col s12 center-align">
-            		<h2 class="center-align"> Gardeners </h2>
+            		<h2 class="center-align">Gardeners</h2>
             		<h5 class="center-align"> Available contacts: {{ count }} </h5>
             		{% if session["user"] %}
                 		<a class="waves-effect waves-light btn medium black-text" href="{{ url_for('add_contact') }}"><strong>Add New Contact</strong></a>
@@ -12,24 +12,38 @@
     	</div>
     	<div class="row contacts">
             {% for contact in contacts %}
-                <div class="col s12 m12 l4 fcard">
+                <div class="col s12 m12 l6 xl4 fcard">
                     <div class="card small">
-                        <div class="card-content white-text">
-                            <span class="card-title center-align"><strong>{{ contact.company_name }}</strong></span>
+                        <div class="row">
+                            <div class="col s12 m6 center-align">
+                                <img src="{{ contact.company_image}}" class="company_image">
+                            </div>
+                            <div class="col s12 m6">
+                                <p class="card-title center-align"><strong>{{ contact.company_name }}</strong></p>
                             {% if contact.company_name in review_companies %}
                                 {% for rating in ratings %}
                                     {% if rating["_id"]==contact.company_name %}
                                         <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">{{ rating["avgRating"] }}</strong></p>
+                                        <p class="center-align">created:&nbsp;&nbsp;{{ contact.created_date }}</p>   
                                     {% endif %}
                                 {% endfor %}
                             {% elif contact.company_name in no_review_companies %}
                                 <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating noavg">N/A</strong></p>
                             {% endif %}
+                            </div>
+                        </div>
+                        
+                        <div class="card-content white-text">
+                            <div class = "row">
+                                
+                                <div class="col s12">
                             <p><i class="fas fa-phone-alt contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.mobile }} </p>
                             <p><i class="fas fa-envelope-square contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.email }}</p>
                             <p><i class="fas fa-globe-europe contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.url }}</p>
                             <p><i class="fas fa-map-marker-alt contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.address }}</p>
                         </div>
+                    </div>
+                    </div>
                         <div class="card-action center-align">
                             <div class="row">
                         	{% if session["user"] %}
@@ -78,20 +92,23 @@
                                             </div>
                                         </div>
                                         <div class="row review-row">
-                                            <div class="col s12">
+                                            <div class="col s8">
                                                 <p>{{ review.date }}</p>
                                             </div>
-                                            <div class="col s12">
-                                                <p class="white-text review-comments">{{ review.comments}}</p>
-                                            </div>
-                                            <div class="col s12 right-align">
+                                            <div class="col s4 right-align">
                                                 {% if session["user"] %}
                                                     {% if session["user"]==review.created_by %}
-                                                        <a class="waves-effect waves-light btn small tooltipped" data-position="top" data-tooltip="Delete review"  
+                                                        <a class="waves-effect waves-light btn small tooltipped del_review" data-position="top" data-tooltip="Delete review"  
                                                         href="{{ url_for('delete_review', review_id=review._id) }}"><i class="fas fa-trash-alt"></i></a>
                                                     {% endif %}
                                                 {% endif %}
                                             </div>
+                                        </div>
+                                        <div class="row review-row">
+                                            <div class="col s12">
+                                                <p class="white-text review-comments">{{ review.comments}}</p>
+                                            </div>
+                                            
                                         </div>
                                         <div class="row divider"></div>
                                     {% endif %}
