@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col s12">
         
-        <form class="col s12" method="POST" action="{{ url_for('add_contact') }}">
+        <form enctype="multipart/form-data" class="col s12" method="POST" action="{{ url_for('add_contact') }}">
             <!-- service_type selection -->
             <div class="row">
                 <div class="input-field col s12">
@@ -28,6 +28,14 @@
                     <label for="comapany_name">Company Name</label>
                 </div>
             </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-images prefix white-tex"></i>
+                    
+                  <input class="file-upload" type="file" name="file" id="fileid" required>
+                  
+                </div>
+              </div>
              <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-phone-alt prefix white-text"></i>

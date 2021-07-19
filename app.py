@@ -1,12 +1,16 @@
 import os
 from flask import (
     Flask, flash, render_template,
-    redirect, request, session, url_for)
+    redirect, request, session, url_for, jsonify)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from pymongo.message import query
+from werkzeug.datastructures import FileStorage
 from urllib.parse import urlparse
 from datetime import datetime
+import cloudinary
+import cloudinary.uploader
 if os.path.exists("env.py"):
     import env
 
@@ -282,9 +286,17 @@ def cleaners():
         "cleaners.html", contacts=cleaner_contacts, count=len(cleaner_contacts), reviews=reviews, ratings=ratings, review_companies=review_companies, no_review_companies=no_review_companies)  
 
 
+def upload(file):
+    app.logger.info('in upload route')
+    cloudinary.config(cloud_name = os.getenv('CLOUD_NAME'), api_key=os.getenv('API_KEY'), 
+        api_secret=os.getenv('API_SECRET'))
+    return cloudinary.uploader.upload(file, width=200, height=160)
+
+
 @app.route("/add_contact", methods=["GET", "POST"])
 def add_contact():
     if request.method == "POST":  
+        img_upload = upload(request.files['file'])
         company_name = request.form.get("company_name")
         service_type = request.form.get("service_type")
         contacts = list(mongo.db.contacts.find(
@@ -298,7 +310,8 @@ def add_contact():
             "email": request.form.get("email"),
             "url": ((request.form.get("url") if(request.form.get("url")) else "N/A")),
 	        "address": ((request.form.get("address") if(request.form.get("address")) else "N/A")),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "company_image": img_upload["secure_url"]
             }
             mongo.db.contacts.insert_one(contact)
             full_url = request.referrer
