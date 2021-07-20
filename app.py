@@ -296,11 +296,11 @@ def upload(file):
 @app.route("/add_contact", methods=["GET", "POST"])
 def add_contact():
     if request.method == "POST":  
-        img_upload = upload(request.files['file'])
         company_name = request.form.get("company_name")
         service_type = request.form.get("service_type")
         contacts = list(mongo.db.contacts.find(
         {"service_type": service_type}))
+        img_upload = upload(request.files['file'])
         companies = [contact["company_name"] for contact in contacts]
         if company_name not in companies:
             contact = {
@@ -349,8 +349,13 @@ def edit_contact(contact_id):
         flash("contact Successfully Updated")
         return redirect(baseurl)
     contact = mongo.db.contacts.find_one({"_id": ObjectId(contact_id)})
+    print(contact)
     services = mongo.db.services.find().sort("service-type", 1)
-    return render_template("edit_contact.html", contact=contact, services=services)
+    old_image = urlparse(contact['company_image'])
+    filename = os.path.basename(old_image.path)
+    print(filename)
+    
+    return render_template("edit_contact.html", contact=contact, services=services, company_image=filename)
     
     
 @app.route("/delete_contact/<contact_id>")

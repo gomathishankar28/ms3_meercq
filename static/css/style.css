@@ -169,7 +169,7 @@ active,#navbar-items a {
 	margin-left: -15px;
 }
 /*------------hover effect on service image ------------*/
-.services {
+.service {
 	position: relative;
 	width: 100%;
   }
@@ -182,27 +182,15 @@ active,#navbar-items a {
 	backface-visibility: hidden;
 	margin-top: 15px;
 	margin-left: -20px;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
   }
-  
-  .middle {
-	transition: .5s ease;
-	opacity: 0;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	text-align: center;
+.image:hover {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
   }
-  
-  .image:hover {
-	opacity: 0.3;
-  }
-  
-  .services:hover .middle {
-	opacity: 1;
-  }
-  
   .text {
 	color: white;
 	font-size: 20px;
@@ -663,6 +651,7 @@ active,#navbar-items a {
 	.contacts {
 		margin-left: -110px!important;
 		margin-right: -110px!important;
+		padding-left: 30px;
 	}
 	.card.small {
 		width: 400px;
