@@ -334,7 +334,7 @@ def edit_contact(contact_id):
         parts = urlparse(full_url)
         path =  "/{}".format(request.form.get("service_type"))
         baseurl = "{}://{}{}".format(parts.scheme, parts.netloc, path)
-        img_upload = upload(request.files['file'])
+        contact = mongo.db.contacts.find_one({"_id": ObjectId(contact_id)})
         edited_contact = {
             "service_type": request.form.get("service_type"),
             "company_name": request.form.get("company_name"),
@@ -343,7 +343,8 @@ def edit_contact(contact_id):
             "address": request.form.get("address"),
             "url": request.form.get("url"), 
             "created_by": session["user"],
-            "company_image": img_upload["secure_url"]
+            "created_date": contact["created_date"],
+            "company_image": contact["company_image"]
         }
         mongo.db.contacts.update({"_id": ObjectId(contact_id)}, edited_contact)
         flash("contact Successfully Updated")
@@ -351,11 +352,7 @@ def edit_contact(contact_id):
     contact = mongo.db.contacts.find_one({"_id": ObjectId(contact_id)})
     print(contact)
     services = mongo.db.services.find().sort("service-type", 1)
-    old_image = urlparse(contact['company_image'])
-    filename = os.path.basename(old_image.path)
-    print(filename)
-    
-    return render_template("edit_contact.html", contact=contact, services=services, company_image=filename)
+    return render_template("edit_contact.html", contact=contact, services=services)
     
     
 @app.route("/delete_contact/<contact_id>")

@@ -642,7 +642,7 @@ active,#navbar-items a {
 		font-size: 30px!important;
 	}
 	.services {
-		margin-left: 100px;
+		margin-left: 150px;
 	}
 	
 	.fcard {
@@ -722,7 +722,9 @@ active,#navbar-items a {
 		font-size: 18px;
 		padding-left: 20px;
 	}
-	
+	.services {
+		margin-left: 200px;
+	}
 	.contacts {
 		margin-left: 0;
 		margin-right: 0;
@@ -755,5 +757,5 @@ active,#navbar-items a {
 	.review_icon {
 		margin-left: 200px;
 		margin-right: -50px!important;
-		}
+	}
 }
