@@ -5,7 +5,7 @@ carpenters, painters, gardeners, whitegoods and cleaners in Meerhoven in one pla
 is a platform where people can find the contact of a professional for all the chores at home without any hassle.
 **MeerCQ** is an educational project that serves as the **Milestone Project 3** for the **Full-Stack Software Developer programme** powered by **Code Institute**.
 
-## **Table of Contents**
+## Table of Contents
   - [Demo](#demo)
   - [Introduction](#introduction)
   - [UX](#ux)
@@ -24,11 +24,11 @@ is a platform where people can find the contact of a professional for all the ch
   - [Credits](#credits)
   - [Acknowledgements](#acknowledgements)
 
-## **Demo** 
+## Demo 
 
 
 
-# **Introduction**
+### Introduction
 
 MeerCQ gathers recommendations shared in public conversations on social media. It aims to create contact listings for
  recommended pros, so that the customers can easily see referrals from across social media, in one handy location.
@@ -43,7 +43,7 @@ The site enables the registered users to create, Read, Update and Delete (CRUD) 
 the user reviews for each contact, based on which the customers can choose a best contact professional from the list of available contacts.
 
 
-## **Business Goals**
+### Business Goals
 *   To target the expat community who are looking for handyman professionals for their home needs.
 
 *   To evince interest in customers who wants to find contacts for all home services in one place.
@@ -58,7 +58,7 @@ the user reviews for each contact, based on which the customers can choose a bes
 
 *   Clearly communicate the contact information for every company under each service type.
 
-## **user Goals**
+### user Goals
 
 As a customer, I would like 
 
@@ -70,7 +70,7 @@ As a customer, I would like
 
 *   To see the user reviews for each company,so that i can pick the best choice up. 
 
-##  **User stories**
+##  User stories
 *   As a prospective customer to the website, I want to easily navigate the site, so that I can easily find the details about MeerCQ so that I am assured about their service.
 
 *   As a prospective customer to the website, I want to precisely know what services are offered so that I have enough information to avail their service.
@@ -122,7 +122,7 @@ As a customer, I would like
 *   As an administrator, I would like to have field level validations on the contact entry so that incorrect or incomplete information is avoided.
  
 
-## **UX**
+## UX
 ### Ideal client
 #### The ideal client for this business is:
 *   Residing in the Netherlands.
@@ -140,14 +140,14 @@ As a customer, I would like
 #### This Website is the best way to help the user and the owner because:
 Be it any place , for an expat, finding a handyman professional for any service is extremely difficult as people are not aware about reliable contacts. All they could do is search in google for any available contact. Currently this is being done via watsapp where the expat community in neighbourhood form a group and then share contacts when there is a need. This website will serve as a single point of reference for all the home needs.
 
-## **Strategy**
+### Strategy
 Build brand awareness for a directory of handyman contacts in the neighbourhood
 Through this website , clearly communicate the services for which contacts are available
 Provide an easy option for users to quickly look for a contact for a particular service
 Maintain all contact information in one place.
 Aim to increase the number of reliable contacts for different services based on customer reviews.
 
-## **Scope**
+### Scope
 **Functional requirements:**
 *   A Navigation bar to guide the user experience across the website;
 *   An About section to tell what MeerCQ is all about and list of services for which contact are available.
@@ -167,7 +167,7 @@ Aim to increase the number of reliable contacts for different services based on 
 *   An collapsible to display user reviews.
 *   Buttons to Add, edit and delete contacts.
 
-## **Structure**
+### Structure
 
 The website was designed to deliver an intuitive experience with a consistent information flow.
 
@@ -179,7 +179,7 @@ The interface responds to the user actions as expected. The scroll behavior is s
 
 The content is organized and segregated into sections from top to bottom. The navigation bar is also categorized accordingly.
 
-## **Skeleton**
+### Skeleton
 
 **Wireframe mockups**
 
@@ -202,12 +202,6 @@ Wireframe mockups for Home, Login, Register, Add New Contact, Edit Contact, Add 
 
 * The site contains **four** collections which are stored in MongoDB. The **users** collection stores the user's username and password which enables the user to create an account and have a profile page. The **services** collection stores all the different type of services that it provides contacts for.The **contacts** collection that stores all the contact details for a company like service type, mobile number, email, website, address etc. The **Reviews** section stores the rating, user comments for each company name.
 
-
-### Sitemap
-* The sitemap was created using [Balsamiq wireframes](https://balsamiq.com/)
-
-* A link to the [Sitemap can be found here](assets/documentation/wireframes/MS3-sitemap-wireframe.pdf)
-
 ## **Surface**
 
 **Colors**
@@ -229,17 +223,20 @@ All images have been resized and compressed in order to boost the UX flow.
 
 Icons like plus, pen,star, comments, back arrow have been used throughout the website to improve the efficiency of UX.
 
-## **Features**
+## Features
 Each page in the website features a responsive navigation bar on the right with conventional placing of Brand Name on the top left. Each page has a very simple footer with just the copyright information.
 
-### **Home**
+**Home**
+
 The Home page features 2 sections areas apart from the header and footer.
 
 
 **Hero image with qucik search bar**
+
 This is the  first section (call out section)- which features a handyman professional with the tools. Upon which is placed a "Call out text" describing the purpose of the website. It also features a search bar that enables the user to quickly find a contact for a service.
 
 **About**
+
 This is second section of the Home page. This section elaborates the purpose  and the uses of this website. It also higlights the services for which the contacts are available.
 
 ### **Services**
@@ -257,16 +254,19 @@ This page displays the following:
 
 ***User Reviews*** To view th rating and user comments added by users against each company.
 
-### **Login**
+**Login**
+
 This page is used for the registered users to login and thereby perform operations like adding new contact, editing existing contact, deleting a contact(only for admin user), adding user reviews etc. This page contains a form with 2 input fields 1. username and 2. password. It also has a link to "Register" page for New users to register
 
 
-### **Register**
+**Register**
+
 This page is used for first time users or new users who wish to register themselves. It contains a form with 3 input fields such as username, password and email. It also provides a link to Login to enable the user to login once they are registered.
 
 
 ### **Footer**
-The footer displays the copyright information 
+
+The footer displays the copyright information and social media links 
 
 ##  **Existing Features**
 
@@ -317,6 +317,8 @@ The footer displays the copyright information
     - MongoDB Atlas was used as the database for the creation of this project.
 - [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
     - Jinja was used for templating.
+- [Cloudinary API](https://cloudinary.com/blog/creating_an_api_with_python_flask_to_upload_files_to_cloudinary)
+    - for uploading company_images
 - [Balsamiq](https://balsamiq.com/)
     - The wireframes and sitemap for this project were created using Balsamiq.
  -[Freeformatter- CSS beautifier](https://www.freeformatter.com/css-beautifier.html)
@@ -354,15 +356,15 @@ The footer displays the copyright information
 
 
 
-## **Testing**
+## Testing
 Testing information can be found here in the separate [TESTING.md file](/workspace/ms3_meercq/testing.md)
 
-## **Deployment**
+## Deployment
 This project was developed using [Gitpod IDE](https://gitpod.io) and pushed to Github using the in-built terminal. However, because Github can only host static websites it was necessary to deploy this project to Heroku because it is a compatible hosting platform for a back-end focused site like MeerCQ. 
 
 This project was deployed using Heroku and stored in GitHub.
 
-### **3 steps to be done in workspace before deploying**
+### 3 steps to be done in workspace before deploying
 Before deploying the website to Heroku, the following three must be followed to allow the app to work in Heroku:
 
 1. Create requirements.txt file that contains the names of packages being used in Python. It is important to update this file if other packages or modules are installed during project development by using the following command:
@@ -373,7 +375,8 @@ Before deploying the website to Heroku, the following three must be followed to 
 
         web: python app.py
 
- Make sure Procfile does not have any blank line follwing the above line when it is created.
+    Make sure Procfile does not have any blank line follwing the above line when it is created.
+
 
 3. Push these files to GitHub.
 Once those steps are done, the website can be deployed in Heroku using the steps listed below:
@@ -469,6 +472,8 @@ Once the project been loaded into the IDE it is necessary to install the necessa
     * [stackoverflow](https://stackoverflow.com/) for aggregate and $round function to calculate average rating in pymongo
 
     * [Githubgist](https://gist.github.com/) as reference for collapsible menu on side nav.
+
+    * [Cloudinary](https://cloudinary.com/blog/creating_an_api_with_python_flask_to_upload_files_to_cloudinary) as a reference to upload company images on add_contact form.
 
     * [code Institute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+IFD101+2017_T3/courseware/03d3f6524ad249d9b33e3336d156dfd0/3b2af8636ea54a4d9dc45126f7498633/) for login, register and delete views.
 

@@ -24,12 +24,13 @@
                                 {% for rating in ratings %}
                                     {% if rating["_id"]==contact.company_name %}
                                         <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">{{ rating["avgRating"] }}</strong></p>
-                                        <p class="center-align">created:&nbsp;&nbsp;{{ contact.created_date }}</p>   
+                                        
                                     {% endif %}
                                 {% endfor %}
                             {% elif contact.company_name in no_review_companies %}
                                 <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating noavg">N/A</strong></p>
                             {% endif %}
+                            <p class="center-align">created:&nbsp;&nbsp;{{ contact.created_date }}</p>   
                             </div>
                         </div>
                         
