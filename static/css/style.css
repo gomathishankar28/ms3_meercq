@@ -453,7 +453,7 @@ active,#navbar-items a {
 	.try_again {
 		
 		position: absolute;
-		top: 35%;
+		top: 50%;
 	}
 	.login-btn, .register-btn {
     	margin-left: 90px!important;
@@ -588,9 +588,10 @@ active,#navbar-items a {
 	.add_review {
 		margin-left: 50px;
 	}
-	.try_again a {
-		top: -200px!important;
-    	position: relative;
+	
+	.try_again {
+		position: absolute;
+		top: 45%;
 	}
 	.review_icon {
 		margin-left: 400px;
@@ -666,9 +667,9 @@ active,#navbar-items a {
 	.add_review {
 		margin-left: 150px;
 	}
-	.try_again a{
-		top: -400px!important;
-    	position: relative;
+	.try_again {
+		position: absolute;
+		top: 40%;
 	}
 	.image {
 		margin-left: 0;
@@ -717,6 +718,10 @@ active,#navbar-items a {
 		font-size: 18px;
 		width: calc(100% - 300px);
 	}
+	.try_again {
+		position: absolute;
+		top: 35%;
+	}
 	::-webkit-input-placeholder {
 		color: white;
 		font-size: 18px;
@@ -729,11 +734,12 @@ active,#navbar-items a {
 		margin-left: 0;
 		margin-right: 0;
 	}
+	
 	.card.small {
-		width: 400px;
+		width: 390px;
 	}
 	.reviews {
-		width: 400px;
+		width: 390px;
 	}
 	.add_contact,
 	.edit_contact,
@@ -743,10 +749,7 @@ active,#navbar-items a {
 	.add_contact {
 	margin-left: 200px;
 	}
-	.try_again a {
-		top: -700px!important;
-    	position: relative;
-	}
+	
 	.image {
 		margin-left: 5px;
 	}

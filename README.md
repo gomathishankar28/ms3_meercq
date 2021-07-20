@@ -25,8 +25,9 @@ is a platform where people can find the contact of a professional for all the ch
   - [Acknowledgements](#acknowledgements)
 
 ## Demo 
+[Live Website](https://meercq.herokuapp.com/)
 
-
+![AmIResponsive](https:/workspace/ms3_meercq/static/images/readme/amiresponsive.jpg?raw=true)
 
 ### Introduction
 
@@ -242,7 +243,7 @@ This is second section of the Home page. This section elaborates the purpose  an
 ### **Services**
 This page displays the following:
 
-***Cards*** for each company containing  information such as Average Rating,company name, mobile number, address, email, website if any etc. based on one of the 7 services chosen. 
+***Cards*** for each company containing  information such as Average Rating, company name, created date, mobile number, address, email, website if any etc. based on one of the 7 services chosen. 
 
 ***Add New Contact*** Button to enable registered users to add new contact under a service.
 
@@ -252,7 +253,7 @@ This page displays the following:
 
 ***Add Review***Button to enable registered users to give rating and comments for a company based on their experience with that contact.
 
-***User Reviews*** To view th rating and user comments added by users against each company.
+***User Reviews*** To view the rating and user comments added by users along with the timestamp against each company.
 
 **Login**
 
@@ -354,7 +355,50 @@ The footer displays the copyright information and social media links
 - [StlitsIreland](https://stiltsireland.net)- for Whitegoods image.
 - [Econations](https://eco-nations.com)- for No results found image.
 
+## Cloudinary API
 
+1. Create an account by clicking on sign up for free account on [Cloudinary](https://cloudinary.com/)
+2. While creating an account using email and password., Make sure to edit the Cloud name of your choice.
+3. Authorize the verification email from cloudinary.
+4. clicking on Configure SDK  button gives the values of the environmental variables like cloud_name, api_key, api_secret_key.
+5. login to Gitpod workspace.
+6. Set default for all the environmental variables.Also make sure to add them to Heroku(under settings->reveal config vars) as well.
+7. Install cloudinary using the below command.
+
+        pip3 install cloudinary.
+        pip3 freeze --local > requirements.txt
+8. Make sure to import the following packages
+
+        from werkzeug.datastructures import FileStorage
+        import cloudinary
+        import cloudinary.uploader
+9.  Add  the following attribute to the form element having the input file class 
+
+        <form enctype="multipart/form-data" class="col s12" method="POST" action="{{ url_for('add_contact') }}">
+
+10. Add the following input element through which file upload can be done.
+
+        <div class="input-field col s12">
+                    <i class="fas fa-images prefix white-tex"></i>
+                    <input class="file-upload" type="file" name="file" id="fileid" class="validate" required>
+                  </div>
+11. Add the following code to app.py
+
+            def upload(file):
+                app.logger.info('in upload route')
+                cloudinary.config(cloud_name = os.getenv('CLOUD_NAME'), api_key=os.getenv('API_KEY'), 
+                api_secret=os.getenv('API_SECRET'))
+            return cloudinary.uploader.upload(file, width=200, height=160)
+
+12. To the form that is being submitted  with the file. add the code below.
+
+            def add_contact():
+                 if request.method == "POST":  
+                    img_upload = upload(request.files['file'])
+                    contact = {
+                        "company_image": img_upload["secure_url"]
+                    }
+                    mongo.db.contacts.insert_one(contact)
 
 ## Testing
 Testing information can be found here in the separate [TESTING.md file](/workspace/ms3_meercq/testing.md)
