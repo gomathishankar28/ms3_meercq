@@ -27,7 +27,7 @@ is a platform where people can find the contact of a professional for all the ch
 ## Demo 
 [Live Website](https://meercq.herokuapp.com/)
 
-![AmIResponsive](https:/workspace/ms3_meercq/static/images/readme/amiresponsive.jpg?raw=true)
+![AmIResponsive](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/readme/amiresponsive.jpg?raw=true)
 
 ### Introduction
 
@@ -189,7 +189,7 @@ Please find attached Wireframe for Home page , place order form and acknowledgem
 **Wirefame mockups**
 Wireframe mockups for Home, Login, Register, Add New Contact, Edit Contact, Add Review for small, meidium and Large screens have been given below.
 
-[SMALL screen](/workspace/ms3_meercq/static/images/wireframes/Small.pdf)
+[SMALL screen](https:/workspace/ms3_meercq/static/images/wireframes/Small.pdf)
 
 [MEDIUM screen](/workspace/ms3_meercq/static/images/wireframes/Medium.pdf)
 
