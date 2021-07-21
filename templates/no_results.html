@@ -1,17 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
+    <img class="materialboxed" width="100%" height="800px" src="static/images/search/noresults.png" alt="maginifier pic">
 
-        <img class="materialboxed" width="100%" height="800px" src="static/images/search/noresults.png" alt="maginifier pic">
+        <!-- Message to say No results found -->
         <div class="row">
             <div class="col s12 no_results">
                 <h4 class="center-align">Sorry, We could not find any matching results for your search.</h4>
             </div>
         </div>
+
+        <!-- Try again Button -->
         <div class="row">
             <div class="col s12 try_again">
                 <a class="waves-effect waves-light btn medium red accent-4 white-text" href="{{ url_for('home') }}"><strong>Try again</strong></a>
                </button>
             </div>
         </div>
-    
 {% endblock %}

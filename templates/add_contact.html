@@ -1,42 +1,44 @@
 {% extends "base.html" %}
 {% block content %}  
-<div class="container add_contact">
-    <h4 class="center-align">Add New contact</h4>
-    <div class="row">
-        <div class="col s12">
-        
-        <form enctype="multipart/form-data" class="col s12" method="POST" action="{{ url_for('add_contact') }}">
-            <!-- service_type selection -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-folder-open prefix white-text"></i>
-                    <select id="service_type" name="service_type" class="validate" required>
-                        <option value="" disabled selected>Choose a Service</option>
-                        {% for service in services %}
-                            <option value="{{ service.service_type }}">{{ service.service_type }}</option>
-                        {% endfor %}
-                    </select>
+    <div class="container add_contact">
+        <h4 class="center-align">Add New contact</h4>
+        <div class="row">
+            <div class="col s12">
+                <form enctype="multipart/form-data" class="col s12" method="POST" action="{{ url_for('add_contact') }}">
+
+                <!-- service_type selection -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-folder-open prefix white-text"></i>
+                        <select id="service_type" name="service_type" class="validate" required>
+                            <option value="" disabled selected>Choose a Service</option>
+                            {% for service in services %}
+                                <option value="{{ service.service_type }}">{{ service.service_type }}</option>
+                            {% endfor %}
+                        </select>
                     <label for="service_type">Service Type</label>
                 </div>
             </div>
-            <!-- task name -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-building prefix white-text"></i>
-                    <input id="company_name" name="company_name" minlength="5" maxlength="50" type="text" class="validate"
+
+                <!-- company name -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-building prefix white-text"></i>
+                        <input id="company_name" name="company_name" minlength="5" maxlength="50" type="text" class="validate"
                         required>
-                    <label for="comapany_name">Company Name</label>
+                        <label for="comapany_name">Company Name</label>
+                    </div>
                 </div>
-            </div>
-             <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-phone-alt prefix white-text"></i>
-                    <input id="mobile" name="mobile" type="number" pattern="/(+316){4}\d{8}" minlength="12" maxlength="12" class="validate"
-                    placeholder="eg:+31687241357" required>
-                    <label for="mobile">Contact Number</label>
-                    
+
+                <!-- Mobile number -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-phone-alt prefix white-text"></i>
+                        <input id="mobile" name="mobile" type="number" pattern="/(+316){4}\d{8}" minlength="12" maxlength="12" class="validate"
+                        placeholder="eg:+31687241357" required>
+                        <label for="mobile">Contact Number</label>
+                    </div>
                 </div>
-            </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-envelope-square prefix white-text"></i>
