@@ -27,7 +27,7 @@ is a platform where people can find the contact of a professional for all the ch
 ## Demo 
 [Live Website](https://meercq.herokuapp.com/)
 
-![AmIResponsive](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/readme/amiresponsive.jpg?raw=true)
+![AmIResponsive](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/readme/amiresponsives.jpg?raw=true)
 
 ### Introduction
 
@@ -189,17 +189,18 @@ Please find attached Wireframe for Home page , place order form and acknowledgem
 **Wirefame mockups**
 Wireframe mockups for Home, Login, Register, Add New Contact, Edit Contact, Add Review for small, meidium and Large screens have been given below.
 
-[SMALL screen](https:/workspace/ms3_meercq/static/images/wireframes/Small.pdf)
+[SMALL screen](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/wireframes/Small.pdf)
 
-[MEDIUM screen](/workspace/ms3_meercq/static/images/wireframes/Medium.pdf)
+[MEDIUM screen](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/wireframes/Medium.pdf)
 
-[LARGE screen](/workspace/ms3_meercq/static/images/wireframes/Large.pdf)
+[LARGE screen](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/wireframes/Large.pdf)
 
 
 
 ### Database Schema
 
-<img src="static/images/readme/dbschema.png" width="900" height="300" alt="database schema">
+![Database Schema](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/readme/database_schema.jpg?raw=true)
+
 
 * The site contains **four** collections which are stored in MongoDB. The **users** collection stores the user's username and password which enables the user to create an account and have a profile page. The **services** collection stores all the different type of services that it provides contacts for.The **contacts** collection that stores all the contact details for a company like service type, mobile number, email, website, address etc. The **Reviews** section stores the rating, user comments for each company name.
 
