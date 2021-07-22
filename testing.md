@@ -46,7 +46,7 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
 
    1. Warnings for variables with let or const declaration according to ECMAScript 6 features
 
-         Fixed by adding /*jshint esversion: 6 */ at the top of every js file.
+              Fixed by adding /*jshint esversion: 6 */ at the top of every js file.
 
 ## **User Stories Testing**
 

@@ -46,98 +46,88 @@
 
     <!-- About Section -->
     <section id="about-section">
-                <div class="row">
-                    <h2 class="center-align about">About us</h2>
-                    <p> MeerCQ is the place to reach for every problem in and around the house. As the name suggests,
-                        a resident of Meerhoven can seek this site for finding easy referrals for various services in
-                        one handy location. We gather contacts for various services from neighbours of meerhoven who 
-                        already had some good service rendered by them. That way we ensure only good and reliable 
-                        contacts for various services are listed.This site serves as a central repository for 
-                        sharing all the handyman contacts in the neighbourhood.
-                    </p>
-                    <p> We have contacts listed for most common handyman services such an electricians, plumbers, painters,
-                        Carpenters,Gardeners,whitegoods and Cleaners.
-                    </p>
-                </div>
-            <div class="services">
-                <div class="row">
-                    <div class="col s12 m4 l3 services">
-                        <div class="service">
-                            <a href="{{url_for('plumbers')}}">
-                                <img src="../static/images/services/electrician.jpg"
-                                    class="circle responsive-img image" alt="electrician pic">
-                                <div class="center-align text">Electricians</div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col s12 m4 l3 services">
-                        <div class="service">
-                            <a href="{{url_for('plumbers')}}">
-                                <img src="../static/images/services/plumber.jpg"
-                                    class="circle responsive-img image" alt="plumber pic">
-                                    
-                                        <div class="center-align text">Plumbers</div>
-                                   
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col s12 m4 l3 services">
-                        <div class="service">
-                            <a href="{{url_for('painters')}}"><img src="../static/images/services/painter.jpg"
-                                    class="circle responsive-img image" alt="painter pic">
-                                    
-                                        <div class="center-align text">Painters</div>
-                                       
-                            </a>
-                        </div>
+        <div class="row">
+            <h2 class="center-align about">About us</h2>
+            <p> MeerCQ is the place to reach for every problem in and around the house. As the name suggests,
+                a resident of Meerhoven can seek this site for finding easy referrals for various services in
+                one handy location. We gather contacts for various services from neighbours of meerhoven who 
+                already had some good service rendered by them. That way we ensure only good and reliable 
+                contacts for various services are listed.This site serves as a central repository for 
+                sharing all the handyman contacts in the neighbourhood.
+            </p>
+            <p> We have contacts listed for most common handyman services such an electricians, plumbers, painters,
+                Carpenters,Gardeners,whitegoods and Cleaners.
+            </p>
+        </div>
+        <div class="services">
+            <div class="row">
+                <div class="col s12 m4 l3 services">
+                    <div class="service">
+                        <a href="{{url_for('plumbers')}}">
+                            <img src="../static/images/services/electrician.jpg"
+                                 class="circle responsive-img image" alt="electrician pic">
+                            <div class="center-align text">Electricians</div>
+                        </a>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col s12 m4 l3 services">
-                        <div class="service">
-                            <a href="{{ url_for('carpenters') }}"><img src="../static/images/services/carpenter.jpg"
-                                    class="circle responsive-img image" alt="carpenter pic">
-                                    
-                                        <div class="center-align text">Carpenters</div>
-                                      
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col s12 m4 l3 services">
-                        <div class="service">
-                            <a href="{{url_for('gardeners')}}"><img src="../static/images/services/gardener.jpg"
-                                    class="circle responsive-img image" alt="garden pic">
-                                    
-                                        <div class="center-align text">Gardeners</div>
-                                        
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col s12 m4 l3 services">
-                        <div class="service">
-                            <a href="{{url_for('whitegoods')}}"><img src="../static/images/services/whitegoods.jpg"
-                                    class="circle responsive-img image" alt="dishwasher service guy pic">
-                                    
-                                        <div class="center-align text">Whitegoods</div>
-                                      
-                            </a>
-                        </div>
+                <div class="col s12 m4 l3 services">
+                    <div class="service">
+                        <a href="{{url_for('plumbers')}}">
+                            <img src="../static/images/services/plumber.jpg"
+                                class="circle responsive-img image" alt="plumber pic">
+                            <div class="center-align text">Plumbers</div>
+                        </a>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col s12 m4 l3 services"></div>
-                    <div class="col s12 m4 l3 services">
-                        <div class="service">
-                            <a href="{{url_for('cleaners')}}"><img src="../static/images/services/cleaner.jpg"
-                                    class="circle responsive-img image" alt="cleaner pic">
-                                    
-                                        <div class="center-align text">Cleaners</div>
-                                    
-                            </a>
-                        </div>
+                <div class="col s12 m4 l3 services">
+                    <div class="service">
+                        <a href="{{url_for('painters')}}"><img src="../static/images/services/painter.jpg"
+                            class="circle responsive-img image" alt="painter pic">
+                            <div class="center-align text">Painters</div>
+                        </a>
                     </div>
-                    <div class="col s12 m4 l3 services"></div>
                 </div>
             </div>
-            </section>
+            <div class="row">
+                <div class="col s12 m4 l3 services">
+                    <div class="service">
+                        <a href="{{ url_for('carpenters') }}"><img src="../static/images/services/carpenter.jpg"
+                            class="circle responsive-img image" alt="carpenter pic">
+                            <div class="center-align text">Carpenters</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m4 l3 services">
+                    <div class="service">
+                        <a href="{{url_for('gardeners')}}"><img src="../static/images/services/gardener.jpg"
+                            class="circle responsive-img image" alt="garden pic">
+                            <div class="center-align text">Gardeners</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m4 l3 services">
+                    <div class="service">
+                        <a href="{{url_for('whitegoods')}}"><img src="../static/images/services/whitegoods.jpg"
+                            class="circle responsive-img image" alt="dishwasher service guy pic">
+                            <div class="center-align text">Whitegoods</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m4 l3 services"></div>
+                <div class="col s12 m4 l3 services">
+                    <div class="service">
+                        <a href="{{url_for('cleaners')}}"><img src="../static/images/services/cleaner.jpg"
+                            class="circle responsive-img image" alt="cleaner pic">
+                            <div class="center-align text">Cleaners</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m4 l3 services"></div>
+            </div>
+        </div>
+    </section>
+    <!-- End of About Section -->
+
 {% endblock %}

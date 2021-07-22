@@ -23,7 +23,7 @@
 <body>
 
     <header>
-        <!-- top navbar -->
+        <!-- services drpdown menu on navbar -->
         <ul id="dropdown1" class="dropdown-content black black-text navdropdown">
             <li><a href="{{ url_for('electricians') }}">Electricians</a></li>
             <li class="divider"></li>
@@ -39,7 +39,9 @@
             <li class="divider"></li>
             <li><a href="{{ url_for('cleaners') }}">Cleaners</a></li>
         </ul>
+
         <div class="navbar-fixed">
+        <!-- top navbar -->
 		<nav>
 			<div class="nav-wrapper navbg navtext">
 				<a href="{{ url_for('home') }}" class="brand-logo">MeerCQ</a>
@@ -114,51 +116,54 @@
     {% block content %}
 
     {% endblock %}
-</main>
+    </main>
      
-<footer class="page-footer footer_bg">
-    <div class="container footer_bg">
-      <div class="row">
-        <div class="col s12 l4">
-          <h5 class="copyright">@ 2021 copyright </h5>
-          
+    <footer class="page-footer footer_bg">
+        <div class="container footer_bg">
+            <div class="row">
+            <div class="col s12 l4">
+                <h5 class="copyright">@ 2021 copyright </h5>
+            </div>
+            <div class="col s12 l4">
+                <h5 class="center-align meercq"> MeercQ</h5>
+            </div>
+            <!-- Social media links -->
+            <div class="col s12 l4">
+                <p class="center-align">
+                    <span>
+                        <a target="_blank" href="https://www.instagram.com/">
+                        <i class="fab fa-instagram links" aria-hidden="true"></i>
+                        <span class="sr-only">Instagram</span></a>
+                    </span>
+                    <span>
+                        <a target="_blank" href="https://www.facebook.com/">
+                        <i class="fab fa-facebook-f links" aria-hidden="true"></i>
+                        <span class="sr-only">Facebook</span></a>
+                    </span>
+                    <span>
+                        <a target="_blank" href="https://www.twitter.com/">
+                        <i class="fab fa-twitter links" aria-hidden="true"></i>
+                        <span class="sr-only">Twitter</span></a>
+                    </span>
+                    <span>
+                        <a target="_blank" href="https://www.linkedin.com/">
+                        <i class="fab fa-linkedin links" aria-hidden="true"></i>
+                        <span class="sr-only">Linkedin</span></a>
+                    </span>
+                </p>
+            </div>
+            </div>
         </div>
-        <div class="col s12 l4">
-            <h5 class="center-align meercq"> MeercQ</h5>
-        </div>
-        <div class="col s12 l4">
-          
-          <p class="center-align">
-            <span><a target="_blank" href="https://www.instagram.com/">
-                <i class="fab fa-instagram links" aria-hidden="true"></i>
-                    <span class="sr-only">Instagram</span>
-            </a></span>
-            <span><a target="_blank" href="https://www.facebook.com/">
-                <i class="fab fa-facebook-f links" aria-hidden="true"></i>
-                    <span class="sr-only">Facebook</span>
-            </a></span>
-            <span><a target="_blank" href="https://www.twitter.com/">
-                <i class="fab fa-twitter links" aria-hidden="true"></i>
-                    <span class="sr-only">Twitter</span>
-            </a></span>
-            <span><a target="_blank" href="https://www.linkedin.com/">
-                <i class="fab fa-linkedin links" aria-hidden="true"></i>
-                    <span class="sr-only">Linkedin</span>
-            </a></span>
-        </p>
-        </div>
-      </div>
-    </div>
     </footer>
     
     
     <!-- script for jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
 
-  <!-- script for materialize CDN -->
+    <!-- script for materialize CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-  <!-- custom script file -->
+    <!-- custom script file -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% block scripts %}
     {% endblock %}

@@ -3,11 +3,11 @@
     <div class="container services-container">
     	<div class="row services-header">
         	<div class = "col s12 center-align">
-            		<h2 class="center-align">Carpenters</h2>
-            		<h5 class="center-align"> Available contacts: {{ count }} </h5>
-            		{% if session["user"] %}
-                		<a class="waves-effect waves-light btn medium black-text" href="{{ url_for('add_contact') }}"><strong>Add New Contact</strong></a>
-            		{% endif %}
+            	<h2 class="center-align">Carpenters</h2>
+            	<h5 class="center-align"> Available contacts: {{ count }} </h5>
+            	{% if session["user"] %}
+                	<a class="waves-effect waves-light btn medium black-text" href="{{ url_for('add_contact') }}"><strong>Add New Contact</strong></a>
+            	{% endif %}
         	</div>
     	</div>
     	<div class="row contacts">
@@ -15,37 +15,38 @@
                 <div class="col s12 m12 l6 xl4 fcard">
                     <div class="card small">
                         <div class="row">
+
+                            <!-- To display company image -->
                             <div class="col s12 m6 center-align">
                                 <img src="{{ contact.company_image}}" class="company_image">
                             </div>
+                            <!-- To display Average rating -->
                             <div class="col s12 m6">
                                 <p class="card-title center-align"><strong>{{ contact.company_name }}</strong></p>
                             {% if contact.company_name in review_companies %}
                                 {% for rating in ratings %}
                                     {% if rating["_id"]==contact.company_name %}
                                         <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">{{ rating["avgRating"] }}</strong></p>
-                                          
                                     {% endif %}
                                 {% endfor %}
                             {% elif contact.company_name in no_review_companies %}
                                 <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating noavg">N/A</strong></p>
-                                 
                             {% endif %}
                             <p class="center-align">created:&nbsp;&nbsp;{{ contact.created_date }}</p> 
                             </div>
                         </div>
-                        
+                        <!-- To display contact details of the company -->
                         <div class="card-content white-text">
                             <div class = "row">
-                                
                                 <div class="col s12">
-                            <p><i class="fas fa-phone-alt contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.mobile }} </p>
-                            <p><i class="fas fa-envelope-square contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.email }}</p>
-                            <p><i class="fas fa-globe-europe contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.url }}</p>
-                            <p><i class="fas fa-map-marker-alt contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.address }}</p>
+                                    <p><i class="fas fa-phone-alt contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.mobile }} </p>
+                                    <p><i class="fas fa-envelope-square contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.email }}</p>
+                                    <p><i class="fas fa-globe-europe contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.url }}</p>
+                                    <p><i class="fas fa-map-marker-alt contact_icon"></i>&nbsp;&nbsp;&nbsp;{{ contact.address }}</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    </div>
+                        <!-- To display action buttons -->
                         <div class="card-action center-align">
                             <div class="row">
                         	{% if session["user"] %}
@@ -66,59 +67,51 @@
                         	{% endif %}
                             </div>
                         </div>
-                        
                     </div>
-                
+                    <!-- To display user Reviews -->
                     <div class="reviews">
-                        
                         <ul class="collapsible">
-                            
-                                <li>
+                            <li>
 	                            <div class="collapsible-header white-text"><h5>User Reviews</h5><i class="fas fa-caret-down review_icon"></i></div>
 		                        <div class="collapsible-body">
                                     {% for review in reviews %}
-                                    {% if review.company_name==contact.company_name %}
-                                        <div class="row review-row">
-                                            <div class="col s2">
-                                                <i class="fas fa-user"></i>
+                                        {% if review.company_name==contact.company_name %}
+                                            <div class="row review-row">
+                                                <div class="col s2">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                                <div class="col s3 review_user">
+                                                    <span class="white-text">{{ review.created_by}}</span>
+                                                </div>
+                                                <div class="col s7 ">
+                                                    {% for s in range(0, review.rating |int) %}
+                                                        <span><i class="fas fa-star checked"></i></span>
+                                                    {% endfor %}
+                                                </div>
                                             </div>
-                                            <div class="col s3 review_user">
-                                                <span class="white-text">{{ review.created_by}}</span>
-                                                
-                                            </div>
-                                            <div class="col s7 ">
-                                                {% for s in range(0, review.rating |int) %}
-                                                    <span><i class="fas fa-star checked"></i></span>
-                                                {% endfor %}
-                                                
-                                            </div>
-                                        </div>
-                                        <div class="row review-row">
-                                            <div class="col s8">
-                                                <p>{{ review.date }}</p>
-                                            </div>
-                                            <div class="col s4 right-align">
-                                                {% if session["user"] %}
-                                                    {% if session["user"]==review.created_by %}
-                                                        <a class="waves-effect waves-light btn small tooltipped del_review" data-position="top" data-tooltip="Delete review"  
-                                                        href="{{ url_for('delete_review', review_id=review._id) }}"><i class="fas fa-trash-alt"></i></a>
+                                            <div class="row review-row">
+                                                <div class="col s8">
+                                                    <p>{{ review.date }}</p>
+                                                </div>
+                                                <div class="col s4 right-align">
+                                                    {% if session["user"] %}
+                                                        {% if session["user"]==review.created_by %}
+                                                            <a class="waves-effect waves-light btn small tooltipped del_review" data-position="top" data-tooltip="Delete review"  
+                                                            href="{{ url_for('delete_review', review_id=review._id) }}"><i class="fas fa-trash-alt"></i></a>
+                                                        {% endif %}
                                                     {% endif %}
-                                                {% endif %}
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="row review-row">
-                                            <div class="col s12">
-                                                <p class="white-text review-comments">{{ review.comments}}</p>
+                                            <div class="row review-row">
+                                                <div class="col s12">
+                                                    <p class="white-text review-comments">{{ review.comments}}</p>
+                                                </div>
                                             </div>
-                                            
-                                        </div>
-                                        <div class="row divider"></div>
-                                    {% endif %}
-                                    
-                                 {% endfor %} 
+                                            <div class="row divider"></div>
+                                        {% endif %}
+                                    {% endfor %} 
                                 </div>
                             </li>
-                            
                         </ul>
                     </div>
                 </div>

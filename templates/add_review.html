@@ -2,60 +2,67 @@
 {% block content %}   
     <div class="container">
         <h4 class="center-align">Add Review</h4>
-    <div class="row add_review">
-        
-                                
-                                        <form method="post" action="{{url_for('add_review', contact_id=contact._id)}}" class="review_form">
-                                            <div class="input-field col s12">
-                                                <i class="fas fa-building prefix white-text"></i>
-                                                <input id="company_name" name="company_name" minlength="5" maxlength="50" type="text" class="validate"
-                                                    value="{{ contact.company_name }}">
-                                                <label for="comapany_name">Company Name</label>
-                                            </div>
-                                            <div class="input-field col s12">
-                                                    <i class="fas fa-folder-open prefix white-text"></i>
-                                                    <select id="service_type" name="service_type" class="validate" required>
-                                                        <option value="" disabled>Choose a Service</option>
-                                                        {% for service in services %}
-                                                            {% if service.service_type == contact.service_type %}
-                                                                <option value="{{ service.service_type }}" selected>{{ service.service_type }}</option>
-                                                            {% else %}
-                                                                <option value="{{ service.service_type }}" >{{ service.service_type }}</option>
-                                                            {% endif %}
-                                                        {% endfor %}
-                                                    </select>
-                                                    <label for="service_type">Service Type</label>
-                                            </div>
-                                            
-                                            <div class="input-field col s12">
-                                                <i class="fas fa-star-half-alt prefix white-text"></i>
-                                                <select id="rating" name="rating" type="number" class="validate" required>
-                                                    <option value='' disabled selected>give your rating</option>
-                                                    <option value=1>1</option>
-                                                    <option value=2>2</option>
-                                                    <option value=3>3</option>
-                                                    <option value=4>4</option>
-                                                    <option value=5>5</option>
-                                                </select>
-                                                <label for="rating">Rating</label>
-                                            </div>
-                                            <div class="input-field col s12">
-                                                <i class="far fa-comment prefix white-text"></i>
-                                                <textarea id="textarea1" name="comments" class="materialize-textarea" maxlength="100" required></textarea>
-                                                <label for="textarea1">comments</label>
-                                            </div>
-                                            <div class="col s6 center-align">
-                                                <button type="submit"
-                                                    class="btn-small formbg text-shadow">
-                                                    Add
-                                                </button>
-                                            </div>
-                                            <div class="col s6 center-align">
-                                                <button class="btn-small formbg text-shadow"
-                                                    onclick=" window.history.go(-1);">
-                                                    Back</button>
-                                            </div>
-                                        </form>
-                                </div>
-                            </div>
+            <div class="row add_review">
+                <form method="post" action="{{url_for('add_review', contact_id=contact._id)}}" class="review_form">
+
+                    <!-- Company name -->
+                    <div class="input-field col s12">
+                        <i class="fas fa-building prefix white-text"></i>
+                        <input id="company_name" name="company_name" minlength="5" maxlength="50" type="text" class="validate"
+                            value="{{ contact.company_name }}">
+                        <label for="comapany_name">Company Name</label>
+                    </div>
+                    
+                    <!-- Service type -->
+                    <div class="input-field col s12">
+                        <i class="fas fa-folder-open prefix white-text"></i>
+                            <select id="service_type" name="service_type" class="validate" required>
+                                <option value="" disabled>Choose a Service</option>
+                                {% for service in services %}
+                                    {% if service.service_type == contact.service_type %}
+                                        <option value="{{ service.service_type }}" selected>{{ service.service_type }}</option>
+                                    {% else %}
+                                        <option value="{{ service.service_type }}" >{{ service.service_type }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                            <label for="service_type">Service Type</label>
+                    </div>
+                    
+                    <!-- Rating -->
+                    <div class="input-field col s12">
+                        <i class="fas fa-star-half-alt prefix white-text"></i>
+                        <select id="rating" name="rating" type="number" class="validate" required>
+                            <option value='' disabled selected>give your rating</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                        </select>
+                        <label for="rating">Rating</label>
+                    </div>
+
+                    <!-- user comments -->
+                    <div class="input-field col s12">
+                        <i class="far fa-comment prefix white-text"></i>
+                        <textarea id="textarea1" name="comments" class="materialize-textarea" maxlength="100" required></textarea>
+                        <label for="textarea1">comments</label>
+                    </div>
+
+                    <!-- Submit button -->
+                    <div class="col s6 center-align">
+                        <button type="submit"
+                            class="btn-small formbg text-shadow">Add
+                        </button>
+                    </div>
+                    <!-- Back button -->
+                    <div class="col s6 center-align">
+                        <button class="btn-small formbg text-shadow"
+                            onclick=" window.history.go(-1);">Back
+                        </button>
+                    </div>
+                </form>
+            </div>
+    </div>
 {% endblock %}

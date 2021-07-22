@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}  
     <div class="container add_contact">
-        <h4 class="center-align">Add New contact</h4>
+    <h4 class="center-align">Add New contact</h4>
         <div class="row">
             <div class="col s12">
                 <form enctype="multipart/form-data" class="col s12" method="POST" action="{{ url_for('add_contact') }}">
@@ -18,7 +18,7 @@
                         </select>
                     <label for="service_type">Service Type</label>
                 </div>
-            </div>
+                </div>
 
                 <!-- company name -->
                 <div class="row">
@@ -39,47 +39,59 @@
                         <label for="mobile">Contact Number</label>
                     </div>
                 </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-envelope-square prefix white-text"></i>
-                    <input id="email" name="email" type="email" class="validate"
+
+                <!-- Email -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-envelope-square prefix white-text"></i>
+                        <input id="email" name="email" type="email" class="validate"
                         required>
-                    <label for="email">Email</label>
+                        <label for="email">Email</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                 <div class="input-field col s12">
-                    <i class="fas fa-map-marker-alt prefix white-text"></i>
-                    <input id="address" name="address" type="text" class="validate">
-                    <label for="address">Address</label>
+
+                <!-- Address -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-map-marker-alt prefix white-text"></i>
+                        <input id="address" name="address" type="text" class="validate">
+                        <label for="address">Address</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                 <div class="input-field col s12">
-                    <i class="fas fa-globe-europe prefix white-text"></i>
-                    <input id="url" name="url" type="text" class="validate">
-                    <label for="url">Website</label>
+
+                <!-- Website -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-globe-europe prefix white-text"></i>
+                        <input id="url" name="url" type="text" class="validate">
+                        <label for="url">Website</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-images prefix white-tex"></i>
-                    <input class="file-upload" type="file" name="file" id="fileid" class="validate" required>
-                  </div>
-            </div>
-            <div class="row">
-                <div class="col s6 center-align">
-                    <button type="submit" class="btn-small formbg text-shadow">
-                        Add <i class="fas fa-plus-square right"></i>
-                    </button>
+
+                <!-- Image File -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-images prefix white-tex"></i>
+                        <input class="file-upload" type="file" name="file" id="fileid" class="validate" required>
+                    </div>
                 </div>
-                <div class="col s6 center-align">
-                    <button class="btn-small formbg text-shadow" onclick=" window.history.go(-1);">
-                        Back<i class="fas fa-angle-left right"></i></a>
-                </div>
+                
+                
+                    <div class="row">
+                        <!-- Add button -->
+                        <div class="col s6 center-align">
+                            <button type="submit" class="btn-small formbg text-shadow">
+                                Add <i class="fas fa-plus-square right"></i>
+                            </button>
+                        </div>
+                    <!-- Back button -->
+                        <div class="col s6 center-align">
+                            <button class="btn-small formbg text-shadow" onclick=" window.history.go(-1);">
+                                Back<i class="fas fa-angle-left right"></i></a>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
-    </div>
-</div>
-</div> 
+        </div>
+    </div> 
 {% endblock %}
