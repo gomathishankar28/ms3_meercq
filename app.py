@@ -136,6 +136,7 @@ def carpenters():
     # Retrieve all contacts whose service type = electricians
     carpenter_contacts = list(mongo.db.contacts.find(
         {"service_type": "carpenters"}))
+    # Calculate Average rating rounded to 1 decimal.
     rating = mongo.db.reviews.aggregate(
         [{ 
             "$group":
@@ -149,11 +150,15 @@ def carpenters():
                 },
         }]
     )
+    # create list of dictionaries with company name and average rating.
     ratings = list(rating)
     reviews = list(mongo.db.reviews.find())
+    # To get a list of companies which has reviews available
     review_companies = [review["company_name"] for review in reviews]
     contacts = list(mongo.db.contacts.find())
+    # To get a list of all companies
     all_companies = [contact["company_name"] for contact in contacts]
+    # To get a list of companies which has no reviews.
     no_review_companies = list(set(all_companies) - set(review_companies))
     return render_template(
         "carpenters.html", contacts=carpenter_contacts, 
@@ -363,10 +368,17 @@ def add_contact():
 @app.route("/edit_contact/<contact_id>", methods=["GET", "POST"])
 def edit_contact(contact_id):
     if request.method == "POST":
+        
         contact = mongo.db.contacts.find_one({"_id": ObjectId(contact_id)})
+        # To retreive base url to be redirected
+        full_url = request.referrer
+        parts = urlparse(full_url)
+        path =  "/{}".format(contact["service_type"])
+        baseurl = "{}://{}{}".format(parts.scheme, parts.netloc, path)
+        
         edited_contact = {
-            "service_type": request.form.get("service_type"),
-            "company_name": request.form.get("company_name"),
+            "service_type": contact["service_type"],
+            "company_name": contact["company_name"],
             "mobile": request.form.get("mobile"),
             "email": request.form.get("email"),
             "address": request.form.get("address"),
@@ -377,11 +389,6 @@ def edit_contact(contact_id):
         }
         mongo.db.contacts.update({"_id": ObjectId(contact_id)}, edited_contact)
         flash("contact Successfully Updated")
-        # To retreive base url to be redirected
-        full_url = request.referrer
-        parts = urlparse(full_url)
-        path =  "/{}".format(request.form.get("service_type"))
-        baseurl = "{}://{}{}".format(parts.scheme, parts.netloc, path)
         return redirect(baseurl)
     contact = mongo.db.contacts.find_one({"_id": ObjectId(contact_id)})
     services = mongo.db.services.find().sort("service-type", 1)
@@ -400,14 +407,16 @@ def delete_contact(contact_id):
 @app.route("/add_review/<contact_id>", methods=["GET", "POST"])
 def add_review(contact_id):
     if request.method == "POST":
+        contact = mongo.db.contacts.find_one({"_id": ObjectId(contact_id)})
+        # To retreive the base url to be redirected
         full_url = request.referrer
         parts = urlparse(full_url)
-        path =  "/{}".format(request.form.get("service_type"))
+        path =  "/{}".format(contact["service_type"])
         baseurl = "{}://{}{}".format(parts.scheme, parts.netloc, path)
         review = {
             "rating": int(request.form.get("rating")),
             "comments": request.form.get("comments"),
-            "company_name": request.form.get("company_name"),
+            "company_name": contact["company_name"],
             # To display date and time
             "date": datetime.now().strftime("%b %d %Y %H:%M:%S"),
             "created_by": session["user"]
