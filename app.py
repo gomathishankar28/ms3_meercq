@@ -216,8 +216,7 @@ def painters():
         }]
     )
     ratings = list(rating)
-    print(ratings)
-    reviews =list(mongo.db.reviews.find()) 
+    reviews = list(mongo.db.reviews.find()) 
     review_companies = [review["company_name"] for review in reviews]
     contacts = list(mongo.db.contacts.find())
     all_companies = [contact["company_name"] for contact in contacts]

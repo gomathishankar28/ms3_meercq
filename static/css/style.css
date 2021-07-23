@@ -23,6 +23,10 @@ main {
 .input-field>label {
     color: #d1d1d1;
 }
+.disabled {
+    color: rgb(254 191 172 / 70%)!important;
+}
+
 div#placeholder {
 	color: black!;
 }
