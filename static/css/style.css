@@ -89,6 +89,10 @@ nav .brand-logo {
 nav ul a:hover {
     background-color: transparent;
 }
+a:hover {
+	transform: scale(1.15); 
+    background-color: #f3b61b;
+}
 
 /*------------Footer styles-------------------*/
 .footer_bg {
@@ -103,7 +107,7 @@ nav ul a:hover {
 }
 
 .links {
-	margin-left: 15px;
+	margin-left: 10px;
 	margin-right: 15px;
 	font-size: 24px;
 	color: #426f9d;
@@ -179,6 +183,9 @@ active,#navbar-items a {
 	font-weight: 500;
 	text-decoration: none;
 	margin-left: -15px;
+}
+abt-text {
+	font-size: 22px;
 }
 /*------------hover effect on service image ------------*/
 .service {

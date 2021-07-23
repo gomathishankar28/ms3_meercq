@@ -22,7 +22,7 @@
                             </div>
                             <!-- To display Average rating -->
                             <div class="col s12 m6">
-                                <p class="card-title center-align"><strong>{{ contact.company_name }}</strong></p>
+                                <p class="center-align"><u>{{ contact.company_name }}</u></p>
                             {% if contact.company_name in review_companies %}
                                 {% for rating in ratings %}
                                     {% if rating["_id"]==contact.company_name %}
