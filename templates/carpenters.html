@@ -74,45 +74,58 @@
                             <li>
 	                            <div class="collapsible-header white-text"><h5>User Reviews</h5><i class="fas fa-caret-down review_icon"></i></div>
 		                        <div class="collapsible-body">
-                                
-                                    {% for review in reviews %}
-                                        {% if review.company_name==contact.company_name %}
-                                            <div class="row review-row">
-                                                <div class="col s2">
-                                                    <i class="fas fa-user"></i>
+                                    {% if contact.company_name in review_companies %}
+                                        {% for review in reviews %}
+                                            {% if review.company_name==contact.company_name %}
+                                                <div class="row review-row">
+                                                    <div class="col s2">
+                                                        <i class="fas fa-user"></i>
+                                                    </div>
+                                                     <div class="col s3 review_user">
+                                                        <span class="white-text">{{ review.created_by}}</span>
+                                                    </div>
+                                                    <div class="col s7 ">
+                                                        {% for s in range(0, review.rating |int) %}
+                                                            <span><i class="fas fa-star checked"></i></span>
+                                                        {% endfor %}
+                                                    </div>
                                                 </div>
-                                                <div class="col s3 review_user">
-                                                    <span class="white-text">{{ review.created_by}}</span>
-                                                </div>
-                                                <div class="col s7 ">
-                                                    {% for s in range(0, review.rating |int) %}
-                                                        <span><i class="fas fa-star checked"></i></span>
-                                                    {% endfor %}
-                                                </div>
-                                            </div>
-                                            <div class="row review-row">
-                                                <div class="col s8">
-                                                    <p>{{ review.date }}</p>
-                                                </div>
-                                                <div class="col s4 right-align">
-                                                    {% if session["user"] %}
-                                                        {% if session["user"]==review.created_by %}
-                                                            <a class="waves-effect waves-light btn small tooltipped del_review" data-position="top" data-tooltip="Delete review"  
-                                                            href="{{ url_for('delete_review', review_id=review._id) }}"><i class="fas fa-trash-alt"></i></a>
+                                                <div class="row review-row">
+                                                    <div class="col s8">
+                                                        <p>{{ review.date }}</p>
+                                                    </div>
+                                                    <div class="col s4 right-align">
+                                                        {% if session["user"] %}
+                                                            {% if session["user"]==review.created_by %}
+                                                                <a class="waves-effect waves-light btn small tooltipped del_review"
+                                                                     data-position="top" data-tooltip="Delete review"  
+                                                                     href="{{ url_for('delete_review', review_id=review._id) }}">
+                                                                     <i class="fas fa-trash-alt"></i>
+                                                                </a>
+                                                            {% endif %}
                                                         {% endif %}
-                                                    {% endif %}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="row review-row">
-                                                <div class="col s12">
-                                                    <p class="white-text review-comments">{{ review.comments}}</p>
+                                                <div class="row review-row">
+                                                    <div class="col s12">
+                                                        <p class="white-text review-comments">{{ review.comments}}</p>
+                                                    </div>
                                                 </div>
+                                                <div class="row divider"></div>
+                                            {% endif %}
+                                        {% endfor %} 
+                                    {% elif contact.company_name in no_review_companies %}
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <p> No reviews Available. click here 
+                                                    <a class="waves-effect waves-light btn small small tooltipped black-text" data-position="top" 
+                                                    data-tooltip="Add Review" href="{{ url_for('add_review', contact_id=contact._id) }}">
+                                                    <i class="fas fa-comments"></i></a> to add your review
+                                                </p>
                                             </div>
-                                            <div class="row divider"></div>
-                                            
-                                        {% endif %}
-                                    {% endfor %} 
-                                
+                                        </div>
+                                        
+                                    {% endif %}
                                 </div>
                             </li>
                         </ul>

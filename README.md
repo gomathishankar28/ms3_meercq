@@ -285,7 +285,7 @@ The footer displays the copyright information and social media links
 *   **Footer**  -   Allows user to access contact info and Social links.
 
 ## **Features to be implemented in future**
-
+    *   search based on multiple criteria (company name, username) for quick retreival of known contacts. 
  
  ## **Technologies Used**
 

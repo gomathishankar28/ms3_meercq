@@ -64,6 +64,11 @@ nav .brand-logo {
 	line-height: 55px;
 	margin-top: -5px;
 }
+.dropdown-content li {
+    min-height: 40px;
+    line-height: 1rem;
+    padding-top: 5px;
+}
 .dropdown-content li>a,
 .dropdown-content li>span {
 	color: black;
@@ -76,6 +81,9 @@ nav .brand-logo {
 .collapsible-body>ul>li>a {
 	padding: 0 48px !important;
 	font-weight: 400 !important;
+}
+nav ul a:hover {
+    background-color: transparent;
 }
 
 /*------------Footer styles-------------------*/
