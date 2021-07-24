@@ -58,7 +58,7 @@
                                     <a class="waves-effect waves-light btn small small tooltipped black-text" data-position="top" data-tooltip="Add Review" 
                                     href="{{ url_for('add_review', contact_id=contact._id) }}"><i class="fas fa-comments"></i></a>
                                 </div>
-                                {% if session["user"]=="admin" %}
+                                {% if ((session["user"]==contact.created_by) or (session["user"]=="admin")) %}
                                     <div class="col s4">
                                         <a class="waves-effect waves-light btn small tooltipped black-text" data-position="top" data-tooltip="Delete contact"  
                                         href="{{ url_for('delete_contact', contact_id=contact._id) }}"><i class="fas fa-trash-alt"></i></a>
@@ -96,7 +96,7 @@
                                                     </div>
                                                     <div class="col s4 right-align">
                                                         {% if session["user"] %}
-                                                            {% if session["user"]==review.created_by %}
+                                                            {% if ((session["user"]==review.created_by) or (session["user"]=="admin")) %}
                                                                 <a class="waves-effect waves-light btn small tooltipped del_review"
                                                                      data-position="top" data-tooltip="Delete review"  
                                                                      href="{{ url_for('delete_review', review_id=review._id) }}">
