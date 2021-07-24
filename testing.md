@@ -414,7 +414,7 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
          4. Initially User reviews section just had the start rating, user name and user comments displayed
 
             > **Enhancement 4** - As per the advise of my partner, added a timestamp for each user rating and also added a delete review button which would be accessible only to the user who created that review. That way it is easy for user to delete his own review and add a new one if needed.
-            >
+            >   
          5. Initially the search bar on the Landing page did not have any autocomplete feature .
 
             >**Enhancement 5** - For ease of use for the user, added an autocomplete feature to the search field.

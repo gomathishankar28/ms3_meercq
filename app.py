@@ -324,7 +324,7 @@ def upload(file):
     app.logger.info('in upload route')
     cloudinary.config(cloud_name = os.getenv('CLOUD_NAME'), api_key=os.getenv('API_KEY'), 
         api_secret=os.getenv('API_SECRET'))
-    return cloudinary.uploader.upload(file, width=200, height=160)
+    return cloudinary.uploader.upload(file, width=180, height=160)
 
 
 # Add contact

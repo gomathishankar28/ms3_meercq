@@ -247,6 +247,7 @@ abt-text {
 }
 .company_image {
 	margin-top: 20px;
+	overflow-x: hidden;
 }
 .del_review {
 	padding: 5px;
@@ -706,6 +707,10 @@ abt-text {
 	}
 	.copyright {
 		margin-left: 0;
+	}
+	.company_image {
+		margin-left: 10px; 
+		width: 180px;
 	}
 }
 
