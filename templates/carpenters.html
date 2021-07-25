@@ -21,18 +21,18 @@
                                 <img src="{{ contact.company_image}}" class="company_image">
                             </div>
                             <!-- To display Average rating -->
-                            <div class="col s12 m6">
-                                <p class="center-align"><u>{{ contact.company_name }}</u></p>
-                            {% if contact.company_name in review_companies %}
-                                {% for rating in ratings %}
-                                    {% if rating["_id"]==contact.company_name %}
-                                        <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">{{ rating["avgRating"] }}</strong></p>
-                                    {% endif %}
-                                {% endfor %}
-                            {% elif contact.company_name in no_review_companies %}
-                                <p class="center-align">Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating noavg">N/A</strong></p>
-                            {% endif %}
-                            <p class="center-align">created:&nbsp;&nbsp;{{ contact.created_date }}</p> 
+                            <div class="col s12 m6 card-header">
+                                <p><u>{{ contact.company_name }}</u></p>
+                                {% if contact.company_name in review_companies %}
+                                    {% for rating in ratings %}
+                                        {% if rating["_id"]==contact.company_name %}
+                                            <p>Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating">{{ rating["avgRating"] }}</strong></p>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% elif contact.company_name in no_review_companies %}
+                                    <p>Average Rating&nbsp;&nbsp;&nbsp;<strong class="avgRating noavg">N/A</strong></p>
+                                {% endif %}
+                                <p>created:&nbsp;&nbsp;{{ contact.created_date }}</p> 
                             </div>
                         </div>
                         <!-- To display contact details of the company -->

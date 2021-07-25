@@ -240,7 +240,7 @@ abt-text {
 }
 /*--------------Contact card styles-----------------*/
 .card.small {
-	height: 750px;
+	height: 850px;
 	width: 300px;
 	margin-left: -10px;
 	margin-bottom: 0;
@@ -270,6 +270,9 @@ abt-text {
 	margin: 10px;
 	background-color: #426f9d;
 }
+.card-header p {
+	text-align: center;
+}
 .card-title {
 	text-transform: uppercase;
 }
@@ -279,6 +282,7 @@ abt-text {
 .card-content p {
 	padding: 10px;
 	margin: 5px;
+	word-wrap: break-word;
 }
 .contactcards {
 	margin: 10px!important;
@@ -621,6 +625,9 @@ abt-text {
 		width: 600px;
 		height: 600px;
 		margin-left: -15px!important;
+	}
+	.card-header p {
+		text-align: left;
 	}
 	.reviews {
 		width: 600px;
