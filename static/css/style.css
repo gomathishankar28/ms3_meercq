@@ -189,7 +189,7 @@ abt-text {
 	font-size: 22px;
 }
 /*------------hover effect on service image ------------*/
-.service {
+.services {
 	position: relative;
 	width: 100%;
   }
@@ -215,6 +215,7 @@ abt-text {
 	color: white;
 	font-size: 20px;
 	padding: 16px 32px;
+	
   }
 /*----------------Form styles--------------------------*/
 .add_contact {
@@ -345,6 +346,9 @@ abt-text {
 	}
 	.services {
 		margin-left: 20px;
+	}
+	.text {
+		margin-left: -30px;
 	}
 	.services-header h2,
 	.add_contact h4,
@@ -521,6 +525,9 @@ abt-text {
 	.services {
 		margin-left: 70px;
 	}
+	.text {
+		margin-left: -100px;
+	}
 	input,
 	optgroup,
 	select,
@@ -608,7 +615,7 @@ abt-text {
 		line-height: 5rem;
 	}
 	.services {
-		margin-left: 50px;
+		margin-left: 70px;
 	}
 	.card.small {
 		width: 600px;
@@ -682,9 +689,11 @@ abt-text {
 		font-size: 30px!important;
 	}
 	.services {
-		margin-left: 150px;
+		margin-left: 100px;
 	}
-	
+	.text {
+		margin-left: 10px;
+	}
 	.fcard {
 		margin-left: -10px!important;
 	}
@@ -771,7 +780,7 @@ abt-text {
 		padding-left: 20px;
 	}
 	.services {
-		margin-left: 200px;
+		margin-left: 120px;
 	}
 	.contacts {
 		margin-left: 0;
