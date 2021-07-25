@@ -509,6 +509,9 @@ abt-text {
 		display: block;
 		font-size: 18px;
 	}
+	.fa-bars {
+		margin-left: -50px!important;
+	}
 	.search_form {
 		top: 60%
 	}
@@ -583,9 +586,19 @@ abt-text {
 	.main-heading2 {
 		font-size: 18px;
 	}
+	.fa-bars {
+		margin-left: -70px!important;
+		font-size: 40px;
+	}
+	.sidenav li>a {
+		font-size: 26px;
+	}
 	.search_form {
 		width: 100%;
 		top: 45%;
+	}
+	.abt-text {
+		font-size: 26px;
 	}
 	input,
 	optgroup,
@@ -610,7 +623,9 @@ abt-text {
 	.add_review {
 		margin-left: 50px;
 	}
-	
+	.noresults_img {
+		overflow: hidden;
+	}
 	.try_again {
 		position: absolute;
 		top: 45%;
