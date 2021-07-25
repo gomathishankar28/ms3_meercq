@@ -9,6 +9,7 @@ from pymongo.message import query
 from werkzeug.datastructures import FileStorage
 from urllib.parse import urlparse
 from datetime import datetime
+import datetime
 import cloudinary
 import cloudinary.uploader
 if os.path.exists("env.py"):
@@ -413,12 +414,14 @@ def add_review(contact_id):
         parts = urlparse(full_url)
         path =  "/{}".format(contact["service_type"])
         baseurl = "{}://{}{}".format(parts.scheme, parts.netloc, path)
+        #To covert utc time to local CET time
+        date = datetime.datetime.now() + datetime.timedelta(hours=2)
         review = {
             "rating": int(request.form.get("rating")),
             "comments": request.form.get("comments"),
             "company_name": contact["company_name"],
             # To display date and time
-            "date": datetime.now().strftime("%b %d %Y %H:%M:%S"),
+            "date": date.strftime("%b %d %Y %H:%M:%S"),
             "created_by": session["user"]
         }
         mongo.db.reviews.insert_one(review)

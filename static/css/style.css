@@ -266,6 +266,9 @@ abt-text {
 	margin-left: 50px;
     margin-top: 15px;
 }
+.star-rating {
+	margin-top: 20px;
+}
 .card {
 	margin: 10px;
 	background-color: #426f9d;
@@ -623,7 +626,7 @@ abt-text {
 	}
 	.card.small {
 		width: 600px;
-		height: 600px;
+		height: 700px;
 		margin-left: -15px!important;
 	}
 	.card-header p {

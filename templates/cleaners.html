@@ -39,7 +39,7 @@
                         <div class="card-content white-text">
                             <div class = "row">
                                 <div class="col s2">
-                                    <i class="fas fa-phone-alt contact_icon"></i>
+                                    <p><i class="fas fa-phone-alt contact_icon"></i></p>
                                 </div>
                                 <div class="col s10">
                                         <p>{{ contact.mobile }} </p>
@@ -47,7 +47,7 @@
                             </div>
                             <div class = "row">
                                 <div class="col s2">
-                                    <i class="fas fa-envelope-square contact_icon"></i>
+                                    <p><i class="fas fa-envelope-square contact_icon"></i></p>
                                 </div>
                                 <div class="col s10">
                                     <p>{{ contact.email }}</p>
@@ -55,7 +55,7 @@
                             </div>
                             <div class="row">
                                 <div class ="col s2">
-                                    <i class="fas fa-globe-europe contact_icon"></i>
+                                    <p><i class="fas fa-globe-europe contact_icon"></i></p>
                                 </div>
                                 <div class="col s10">
                                     <p>{{ contact.url }}</p>
@@ -63,7 +63,7 @@
                             </div>
                             <div class="row">
                                 <div class="col s2">
-                                    <i class="fas fa-map-marker-alt contact_icon"></i>
+                                    <p><i class="fas fa-map-marker-alt contact_icon"></i></p>
                                 </div>
                                 <div class="col s10">
                                     <p>{{ contact.address }}</p>
@@ -105,34 +105,37 @@
                                                     <div class="col s2">
                                                         <i class="fas fa-user"></i>
                                                     </div>
-                                                     <div class="col s3 review_user">
+                                                     <div class="col s10 review_user">
                                                         <span class="white-text">{{ review.created_by}}</span>
                                                     </div>
-                                                    <div class="col s7 ">
+                                                </div>
+                                                <div class="row star-rating review-row">
+                                                    <div class="col s12">
                                                         {% for s in range(0, review.rating |int) %}
                                                             <span><i class="fas fa-star checked"></i></span>
                                                         {% endfor %}
-                                                    </div>
+                                                    </div>                            
                                                 </div>
                                                 <div class="row review-row">
-                                                    <div class="col s8">
+                                                    <div class="col s12">
                                                         <p>{{ review.date }}</p>
-                                                    </div>
-                                                    <div class="col s4 right-align">
-                                                        {% if session["user"] %}
-                                                            {% if ((session["user"]==review.created_by) or (session["user"]=="admin")) %}
-                                                                <a class="waves-effect waves-light btn small tooltipped del_review"
-                                                                     data-position="top" data-tooltip="Delete review"  
-                                                                     href="{{ url_for('delete_review', review_id=review._id) }}">
-                                                                     <i class="fas fa-trash-alt"></i>
-                                                                </a>
-                                                            {% endif %}
-                                                        {% endif %}
                                                     </div>
                                                 </div>
                                                 <div class="row review-row">
                                                     <div class="col s12">
-                                                        <p class="white-text review-comments">{{ review.comments}}</p>
+                                                        <p class="white-text review-comments">{{ review.comments}}
+                                                            <span>
+                                                                {% if session["user"] %}
+                                                                    {% if ((session["user"]==review.created_by) or (session["user"]=="admin")) %}
+                                                                        <a class="waves-effect waves-light btn small tooltipped del_review"
+                                                                            data-position="top" data-tooltip="Delete this review"  
+                                                                            href="{{ url_for('delete_review', review_id=review._id) }}">
+                                                                            <i class="fas fa-trash-alt"></i>
+                                                                        </a>
+                                                                    {% endif %}
+                                                                {% endif %}
+                                                            </span>
+                                                        </p>
                                                     </div>
                                                 </div>
                                                 <div class="row divider"></div>
