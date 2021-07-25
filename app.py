@@ -348,7 +348,7 @@ def add_contact():
             "url": ((request.form.get("url") if(request.form.get("url")) else "N/A")),
 	        "address": ((request.form.get("address") if(request.form.get("address")) else "N/A")),
             "created_by": session["user"],
-            "created_date": datetime.now().strftime("%b %d %Y"),
+            "created_date": datetime.datetime.now().strftime("%b %d %Y"),
             "company_image": img_upload["secure_url"]
             }
             mongo.db.contacts.insert_one(contact)

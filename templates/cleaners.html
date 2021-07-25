@@ -123,7 +123,7 @@
                                                 </div>
                                                 <div class="row review-row">
                                                     <div class="col s12">
-                                                        <p class="white-text review-comments">{{ review.comments}}
+                                                        <p class="white-text review-comments">{{ review.comments}}&nbsp;&nbsp;&nbsp;
                                                             <span>
                                                                 {% if session["user"] %}
                                                                     {% if ((session["user"]==review.created_by) or (session["user"]=="admin")) %}
