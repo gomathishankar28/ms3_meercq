@@ -275,22 +275,22 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
 
 ***BrowserTesting***
 
-   Website was tested in browsers listed below and results were satisfying.
+Website was tested in browsers listed below and results were satisfying.
 
-   1. Chrome<br>
-   2. Edge.<br>
-   3. Opera<br>
-   4. Safari<br>
-   5. Firefox<br>
+1. Chrome<br>
+2. Edge.<br>
+3. Opera<br>
+4. Safari<br>
+5. Firefox<br>
 
 ***Operating System Testing***
 
-      Website was tested in different OS listed below and results were satisfying.
+Website was tested in different OS listed below and results were satisfying.
 
-      1. Windows 10<br>
-      2. Mac OS.<br>
-      3. iOS.<br>
-      4. Android<br>
+1. Windows 10<br>
+2. Mac OS.<br>
+3. iOS.<br>
+4. Android<br>
 
 ## Performance Testing
 
@@ -432,7 +432,7 @@ Spelling was checked thoroughly using [W3C Spell Checker](https://www.w3.org/200
 5. Initially the search bar on the Landing page did not have any autocomplete feature .
 
 **Enhancement 5** - For ease of use for the user, added an autocomplete feature to the search field.
-      
+
 
 ## Known Bugs and yet to be Fixed
 
