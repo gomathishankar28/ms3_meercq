@@ -87,6 +87,9 @@ nav .brand-logo {
 	padding: 0 48px !important;
 	font-weight: 400 !important;
 }
+#navbar-items {
+	margin-right: 30px!important;
+}
 nav ul a:hover {
     background-color: transparent;
 }
@@ -661,6 +664,9 @@ abt-text {
 @media (min-width: 1024px) {
 	nav .brand-logo {
 		padding-left: 25px;
+	}
+	#navbar-items {
+		margin-right: 50px!important;
 	}
 	.hero_caption {
 		top: 20%;
