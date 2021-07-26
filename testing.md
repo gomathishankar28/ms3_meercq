@@ -13,26 +13,28 @@
 - [Issues found and fixed during Coding](#issues-found-and-fixed-during-coding)
 - [Enhancements](#enhancements)
 
-## **Smoke Testing**
+## Smoke Testing
 
 Following testcases were tested as part of smoke testing.
 
-> 1. To  Check if the Website launches with a Home page when given the URL of the site. > Tested Pass
-> 2. To Check for broken links for all the navigation menus. –Tested Pass
-> 3. To Check if “search” button on the landing page displays the desired results based on the search –Tested Pass
-> 4. To check if clicking on each image in "about"section displays the contact cards for the appropriate service
-> 5. To check if the Add_contact button in services page invokes a Add Contact Form –Tested Pass
-> 6. To check if the Edit contact button on each contact card invokes the "Edit contact form" with details on the form to be edited –Tested Pass
-> 7. To check if clicking on delete contact button on each contact card deletes the  –Tested Pass
-> 8. To check if the user reviews collapsible is displayed under each contact - Tested Pass.
-> 9. To check if clicking on Add_review button on each contact invokes the "Add review form".
-> 10. To check if the website launches with a home page on all  different devices as per the wireframe. –Tested Pass
+> 1. To  Check if the Website launches with a Home page when given the URL of the site. - **Tested Pass**.
+> 2. To Check for broken links for all the navigation menus. – **Tested Pass**.
+> 3. To Check if “search” button on the landing page displays the desired results based on the search – **Tested Pass**
+> 4. To check if clicking on each image in "about"section displays the contact cards for the appropriate service - **Tested pass**.
+> 5. To check if the Add_contact button in services page invokes a Add Contact Form – **Tested Pass**.
+> 6. To check if the Edit contact button on each contact card invokes the "Edit contact form" with details on the form to be edited – **Tested Pass**.
+> 7. To check if clicking on delete contact button on each contact card deletes the  – **Tested Pass**.
+> 8. To check if the user reviews collapsible is displayed under each contact - **Tested Pass**.
+> 9. To check if clicking on Add_review button on each contact invokes the "Add review form" - **Tested pass**.
+> 10. To check if the website launches with a home page on all  different devices as per the wireframe. – **Tested Pass**.
+> 11. To check if the clicking on delete review button deletes the particular user review. - **Tested Pass**.
+> 12. To check if searching for inappropriate item results in "sorry results not found" page - **Tested Pass**.
 
-## **Code Testing**
+## Code Testing
 
 ### **Results from HTML Validator**
 
-HTML was validated with [W3C Validator](https://validator.w3.org/) by direct input. Results came out good except for few errors because of the use of  jinja templating which cannot be corrected.
+HTML was validated with [W3C Validator](https://validator.w3.org/) by direct input. Results came out good except for few errors because of the use of  jinja templating which cannot be avoided.
 
 
 ### **Results from  W3C CSS**
@@ -48,7 +50,7 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
 
               Fixed by adding /*jshint esversion: 6 */ at the top of every js file.
 
-## **User Stories Testing**
+## User Stories Testing
 
 
    1. ***As a prospective customer to the website, I want to easily navigate the site, so that I can easily find the details about MeerCQ so that I am assured about their service.***
@@ -152,7 +154,7 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
           > This is acheived by using Materialize framework's Validate method.
           >
 
-   ## **Functional Testing**
+   ## Functional Testing
 
    Functional testing was done by testing induvidual features of the website to see if they meet their intended purpose.
 
@@ -230,17 +232,19 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
          * Checked to see if the comments field when left empty prompts an error.
          * Checked to see if the rating field displays a drop down containing numbers from 1 to 5.
 
-   9.***User Reviews***
+   9. ***User Reviews***
 
    * Checked to see if this section is visible for both registered and unregistered users.
    * Checked to see if all the reviews pertaining to the service provider/company are listed in an collapsible view
    * Checked to see if the number of stars displayed is corresponding to the number given in the rating field.
    * Checked to see if the correct name of the user who added that review is displayed.
+   * Checked to see if clicking on delete button against each review deletes the particular user review.
 
    10. ***Login***
 
           * Checked to see if clicking on Login from nav menu invokes the Login form.
           * Checked to see if there is an error message  username/password  combination is invalid.
+
    11. ***Register***
 
           * Checked to see if clicking on Register from nav menu invokes the Register form.
@@ -251,11 +255,11 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
 
          * checked to see if Clicking on Logout from nav menu displays a flash message to the user for successfully logging out.
 
-   ## **Responsiveness Testing**
+## Responsiveness Testing
 
-     ***Devices Testing***
+**Devices Testing**
 
-      Website was tested using Chrome Dev tools in the following devices to check if the pages are rendered well.The results are satisfying<br>
+ Website was tested using Chrome Dev tools in the following devices to check if the pages are rendered well.The results are satisfying<br>
 
    1. Galaxy Fold.<br>
    2. Moto G4<br>
@@ -269,7 +273,7 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
    10. ipad<br>
    11. ipad pro.<br>
 
-   ***BrowserTesting***
+***BrowserTesting***
 
    Website was tested in browsers listed below and results were satisfying.
 
@@ -279,7 +283,7 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
    4. Safari<br>
    5. Firefox<br>
 
-      ***Operating System Testing***
+***Operating System Testing***
 
       Website was tested in different OS listed below and results were satisfying.
 
@@ -288,37 +292,37 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
       3. iOS.<br>
       4. Android<br>
 
-      ## **Performance Testing**
+## Performance Testing
 
-      Performance has been tested using the Lighthouse tool of Google Chrome. The results are shown below.
+Performance has been tested using the Lighthouse tool of Google Chrome. The results are shown below.
 
-      > ![Perfomance Results](https:/workspace/ms3_meercq/static/images/testing/performance.jpg?raw=true)
+> ![Perfomance Results](https:/workspace/ms3_meercq/static/images/testing/performance.jpg?raw=true)
       >
 
-      ## **Accessibility Testing**
+## Accessibility Testing
 
-      The website's accessibility was also tested using Lighthouse. The result are shown below.
+The website's accessibility was also tested using Lighthouse. The result are shown below.
 
-      > ![Accessibility](https:/workspace/ms3_meercq/static/images/testing/accessibility.jpg)
+> ![Accessibility](https:/workspace/ms3_meercq/static/images/testing/accessibility.jpg)
       >
 
-      ## **Best Practices and SEO Results**
+## Best Practices and SEO Results
 
-      > ![BestPractices](https:/workspace/ms3_meercq/static/images/testing/best_practices.jpg)
+> ![BestPractices](https:/workspace/ms3_meercq/static/images/testing/best_practices.jpg)
       >
 
-      > ![SEO](https:/workspace/ms3_meercq/static/images/testing/SEO.jpg)
+> ![SEO](https:/workspace/ms3_meercq/static/images/testing/SEO.jpg)
       >
 
-      Spelling was checked thoroughly using [W3C Spell Checker](https://www.w3.org/2002/01/spellchecker). The results are satisfying.
+Spelling was checked thoroughly using [W3C Spell Checker](https://www.w3.org/2002/01/spellchecker). The results are satisfying.
 
-      ## **Issues found and fixed during Coding**
+## Issues found and fixed during Coding
 
-      1. Nav bar with dropdown menu "services" would collapse to show the list of all services either on main navbar on large screens or on the sidenav on small screen but not on both.
+1. Nav bar with dropdown menu "services" would collapse to show the list of all services either on main navbar on large screens or on the sidenav on small screen but not on both.
+       
+**Solution** - There could actually be only one list emelent  with  dropdown-trigger class with data-target referring to the drop down content. But I had 2 initially, one for the main nav bar and other one for the sidenav.Later it was replaced with a collapsible for a sidenav as shown below.
 
-         > **Solution** - There could actually be only one list emelent  with  dropdown-trigger class with data-target referring to the drop down content. But I had 2 initially, one for the main nav bar and other one for the sidenav.Later it was replaced with a collapsible for a sidenav as shown below.
-
-                <ul class="collapsible">
+       <ul class="collapsible">
                             <li>
                                 <a class="collapsible-header">Services<i class="fas fa-caret-down right"></i></a>
                                 <div class="collapsible-body">
@@ -338,10 +342,10 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
                                         <li><a href="{{ url_for('cleaners') }}">Cleaners</a></li>
                                     </ul>
          
-      2. Redirecting to the corresponding service page from the Edit contact form and Add Review form errored out when 
+2. Redirecting to the corresponding service page from the Edit contact form and Add Review form errored out when 
       "return redirect(request.referrer)" was used because the route app for them involved the contactid as part of the URL.
 
-         > **solution** - Fixed by using the urlparse method to identify the baseurl and then appending it with corresponding service type which would give the url to be redirected.
+**solution** - Fixed by using the urlparse method to identify the baseurl and then appending it with corresponding service type which would give the url to be redirected.
                 
                  from urllib.parse import urlparse
                  @app.route("/edit_contact/<contact_id>", methods=["GET", "POST"])
@@ -365,20 +369,21 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
         flash("contact Successfully Updated")
         return redirect(baseurl)
          
-      3. Average Rating for a company was always being displayed as None, though there were ratings available for the company.
+3. Average Rating for a company was always being displayed as None, though there were ratings available for the company.
 
-         > **solution** - This was because the Rating value received from the add review form was inserted as string in the DB and average function performed on a string returned None. Fixed by parsing the rating value to integer.
+**solution** - This was because the Rating value received from the add review form was inserted as string in the DB and average function performed on a string returned None. Fixed by parsing the rating value to integer.
 
                 "rating": int(request.form.get("rating"))
          
-      4. User Reviews was being displayed only for the first contact card/first company displayed under every service, though other company also had user reviews
+4. User Reviews was being displayed only for the first contact card/first company displayed under every service, though other company also had user reviews
 
-         > **Solution**  - Fixed by converting the reviews object to a list.
+**Solution**  - Fixed by converting the reviews object to a list.
 
-                reviews = list(mongo.db.reviews.find())
-      5. To calculate the average rating rounded to 1 decimalbased n the rating from users.Had to use to $round.Was trying to use it directly to avgRating field.But it errored out.
+              reviews = list(mongo.db.reviews.find())
 
-         > **Solution**  - Had to use $addfields function to use round function as follows.
+5. To calculate the average rating rounded to 1 decimalbased n the rating from users.Had to use to $round.Was trying to use it directly to avgRating field.But it errored out.
+
+**Solution**  - Had to use $addfields function to use round function as follows.
 
                rating = mongo.db.reviews.aggregate(
         [{ 
@@ -394,32 +399,39 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
         }]
     )
     ratings = list(rating)
-      
 
-      ## **Enhancements**
+6. Timestamp on user review was displaying utc time by using datetime.now()
+
+**Solution**  - Fixed by adding the timedelta(hours=2) as the timezone is CET and differentce between local time and utc is 2 hours.
+
+              date = datetime.datetime.now() + datetime.timedelta(hours=2)
+              "date": date.strftime("%b %d %Y %H:%M:%S")    
+
+## Enhancements
 
 
-         1. Initially the contact card section was designed to have only contact details like company name, moble number, email, address and website details. 
+1. Initially the contact card section was designed to have only contact details like company name, moble number, email, address and website details. 
 
-            > **Enhancement 1** - Then as per my partner's advise, Average rating and contact creation date details and user review colapsible were displayed as part of the contact card.
+**Enhancement 1** - Then as per my partner's advise, Average rating and contact creation date details and user review colapsible were displayed as part of the contact card.
             >
-         2. Initially there was no image upload feature as part of this project. My mentor Nishant kumar had suggested to have an image upload feature if possible
+2. Initially there was no image upload feature as part of this project. My mentor Nishant kumar had suggested to have an image upload feature if possible
 
-            > **Enhancement 2** - Added an image upload feature to addcontact form so that the contact card will also have an picture of the company displayed as part of the contact card.This was acheived using Cloudinary API
+**Enhancement 2** - Added an image upload feature to addcontact form so that the contact card will also have an picture of the company displayed as part of the contact card.This was acheived using Cloudinary API
             >
-         3. Initially each service page would display all the contact cards.
+3. Initially each service page would display all the contact cards.
 
-            > **Enhancement 3** - Thought it would be nice to display the total number of available contacts on the top, so that the user can know how many contacts does he have without counting the cards being displayed.
+**Enhancement 3** - Thought it would be nice to display the total number of available contacts on the top, so that the user can know how many contacts does he have without counting the cards being displayed.
             >
-         4. Initially User reviews section just had the start rating, user name and user comments displayed
 
-            > **Enhancement 4** - As per the advise of my partner, added a timestamp for each user rating and also added a delete review button which would be accessible only to the user who created that review. That way it is easy for user to delete his own review and add a new one if needed.
+4. Initially User reviews section just had the start rating, user name and user comments displayed
+
+**Enhancement 4** - As per the advise of my partner, added a timestamp for each user rating and also added a delete review button which would be accessible only to the user who created that review. That way it is easy for user to delete his own review and add a new one if needed.
             >   
-         5. Initially the search bar on the Landing page did not have any autocomplete feature .
+5. Initially the search bar on the Landing page did not have any autocomplete feature .
 
-            >**Enhancement 5** - For ease of use for the user, added an autocomplete feature to the search field.
+**Enhancement 5** - For ease of use for the user, added an autocomplete feature to the search field.
       
 
-         ## **Known Bugs and yet to be Fixed**
+## Known Bugs and yet to be Fixed
 
          

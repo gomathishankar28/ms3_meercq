@@ -31,17 +31,15 @@ is a platform where people can find the contact of a professional for all the ch
 
 ### Introduction
 
-MeerCQ gathers recommendations shared in public conversations on social media. It aims to create contact listings for
- recommended pros, so that the customers can easily see referrals from across social media, in one handy location.
- Customers can find a professional to contact for small jobs in and around the house.
+Meerhoven is a large neighbourhood in the city of Eindhoven that is now home to a significant expat population. Nearly three fourth of the houses sold since 2018 have been to expats. Due to this exponential growth and lack of understanding the nuances of Dutch houses, there is an acute shortage of information regarding home servicing companies or handymen who provide their services in this area.
 
-The reason to promote this business model is because when there is a problem with any of the service at home,
-it is very difficult to find an appropriate contact on time. Users refer to google and find some available contact which will not ensure 
-a reliable service. MeerCQ aims at collecting the details and contacts  for such services based on experience from other users which 
-ensures a reliable service.
+Currently this information is fragmented and tends to remain within small groups of friends in the neighbourhood. Similarly, each group have their own set of service providers with no alternatives and there is hardly any way to compare if a particular handyman is better than the others employed in this neighbourhood.
 
-The site enables the registered users to create, Read, Update and Delete (CRUD) contacts. The site also provides a platform to share
-the user reviews for each contact, based on which the customers can choose a best contact professional from the list of available contacts.
+MeerCQ attempts to grow from the collective knowledge of the area by aggregating the different service providers in one single platform. The initial resource pool of contacts can be gathered from the informal social media platforms along with their recommendations. The users can then start providing feedback through user reviews on the professionals listed as well as suggest better alternatives.
+
+The core of this business model is to list even single person businesses like handymen who are needed for small and quick fixes that is either too expensive with the large companies or have a huge waiting time. Also, the business model of most of the established big players is through annual maintenance contracts which most of the expats do not subscribe to. Alternatively, users rely on google searches that provides a list of service providers geo-located in and around Meerhoven but misses out on single person companies and professionals who are located outside of Meerhoven but would still like to provide their services here. MeerCQ thus aims at pooling the word of mouth details from different users based on their experiences to help the residents of Meerhoven in their search for home service professionals.
+
+The site enables the registered users to Create, Read, Update and Delete (CRUD) contacts. The site also provides a platform to share the user reviews for each service professional, based on which the customers can choose the best to suit their requirement from the list of available contacts.
 
 
 ### Business Goals
@@ -189,13 +187,11 @@ Please find attached Wireframe for Home page , place order form and acknowledgem
 **Wirefame mockups**
 Wireframe mockups for Home, Login, Register, Add New Contact, Edit Contact, Add Review for small, meidium and Large screens have been given below.
 
-[SMALL screen](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/wireframes/Small.pdf)
+[LARGE screen](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/wireframes/Large.pdf)
 
 [MEDIUM screen](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/wireframes/Medium.pdf)
 
-[LARGE screen](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/wireframes/Large.pdf)
-
-
+[SMALL screen](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/wireframes/Small.pdf)
 
 ### Database Schema
 
@@ -256,6 +252,8 @@ This page displays the following:
 
 ***User Reviews*** To view the rating and user comments added by users along with the timestamp against each company.
 
+***Delete Review*** Button to  enable the user to delete his/her own review.
+
 **Login**
 
 This page is used for the registered users to login and thereby perform operations like adding new contact, editing existing contact, deleting a contact(only for admin user), adding user reviews etc. This page contains a form with 2 input fields 1. username and 2. password. It also has a link to "Register" page for New users to register
@@ -282,12 +280,15 @@ The footer displays the copyright information and social media links
 *   **Edit Contact** - Allows the user to edit existing Contact information.
 *   **Delete Contact** - Allows admin to delete an absolete contact.
 *   **Add Review**  - Allows user to give a rating and add comments about a contact based on theor experience.
+*   **Delete Review** - Allows the user to delete his/her own review.
 *   **Footer**  -   Allows user to access contact info and Social links.
 
 ## **Features to be implemented in future**
-    *   search based on multiple criteria (company name, username) for quick retreival of known contacts. 
+*   search based on multiple criteria (company name, username) for quick retreival of known contacts. 
+*   Provision to extend for more service types.
+*   To edit company images on contact cards on click of the image
  
- ## **Technologies Used**
+## **Technologies Used**
 
  ### **Languages**
 *   HTML
@@ -323,10 +324,10 @@ The footer displays the copyright information and social media links
     - for uploading company_images
 - [Balsamiq](https://balsamiq.com/)
     - The wireframes and sitemap for this project were created using Balsamiq.
- -[Freeformatter- CSS beautifier](https://www.freeformatter.com/css-beautifier.html)
+- [Freeformatter- CSS beautifier](https://www.freeformatter.com/css-beautifier.html)
     - This was used to format the CSS stylesheet.
 - [Freeformatter- HTML formatter](https://www.freeformatter.com/html-formatter.html)
-    - This was used to format each HTML page
+    - This was used to format each HTML page.
 - [PEP8online](http://pep8online.com/)
     - PEP8 online was used to make sure all python code was pep8 compliant.
 - [Google DevTools](https://developers.google.com/web/tools/chrome-devtools) 
@@ -402,7 +403,7 @@ The footer displays the copyright information and social media links
                     mongo.db.contacts.insert_one(contact)
 
 ## Testing
-Testing information can be found here in the separate [TESTING.md file](/workspace/ms3_meercq/testing.md)
+Testing information can be found here in the separate [TESTING.md file](https://github.com/gomathishankar28/ms3_meercq/blob/master/testing.md)
 
 ## Deployment
 This project was developed using [Gitpod IDE](https://gitpod.io) and pushed to Github using the in-built terminal. However, because Github can only host static websites it was necessary to deploy this project to Heroku because it is a compatible hosting platform for a back-end focused site like MeerCQ. 
