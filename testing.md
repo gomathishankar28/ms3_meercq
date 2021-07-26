@@ -296,23 +296,22 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
 
 Performance has been tested using the Lighthouse tool of Google Chrome. The results are shown below.
 
-> ![Perfomance Results](https:/workspace/ms3_meercq/static/images/testing/performance.jpg?raw=true)
-      >
+> ![Perfomance Results](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/testing/performance.jpg?raw=true)
 
 ## Accessibility Testing
 
 The website's accessibility was also tested using Lighthouse. The result are shown below.
 
-> ![Accessibility](https:/workspace/ms3_meercq/static/images/testing/accessibility.jpg)
-      >
+> ![Accessibility](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/testing/accessibility.jpg?raw=true)
+
 
 ## Best Practices and SEO Results
 
-> ![BestPractices](https:/workspace/ms3_meercq/static/images/testing/best_practices.jpg)
-      >
+> ![BestPractices](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/testing/best_practices.jpg?raw=true)
 
-> ![SEO](https:/workspace/ms3_meercq/static/images/testing/SEO.jpg)
-      >
+
+> ![SEO](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/testing/SEO.jpg?raw=true)
+
 
 Spelling was checked thoroughly using [W3C Spell Checker](https://www.w3.org/2002/01/spellchecker). The results are satisfying.
 
@@ -413,20 +412,23 @@ Spelling was checked thoroughly using [W3C Spell Checker](https://www.w3.org/200
 1. Initially the contact card section was designed to have only contact details like company name, moble number, email, address and website details. 
 
 **Enhancement 1** - Then as per my partner's advise, Average rating and contact creation date details and user review colapsible were displayed as part of the contact card.
-            >
+
+
 2. Initially there was no image upload feature as part of this project. My mentor Nishant kumar had suggested to have an image upload feature if possible
 
 **Enhancement 2** - Added an image upload feature to addcontact form so that the contact card will also have an picture of the company displayed as part of the contact card.This was acheived using Cloudinary API
-            >
+
+
 3. Initially each service page would display all the contact cards.
 
 **Enhancement 3** - Thought it would be nice to display the total number of available contacts on the top, so that the user can know how many contacts does he have without counting the cards being displayed.
-            >
+       
 
 4. Initially User reviews section just had the start rating, user name and user comments displayed
 
 **Enhancement 4** - As per the advise of my partner, added a timestamp for each user rating and also added a delete review button which would be accessible only to the user who created that review. That way it is easy for user to delete his own review and add a new one if needed.
-            >   
+            
+
 5. Initially the search bar on the Landing page did not have any autocomplete feature .
 
 **Enhancement 5** - For ease of use for the user, added an autocomplete feature to the search field.
