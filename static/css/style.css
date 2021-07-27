@@ -90,13 +90,6 @@ nav .brand-logo {
 #navbar-items {
 	margin-right: 30px!important;
 }
-nav ul a:hover {
-    background-color: transparent;
-}
-a:hover {
-	transform: scale(1.15); 
-    background-color: #f3b61b;
-}
 
 /*------------Footer styles-------------------*/
 .footer_bg {
@@ -125,8 +118,8 @@ a:hover {
     -o-transition: all 0.35s ease-in-out;
 }
 /*-------- Hover effect on nav links---------------*/
-active,#navbar-items a {
-    text-decoration-line: underline;
+#navbar-items li:hover {
+    text-decoration-line: underline!important;
 }
 
 /*----------------- Home page styles------------------*/
@@ -675,11 +668,12 @@ abt-text {
 		font-size: 70px;
 	}
 	.main-heading2 {
-		font-size: 26px;
+		font-size: 20px;
 	}
 	.search_form {
 		width: 100%;
 		top: 45%;
+		margin-top: 70px;
 	}
 	.search {
 		margin-left: -250px;
@@ -769,6 +763,7 @@ abt-text {
 	.search_form {
 		width: 100%;
 		top: 45%;
+		margin-top: 0;
 	}
 	input,
 	optgroup,
