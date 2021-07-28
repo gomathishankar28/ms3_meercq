@@ -90,6 +90,15 @@ nav .brand-logo {
 #navbar-items {
 	margin-right: 30px!important;
 }
+#navbar-items li:active {
+	text-decoration: underline!important;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+/*-------- Hover effect on nav links---------------*/
+#navbar-items li:hover {
+    text-decoration-line: underline!important;
+}
+
 
 /*------------Footer styles-------------------*/
 .footer_bg {
@@ -117,14 +126,10 @@ nav .brand-logo {
     -webkit-transition: all 0.35s ease-in-out;
     -o-transition: all 0.35s ease-in-out;
 }
-/*-------- Hover effect on nav links---------------*/
-#navbar-items li:hover {
-    text-decoration-line: underline!important;
-}
 
 /*----------------- Home page styles------------------*/
 .service-icon {
-	margin-top: 10px;
+	margin-top: 20px;
 }
 .search_text {
 	color: white;
@@ -764,6 +769,10 @@ abt-text {
 		width: 100%;
 		top: 45%;
 		margin-top: 0;
+	}
+	.abt-text {
+		font-size: 20px;
+		font-weigth: 300;
 	}
 	input,
 	optgroup,

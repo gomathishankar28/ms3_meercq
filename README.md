@@ -43,9 +43,9 @@ The site enables the registered users to Create, Read, Update and Delete (CRUD) 
 
 
 ### Business Goals
-*   To target the expat community who are looking for handyman professionals for their home needs.
+*   To target the expat community who are looking for handyman services or professionals for their home needs.
 
-*   To evince interest in customers who wants to find contacts for all home services in one place.
+*   To evince interest in customers who want to find contacts for all home services in one place.
 
 *   To bring this offering to all the expats who are new to this place and doesn't have any contacts to reach to in case of a problem at home.
 
@@ -57,17 +57,21 @@ The site enables the registered users to Create, Read, Update and Delete (CRUD) 
 
 *   Clearly communicate the contact information for every company under each service type.
 
+*   To have a feedback for each of the professional services so that others in the community can benefit from peer experiences.
+
 ### user Goals
 
 As a customer, I would like 
 
 *   To know what kind of information, MeerCQ can Provide. 
 
-*   To know the list of services for which contacts is provided
+*   To know the list of services for which contacts is provided.
 
-*   To know the name, contact number, address,emailID of each contact for further communication
+*   To be able to search for a service type to obtain the list of professional service providers.
 
-*   To see the user reviews for each company,so that i can pick the best choice up. 
+*   To know the Name, Contact number, Address and EmailID of each contact for further communication
+
+*   To see the user reviews for each company,so that it helps in choosing the professional service. 
 
 ##  User stories
 *   As a prospective customer to the website, I want to easily navigate the site, so that I can easily find the details about MeerCQ so that I am assured about their service.
@@ -78,7 +82,7 @@ As a customer, I would like
 
 *   As a prospective customer, I would like to receive suggestions in the search field so that I can narrow down my search easily.
 
-*   As a prospective customer, I should be able to avail the contacts of services from a list as well as through visual tiles so that this information is easily accessible.
+*   As a prospective customer, I should be able to access all the available service types from nav menu as well as through visual tiles so that this information is easily accessible..
 
 *   As a new customer to the website, I want to know for what kind of services, the contact details are provided.
 
@@ -119,6 +123,10 @@ As a customer, I would like
 *   As an administrator, I should allow registered users to log out so that unauthorized accesses are prevented.
 
 *   As an administrator, I would like to have field level validations on the contact entry so that incorrect or incomplete information is avoided.
+
+*   As a customer, I would like to identify the company through their logo, business image or any other visual representation.
+
+*   As a customer, I would like to delete my own review on the company, if i wish to add a new one.
  
 
 ## UX
@@ -127,6 +135,7 @@ As a customer, I would like
 *   Residing in the Netherlands.
 *   Has good social contacts across the neighbourhood.
 *   Wants to create a directory of contacts for handyman professionals.
+*   Wants to encourage only genuine users by using login credentials.
 *   English speaking.
 
 #### Visitors to this website are searching for:
@@ -137,22 +146,24 @@ As a customer, I would like
 *   An option to write reviews for each contact.
 
 #### This Website is the best way to help the user and the owner because:
-Be it any place , for an expat, finding a handyman professional for any service is extremely difficult as people are not aware about reliable contacts. All they could do is search in google for any available contact. Currently this is being done via watsapp where the expat community in neighbourhood form a group and then share contacts when there is a need. This website will serve as a single point of reference for all the home needs.
+This website attempts to bridge the information divide that exists in Meerhoven about the professionals who offer their services. The users, who are mostly expats , are looking for handyman services who are in short supply. Currently, this information is available through Google but it is not complete as many single person companies go unnoticed and is not available in the results. This website aims to grow through community knowledge and will serve as a single point of reference for all the home needs.
 
 ### Strategy
-Build brand awareness for a directory of handyman contacts in the neighbourhood
-Through this website , clearly communicate the services for which contacts are available
-Provide an easy option for users to quickly look for a contact for a particular service
-Maintain all contact information in one place.
-Aim to increase the number of reliable contacts for different services based on customer reviews.
+The core of this website is to:
+*   Build brand awareness for a directory of handyman contacts in the neighborhood. 
+*   Clearly communicate the services for which contacts are available. 
+*   Provide an easy option for users to quickly look for a contact for a particular service type. 
+*   Maintain all contact information in one place. 
+*   Aim to increase the number of reliable contacts for different services based on customer reviews.
+
 
 ### Scope
 **Functional requirements:**
 *   A Navigation bar to guide the user experience across the website;
-*   An About section to tell what MeerCQ is all about and list of services for which contact are available.
+*   An About section to tell what MeerCQ is all about and list of services for which contacts are available.
 *   A Service section to show the contacts under each service
-*   An Option to Login so the members of the site who have the previlige to add new contacts, edit existing contact and add reviews.
-*   An option to Register for new users.
+*   An option to create individual login IDs so that only members of this site have the privileges to add new contacts, edit existing contacts and add reviews.
+*   An option to only display the information in the site if the user is not logged in.
 
 
 **Content requirements:**
@@ -161,10 +172,9 @@ Aim to increase the number of reliable contacts for different services based on 
 *   Use of Text and images to make things easy to understand.
 *   A search bar on the hero image for a quick search option.
 *   A collapsible dropdown for the "services" nav menu to list down the all the available services.
-*   A list of items that can be ordered along with their corresponding quantity.
 *   A card to display the contact details.
 *   An collapsible to display user reviews.
-*   Buttons to Add, edit and delete contacts.
+*   Buttons to Add, edit delete contacts and to add, delete reviews.
 
 ### Structure
 
@@ -198,13 +208,13 @@ Wireframe mockups for Home, Login, Register, Add New Contact, Edit Contact, Add 
 ![Database Schema](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/readme/database_schema.jpg?raw=true)
 
 
-* The site contains **four** collections which are stored in MongoDB. The **users** collection stores the user's username and password which enables the user to create an account and have a profile page. The **services** collection stores all the different type of services that it provides contacts for.The **contacts** collection that stores all the contact details for a company like service type, mobile number, email, website, address etc. The **Reviews** section stores the rating, user comments for each company name.
+* The site contains **four** collections which are stored in MongoDB. The **users** collection stores the username and password of all the registered users. The **services** collection stores all the different type of services that it provides contacts for.The **contacts** collection that stores all the contact details for a company like service type, mobile number, email, website, address etc. The **Reviews** section stores the rating, user comments for each company name.
 
 ## **Surface**
 
 **Colors**
 
-In factories, the Color BLUE often marks equipment to be repaired. So I have decided to use the colour Blue predominantly across the website. Blue (navy) is considered the perfect pick as it reflects trust, confidence and stability which are considered the most important triats for bulding contacts.
+The color palette chosen here is Blue that represents the services that are typically offered by the companies listed on this site. As a symbolic representation of all the blue collared services being listed on this site, this aims to have a quick recall with the users. 
 
 **Typography**
 
@@ -213,9 +223,7 @@ Two fonts were used for this project, Akaya Telivigala', cursive, and sans-serif
 
 **Media**
 
-The hero image displays a picture of handyman with all the tools..
-All the other images used throughout the website are relative to our service.
-All images have been resized and compressed in order to boost the UX flow.
+The hero image displays a picture of handyman with all the tools.All the other images used throughout the website are relative to our service.All images have been resized and compressed in order to boost the UX flow.
 
 **Iconography**
 
@@ -240,13 +248,13 @@ This is second section of the Home page. This section elaborates the purpose  an
 ### **Services**
 This page displays the following:
 
-***Cards*** for each company containing  information such as Average Rating, company name, created date, mobile number, address, email, website if any etc. based on one of the 7 services chosen. 
+***Cards*** or each Company containing information such as Company image / logo, Company name, Average Rating, Created date, Mobile number, Address, Email, Website if any etc. based on one of the 7 service types chosen.
 
-***Add New Contact*** Button to enable registered users to add new contact under a service.
+***Add New Contact*** Button to enable registered users to add new contact under a service type.
 
 ***Edit Contact*** Button to enable registered users to edit existing contact such as mobile number, address or email.
 
-***Delete Contact*** Button for the admin to delete any obsolete contacts.
+***Delete Contact*** Button for the Admin to delete any obsolete contacts.
 
 ***Add Review***Button to enable registered users to give rating and comments for a company based on their experience with that contact.
 
@@ -287,6 +295,8 @@ The footer displays the copyright information and social media links
 *   search based on multiple criteria (company name, username) for quick retreival of known contacts. 
 *   Provision to extend for more service types.
 *   To edit company images on contact cards on click of the image
+*   To highlight featured / verified Company cards.
+*   To display Last Modified date as part of contact card.
  
 ## **Technologies Used**
 
@@ -517,15 +527,13 @@ Once the project been loaded into the IDE it is necessary to install the necessa
 
     * [stackoverflow](https://stackoverflow.com/) for aggregate and $round function to calculate average rating in pymongo
 
-    * [Githubgist](https://gist.github.com/) as reference for collapsible menu on side nav.
+    * [Githubgist](https://gist.github.com/) as reference for collapsible nav menu on side nav.
 
     * [Cloudinary](https://cloudinary.com/blog/creating_an_api_with_python_flask_to_upload_files_to_cloudinary) as a reference to upload company images on add_contact form.
 
     * [code Institute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+IFD101+2017_T3/courseware/03d3f6524ad249d9b33e3336d156dfd0/3b2af8636ea54a4d9dc45126f7498633/) for login, register and delete views.
 
     
-
-	
 ### **Acknowledgements**
     
 * **My mentor: Nishant kumar** by giving lot of inputs and useful tips to improve.

@@ -60,99 +60,106 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
    2. ***As a prospective customer to the website, I want to precisely know what services are offered so that I have enough information to avail their service***
 
          > This is acheieved by a Hero Banner displayed on the Hero image of the Landing page talking about what MeerCQ is all about and what can it offer.
-         >
+         
    3. ***As a prospective customer to the website, I should be able to search based on keywords so that I can get the desired information quickly***
 
          > This is acheived by providing a search bar on the Hero image of the Landing page.Search can be based on services, usernames who created contacts or Company name.
-         >
+         
    4. ***As a prospective customer, I would like to receive suggestions in the search field so that I can narrow down my search easily.***
 
          > This is acheieved by providing an auto complete option from materialise framework. By typing an alphabet suggests a list of services having that particular letter in them.
-         >
-   5. ***As a prospective customer, I should be able to avail the contacts of services from a list as well as through visual tiles so that this information is easily accessible.***
+         
+   5. ***As a prospective customer, I should be able to access all the available service types from nav menu as well as through visual tiles so that this information is easily accessible.***
 
          > This is acheieved by dropdown nav menu which lists down all the available services for which contacts are available. And also the About section has image tiles for each service which on hovering displays the name of the service.
-         >
+         
    6. ***As a new customer to the website, I want to know for what kind of services, the contact details are provided.***
 
          > This is again acheieved by dropdown nav menu which lists down all the available services for which contacts are available. And also the About section has image tiles for each service which on hovering displays the name of the service.
-         >
+         
    7. ***As a new customer, I want to know the contact details of service providers based on the service type chosen, so that I do not see contacts of services that I do not need.***
 
          > This is acheived by creating a seperate view for each service and rendering a seperate html page for each service called.
-         >
+         
    8. ***As a new customer to website, I want to know how many contacts are available under each service.***
 
          > This is acheived by displaying "Available contacts" for each service on top of the contacts cards listed on the page.
-         >
+         
    9. ***As a customer to the website, I want to know the name of the person/company as part of the contact details.***
 
          > This is acheieved by creating a contact card and displaying the company anme as te card -title.
-         >
+         
    10. ***As a customer, I would like to know the address of the company so that I have the physical location to reach in case of any issues.***
 
           > This is acheieved by creating a contact card and displaying the address information as part of card content.
-          >
+          
    11. ***As a customer, I would like to know the mobile number in order to contact and fix an appointment..***
 
           > This is acheieved by creating a contact card and displaying the mobile number as part of card content.
-          >
+          
    12. ***As a customer, I would like to know the email ID of the Service provider for future correspondences and invoice sharing.***
 
           > This is acheieved by creating a contact card and displaying the emailID as part of card content.
-          >
+          
    13. ***As a customer who has experience with a particular service provider, I would like to provide a rating so that I can quantify my recommendation to other users.***
 
           > This is acheieved by creating a Add Review form and enable the user to give the rating and comments for a service provider.
-          >
+          
    14. ***As a customer, I would like to see an average rating for each contact that would help me to choose a better professional service provider.***
 
           > This is acheieved by creating a contact card and displaying the Average Rating as part of the card content.
-          >
+          
    15. ***As a Prospective customer I want to add a new contact to a particular service when I find a new reliable contact so that the other users can profit from my experience.***
 
           > This is acheieved by creating a Add Contact form and enable the user to give the contact details for the chosen service type.
-          >
+          
    16. ***As a prospective customer to the website, I want to edit all the contact details of the service provider so that the other users have the latest information about the service provider.***
 
           > This is acheieved by creating a Edit Contact form and enable the user to update the contact details chosen to edit.
-          >
+          
    17. ***As a prospective customer to the website, I want provide feedback /comments about each service provider so that it helps other users to choose the best contact from the available list.***
 
           > This is acheieved by creating a "user Reviews" collapsible element which when collapsed shows the rating and comments added by all users for that service provider.
-          >
+          
    18. ***As an Administrator to the website, I want to delete a contact which is fake, never exists or stopped providing any service.***
 
           > This is acheived by placing "Delete" button on the contact card as part of card action.
-          >
+          
    19. ***As an administrator I want to provide the option of user log in so that changes done to contacts are tracked.***
 
           > This is acheived by Login Form which asks for a valid username and password.
-          >
+          
    20. ***As an administror, the system should allow new contacts to be added only by registered user so that there is accountability on the records created.***
 
           > This is acheived by Register Form which asks for a  username, password and email details for user to get registered which is then stored in DB.
-          >
+          
    21. ***As an Administrator, I would like to restrict only the logged in users to edit a contact or add a comment so that unauthorized/ untraceable changes are prevented.***
 
           > This is acheived by displaying the Edit contact, add review button on the contact card to be visible only when the user is logged in .Otherwise no buttons are seen.
-          >
+          
    22. ***As an administrator, only registered users with a valid password should be allowed to log in so that unauthorized changes can be prevented.***
 
           > This is acheived by using Check password hash method.
-          >
+          
    23. ***As an administrator, both unregistered and registered users should be able to view the contact of service providers and the user reviews so that the display of information is not restricted for unregistered users.***
 
           > This is acheived by search bar on Landing page which will help any user to search for contacts without logging in.
-          >
+          
    24. ***As an administrator, I should allow registered users to log out so that unauthorized accesses are prevented.***
 
           > This is acheived by an Logout option on Nav menu which is visible only for logged in users.
-          >
+          
    25. ***As an administrator, I would like to have field level validations on the contact entry so that incorrect or incomplete information is avoided.***
 
           > This is acheived by using Materialize framework's Validate method.
-          >
+          
+   26. ***As a customer, I would like to identify the company through their logo, business image or any other visual representation.***
+
+       > This is acheived by having a company image as part of the card which can be added via add_contact form while creating a new contact.
+
+   27. ***As a customer, I would like to delete my own review on the company, if i wish to add a new one.***
+
+       > This is acheived by having a delete button beside every user comment. However this delete button is visible only to the user who created the review. This means a user can only delete his/her own review and not that of others.
 
    ## Functional Testing
 
