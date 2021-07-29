@@ -12,9 +12,9 @@
                         <i class="fas fa-folder-open prefix white-text"></i>
                         <select id="service_type" name="service_type" class="validate" required>
                             <option value="" disabled selected>Choose a Service</option>
-                            {% for service in services %}
-                                <option value="{{ service.service_type }}">{{ service.service_type }}</option>
-                            {% endfor %}
+                                {% for service in services %}
+                                    <option value="{{ service.service_type }}">{{ service.service_type }}</option>
+                                {% endfor %}
                         </select>
                     <label for="service_type">Service Type</label>
                 </div>
@@ -34,8 +34,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-phone-alt prefix white-text"></i>
-                        <input id="mobile" name="mobile" type="number" pattern="/(+316){4}\d{8}" minlength="12" maxlength="12" class="validate"
-                        placeholder="eg:+31687241357" required>
+                        <input id="mobile" name="mobile" minlength="10" maxlength="10" type="text" class="validate" placeholder="0687241357" required>
                         <label for="mobile">Contact Number</label>
                     </div>
                 </div>
@@ -63,7 +62,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-globe-europe prefix white-text"></i>
-                        <input id="url" name="url" type="text" class="validate">
+                        <input id="url" name="url" type="url" class="validate">
                         <label for="url">Website</label>
                     </div>
                 </div>

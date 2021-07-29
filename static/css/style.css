@@ -50,6 +50,9 @@ p {
 	border: 0;
 	color: white;
 }
+.company_title {
+	text-transform: uppercase;
+}
 /*------------navbar styles----------------*/
 .navbg,
 .formbg {
@@ -275,7 +278,7 @@ abt-text {
 	background-color: #426f9d;
 }
 .card-header p {
-	text-align: center;
+		text-align: center;
 }
 .card-title {
 	text-transform: uppercase;
@@ -726,10 +729,14 @@ abt-text {
 		margin-left: 10px!important;
 	}
 	
-	.add_contact,.edit_contact,
-	.add_review {
-		margin-left: 150px;
+	.add_contact, .edit-contact, .add_review {
+		margin-left: 80px;
 	}
+
+	.edit_form, .review-form {
+		margin-left: -80px
+	}
+	
 	.try_again {
 		position: absolute;
 		top: 40%;
@@ -820,6 +827,9 @@ abt-text {
 	}
 	.add_contact {
 	margin-left: 200px;
+	}
+	.edit_form, .review_form {
+		margin-left: -100px;
 	}
 	
 	.image {

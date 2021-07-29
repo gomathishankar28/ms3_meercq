@@ -20,10 +20,10 @@ Following testcases were tested as part of smoke testing.
 > 1. To  Check if the Website launches with a Home page when given the URL of the site. - **Tested Pass**.
 > 2. To Check for broken links for all the navigation menus. – **Tested Pass**.
 > 3. To Check if “search” button on the landing page displays the desired results based on the search – **Tested Pass**
-> 4. To check if clicking on each image in "about"section displays the contact cards for the appropriate service - **Tested pass**.
+> 4. To check if clicking on each image in "about"section displays the contact cards for the appropriate service types- **Tested pass**.
 > 5. To check if the Add_contact button in services page invokes a Add Contact Form – **Tested Pass**.
 > 6. To check if the Edit contact button on each contact card invokes the "Edit contact form" with details on the form to be edited – **Tested Pass**.
-> 7. To check if clicking on delete contact button on each contact card deletes the  – **Tested Pass**.
+> 7. To check if clicking on delete contact button on each contact card deletes the the contact card (Only through Admin access or when the card is created by the same user)  – **Tested Pass**.
 > 8. To check if the user reviews collapsible is displayed under each contact - **Tested Pass**.
 > 9. To check if clicking on Add_review button on each contact invokes the "Add review form" - **Tested pass**.
 > 10. To check if the website launches with a home page on all  different devices as per the wireframe. – **Tested Pass**.
@@ -87,7 +87,7 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
          
    9. ***As a customer to the website, I want to know the name of the person/company as part of the contact details.***
 
-         > This is acheieved by creating a contact card and displaying the company anme as te card -title.
+         > This is acheieved by creating a contact card and displaying the company name as the card-title.
          
    10. ***As a customer, I would like to know the address of the company so that I have the physical location to reach in case of any issues.***
 

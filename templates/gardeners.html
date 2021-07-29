@@ -22,7 +22,7 @@
                             </div>
                             <!-- To display Average rating -->
                             <div class="col s12 m6 card-header">
-                                <p><u>{{ contact.company_name }}</u></p>
+                                <p class="company_title"><u>{{ contact.company_name }}</u></p>
                             {% if contact.company_name in review_companies %}
                                 {% for rating in ratings %}
                                     {% if rating["_id"]==contact.company_name %}
@@ -123,19 +123,24 @@
                                                 </div>
                                                 <div class="row review-row">
                                                     <div class="col s12">
-                                                        <p class="white-text review-comments">{{ review.comments}}&nbsp;&nbsp;&nbsp;
-                                                            <span>
-                                                                {% if session["user"] %}
-                                                                    {% if ((session["user"]==review.created_by) or (session["user"]=="admin")) %}
-                                                                        <a class="waves-effect waves-light btn small tooltipped del_review"
-                                                                            data-position="top" data-tooltip="Delete this review"  
-                                                                            href="{{ url_for('delete_review', review_id=review._id) }}">
-                                                                            <i class="fas fa-trash-alt"></i>
-                                                                        </a>
+                                                        <div class="row">
+                                                            <div class="col s10">
+                                                                <p class="white-text review-comments">{{ review.comments}}&nbsp;&nbsp;&nbsp;</p>
+                                                            </div>
+                                                            <div class"col s2">
+                                                                <span>
+                                                                    {% if session["user"] %}
+                                                                        {% if ((session["user"]==review.created_by) or (session["user"]=="admin")) %}
+                                                                            <a class="waves-effect waves-light btn small tooltipped del_review"
+                                                                                data-position="top" data-tooltip="Delete this review"  
+                                                                                href="{{ url_for('delete_review', review_id=review._id) }}">
+                                                                                <i class="fas fa-trash-alt"></i>
+                                                                            </a>
+                                                                        {% endif %}
                                                                     {% endif %}
-                                                                {% endif %}
-                                                            </span>
-                                                        </p>
+                                                                </span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="row divider"></div>
