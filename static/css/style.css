@@ -439,6 +439,9 @@ abt-text {
 }
 
 @media (min-width: 360px) {
+	.main-heading1 {
+		margin-left: 40px;
+	}
 	.search_form {
 		top: 45%;
 	}
