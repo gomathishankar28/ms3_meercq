@@ -394,7 +394,7 @@ Spelling was checked thoroughly using [W3C Spell Checker](https://www.w3.org/200
 
               reviews = list(mongo.db.reviews.find())
 
-5. To calculate the average rating rounded to 1 decimalbased n the rating from users.Had to use to $round.Was trying to use it directly to avgRating field.But it errored out.
+5. To calculate the average rating rounded to 1 decimal based on the rating from users.Had to use to $round function. Was trying to use it directly to avgRating field.But it errored out.
 
 **Solution**  - Had to use $addfields function to use round function as follows.
 
