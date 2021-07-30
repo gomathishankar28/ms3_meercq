@@ -27,7 +27,7 @@ is a platform where people can find the contact of a professional for all the ch
 ## Demo 
 [Live Website](https://meercq.herokuapp.com/)
 
-![AmIResponsive](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/readme/amiresponsives.jpg?raw=true)
+![AmIResponsive](https://github.com/gomathishankar28/ms3_meercq/blob/master/static/images/readme/amiresponsive.jpg?raw=true)
 
 ### Introduction
 

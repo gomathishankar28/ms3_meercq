@@ -420,9 +420,10 @@ Spelling was checked thoroughly using [W3C Spell Checker](https://www.w3.org/200
               date = datetime.datetime.now() + datetime.timedelta(hours=2)
               "date": date.strftime("%b %d %Y %H:%M:%S")  
 
-7.  Hero image did not render well on small screen even after resizing. 
+7.  Hero image did not render well on small screen even after resizing. There were lot of small issues related to margin,padding,width,height of the image,font-size etc 
 
-**Solution** - As per the advise of the mentor, had to change the hero image on smaller screens.  
+**Solution** - As per the advise of the mentor, had to change the hero image on smaller screens. Other small issues were Fixed by adding media queries accordingly.
+
 
 ## Enhancements
 
