@@ -350,6 +350,8 @@ abt-text {
 	}
 	.main-heading1 {
 		font-size: 28px;
+		color: white;
+		margin-left: 20px;
 	}
 	.search_form {
 		width: 280px;
@@ -530,6 +532,7 @@ abt-text {
 	
 	.main-heading1 {
 		font-size: 44px;
+		color: black;
 	}
 	.main-heading2 {
 		display: block;

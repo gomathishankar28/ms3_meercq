@@ -59,11 +59,11 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
          
    2. ***As a prospective customer to the website, I want to precisely know what services are offered so that I have enough information to avail their service***
 
-         > This is acheieved by a Hero Banner displayed on the Hero image of the Landing page talking about what MeerCQ is all about and what can it offer.
+         > This is acheieved by a Hero Banner displayed on the Hero image of the Landing page talking about what MeerCQ is all about and what it can offer.
          
    3. ***As a prospective customer to the website, I should be able to search based on keywords so that I can get the desired information quickly***
 
-         > This is acheived by providing a search bar on the Hero image of the Landing page.Search can be based on services, usernames who created contacts or Company name.
+         > This is acheived by providing a search bar on the Hero image of the Landing page.Search is be based on services types like Electricians, Plumbers etc.
          
    4. ***As a prospective customer, I would like to receive suggestions in the search field so that I can narrow down my search easily.***
 
@@ -71,11 +71,11 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
          
    5. ***As a prospective customer, I should be able to access all the available service types from nav menu as well as through visual tiles so that this information is easily accessible.***
 
-         > This is acheieved by dropdown nav menu which lists down all the available services for which contacts are available. And also the About section has image tiles for each service which on hovering displays the name of the service.
+         > This is acheieved by dropdown nav menu which lists down all the available services for which contacts are available. And also the About section has image tiles with the name of the service type.
          
    6. ***As a new customer to the website, I want to know for what kind of services, the contact details are provided.***
 
-         > This is again acheieved by dropdown nav menu which lists down all the available services for which contacts are available. And also the About section has image tiles for each service which on hovering displays the name of the service.
+         > This is again acheieved by dropdown nav menu which lists down all the available services for which contacts are available. And also the About section has image tiles with the name of the service type that it offers.
          
    7. ***As a new customer, I want to know the contact details of service providers based on the service type chosen, so that I do not see contacts of services that I do not need.***
 
@@ -171,6 +171,7 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
    2. **Navigation Bar**
 
          * Checked to see if the navigation links are highlighted according to the active page.
+         * Checked to see if the navigation links are highlighted with an underline while hovering on them.
          * At the launch, Home link of the nav bar has to be higlighted with a relatively dark background color.
    3. **Home Page**
 
@@ -186,6 +187,7 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
 
          * Checked to see if the hovering on each service image displays the name of that service.
          * Checked to see if clicking on particular service displays corresponding service page with contact cards.
+
    4. ***Services Section***
 
          * checked to see if choosing "Electricians" from service dropdown displays a service page with contacts whose service type is electricians.
@@ -195,7 +197,8 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
          * checked to see if choosing "Painters" from service dropdown displays a service page with contacts whose service type is Painters.
          * checked to see if choosing "Whitegoods" from service dropdown displays a service page with contacts whose service type is Whitegoods.
          * checked to see if choosing "Cleaners" from service dropdown displays a service page with contacts whose service type is Cleaners.
-         * checked to see if  the total number of Available contacts is displayed for each service and tallies with the number of contact cards listed for that service..
+         * checked to see if  the total number of Available contacts is displayed for each service and tallies with the number of contact cards listed for that service.
+
    5. ***Add New Contact***
 
          * Checked to see if this button is visible only for users who are logged in.
@@ -209,6 +212,7 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
          * Checked to see if the new contact card is displayed under the corresponding service page.
          * Checked to see if "N/A" is displayed for address and website details of the contact card when left empty while adding the details.
          * Checked to see if the Available Contacts" gets updated accordingly.
+
    6. ***Edit Contact***
 
          * Checked to see if this button is visible only for users who are logged in.
@@ -223,6 +227,7 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
          * checked to see if clicking on Update button displays a flash message when contact is successfully updated.
          * Checked to see if the contact card is displayed  with the updated details under the corresponding service page.
          * Checked to see if "N/A" is displayed for address and website details of the contact card when left empty while adding the details.
+
    7. ***Delete Contact***
 
          * Checked to see if this button is visible only for admin user.
@@ -230,6 +235,7 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
          * checked to see if clicking on Delete button displays a flash message when contact is successfully deleted.
          * Checked to see if the contact card is removed under the corresponding service page.
          * Checked to see if the Available Contacts" gets updated accordingly.
+
    8. ***Add Review***
 
          * Checked to see if this button is visible only for users who are logged in.
@@ -241,11 +247,11 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
 
    9. ***User Reviews***
 
-   * Checked to see if this section is visible for both registered and unregistered users.
-   * Checked to see if all the reviews pertaining to the service provider/company are listed in an collapsible view
-   * Checked to see if the number of stars displayed is corresponding to the number given in the rating field.
-   * Checked to see if the correct name of the user who added that review is displayed.
-   * Checked to see if clicking on delete button against each review deletes the particular user review.
+         * Checked to see if this section is visible for both registered and unregistered users.
+         * Checked to see if all the reviews pertaining to the service provider/company are listed in an collapsible view
+         * Checked to see if the number of stars displayed is corresponding to the number given in the rating field.
+         * Checked to see if the correct name of the user who added that review is displayed.
+         * Checked to see if clicking on delete button against each review deletes the particular user review.
 
    10. ***Login***
 
@@ -258,6 +264,7 @@ Js files were validated with [Jshint](https://jshint.com/). No Errors found
           * Checked to see if the username accepts a combination of alphabets and numbers and a maximum of 15 characters.
           * Checked to see if the password accepts a combination of alphabets and numbers and a maximum of 15 characters.
           * Checked to see if the email field displays an error for an invalid emailid input.
+
    12. ***Logout***
 
          * checked to see if Clicking on Logout from nav menu displays a flash message to the user for successfully logging out.
@@ -411,7 +418,11 @@ Spelling was checked thoroughly using [W3C Spell Checker](https://www.w3.org/200
 **Solution**  - Fixed by adding the timedelta(hours=2) as the timezone is CET and differentce between local time and utc is 2 hours.
 
               date = datetime.datetime.now() + datetime.timedelta(hours=2)
-              "date": date.strftime("%b %d %Y %H:%M:%S")    
+              "date": date.strftime("%b %d %Y %H:%M:%S")  
+
+7.  Hero image did not render well on small screen even after resizing. 
+
+**Solution** - As per the advise of the mentor, had to change the hero image on smaller screens.  
 
 ## Enhancements
 
