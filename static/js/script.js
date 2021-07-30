@@ -4,22 +4,8 @@
 /*
     jQuery for MaterializeCSS initialization
 */
-if(window.location.pathname.indexOf("/home#about-section") !== -1){
-    document.getElementById("about").style.backgroundColor = "rgba(0,0,0,0.1)";
-}
-if(window.location.pathname.indexOf("/home") !== -1){
-    document.getElementById("home").style.backgroundColor = "rgba(0,0,0,0.1)";
-}
-if(window.location.pathname.indexOf("/login") !== -1){
-    document.getElementById("login").style.backgroundColor = "rgba(0,0,0,0.1)";
-}
-if(window.location.pathname.indexOf("/register") !== -1){
-    document.getElementById("register").style.backgroundColor = "rgba(0,0,0,0.1)";
-}
-else
-    document.getElementById("services").style.backgroundColor = "rgba(0,0,0,0.1)";
-
 $(document).ready(function () {
+    
     $(".dropdown-trigger").dropdown({ hover: true });
     $(".sidenav").sidenav({edge: "right"});
     $('.collapsible').collapsible();
@@ -73,4 +59,16 @@ $(document).ready(function () {
           });
       }
 });
+
+// For highlighting the active page on Nav menu.
+
+if(window.location.pathname.indexOf("/home") !== -1){
+    document.getElementById("home").style.backgroundColor = "rgba(0,0,0,0.1)";
+}
+if(window.location.pathname.indexOf("/login") !== -1){
+    document.getElementById("login").style.backgroundColor = "rgba(0,0,0,0.1)";
+}
+if(window.location.pathname.indexOf("/register") !== -1){
+    document.getElementById("register").style.backgroundColor = "rgba(0,0,0,0.1)";
+}
 

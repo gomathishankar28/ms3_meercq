@@ -131,6 +131,7 @@ nav .brand-logo {
 }
 
 /*----------------- Home page styles------------------*/
+
 .service-icon {
 	margin-top: 20px;
 }
@@ -335,6 +336,7 @@ abt-text {
 }
 /*----------------media queries for small screens---------------------*/
 @media (min-width: 280px) {
+
 	.search_form {
 		top: 50%;
 	}
@@ -516,7 +518,16 @@ abt-text {
 		margin-left: 90px;
 	}
 }
+@media (max-width: 415px) {
+	.hero-large {
+		display: none;
+	}
+}
 @media (min-width: 540px) {
+	.hero-small {
+		display: none;
+	}
+	
 	.main-heading1 {
 		font-size: 44px;
 	}

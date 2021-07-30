@@ -49,7 +49,7 @@
 				<ul class="right hide-on-med-and-down rightnav" id="navbar-items">
                     <li id="home"><a href="{{ url_for('home') }}">Home</a></li>
                     <li id="about"><a href="{{ url_for('home', _anchor='about-section') }}">About</a></li>
-                    <li><a class="dropdown-trigger navdropdown" href="#!" data-target="dropdown1">Services
+                    <li><a class="dropdown-trigger navdropdown" href="#!" data-target="dropdown1" id="servicedd">Services
                         <i class="fas fa-caret-down services-icon"></i></a></li>
 					{% if session.user %}
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
