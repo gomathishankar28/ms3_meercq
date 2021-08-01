@@ -455,4 +455,6 @@ Spelling was checked thoroughly using [W3C Spell Checker](https://www.w3.org/200
 
 ## Known Bugs and yet to be Fixed
 
+Contact cards don't render well in 1280* and 1440* resolution screens.
+
          
