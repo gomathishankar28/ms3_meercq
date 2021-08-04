@@ -260,7 +260,7 @@ This page displays the following:
 
 ***User Reviews*** To view the rating and user comments added by users along with the timestamp against each company.
 
-***Delete Review*** Button to  enable the user to delete his/her own review.
+***Delete Review*** Button to  enable the user to delete his/her own review. So this delete button is visible only for the user who created the review.
 
 **Login**
 
