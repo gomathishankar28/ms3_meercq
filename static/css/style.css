@@ -861,3 +861,27 @@ abt-text {
 		margin-right: -50px!important;
 	}
 }
+/*-----media queries for adjusting th display of contact cards on 1280* and 1440* screens----------*/
+@media(min-width: 1280px) and (max-width: 1440px) {
+	
+	.card.small {
+		width: 320px;
+	}
+	.reviews {
+		width: 320px;
+	}
+	.company_image {
+		width: 120px;
+	}
+	.review_icon {
+		margin-left: 100px;
+		margin-right: -100px!important;
+	}
+	.card-header p {
+		font-size: 14px;
+	}
+	.card-content p {
+		font-size: 14px;
+	}
+	
+}

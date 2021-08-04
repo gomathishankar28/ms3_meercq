@@ -1,7 +1,7 @@
 # [MeerCQ](https://gomathishankar28.github.io/ms3_meercq/)
 
-This is a website that provides contact details of variety of services like electricians, plumbers,
-carpenters, painters, gardeners, whitegoods and cleaners in Meerhoven in one place. As the name suggests, MeerCQ( which means Meerhoven people seek you) 
+This is a website that provides contact details for variety of  handyman services like electricians, plumbers,
+carpenters, painters, gardeners, whitegoods and cleaners in Meerhoven, a place which has large concentration of expats in Netherlands. As the name suggests, MeerCQ( which means Meerhoven people seek you) 
 is a platform where people can find the contact of a professional for all the chores at home without any hassle.
 **MeerCQ** is an educational project that serves as the **Milestone Project 3** for the **Full-Stack Software Developer programme** powered by **Code Institute**.
 
